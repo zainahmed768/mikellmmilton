@@ -2,6 +2,11 @@
 :root {
     --bs-cube-2: cubic-bezier(0.1, 0.75, 0.25, 1);
 }
+
+body {
+    overflow-x: hidden;
+}
+
 * {
     font-family: "DM sans";
 }
@@ -164,10 +169,10 @@ section.list-sec {
     background-repeat: no-repeat;
     background-position: center;
 }
-.about-sec .about-heading-wrapper {
+.about-heading-wrapper {
     border-bottom: 1px solid #d9d9d9;
 }
-.about-sec .about-heading-wrapper h5 {
+.about-heading-wrapper h5 {
     font-size: 18px;
     font-family: "Albert Sans";
     text-transform: uppercase;
@@ -339,6 +344,299 @@ section.list-sec {
     padding-top: 14px;
 }
 /* availabel ends here */
+
+/* diaspora-section Css  */
+.diaspora-section {
+    background-image: url(../images/about-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.diaspora-content-wrapper {
+    background: #3c3d40;
+    padding: 100px 0px 100px 50px;
+}
+
+.diaspora-content-wrapper .about-heading-wrapper h5 {
+    font-size: 16px;
+    font-family: "Albert Sans";
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.diaspora-content-wrapper .about-heading-wrapper {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.diaspora-section .custom-controls .video_btn {
+    cursor: pointer;
+    color: #fff;
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    animation: pulse-animation 2s infinite;
+    overflow: hidden;
+    border: 1px solid #fff;
+    text-decoration: none;
+}
+
+.diaspora-section .custom-controls .video_btn i {
+    font-size: 40px;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgb(238, 203, 189, 0.9);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgb(230, 42, 42, 0.1);
+    }
+}
+
+.diaspora_li {
+    background: rgba(6, 6, 6, 0.06);
+    backdrop-filter: blur(20px);
+    border: 1px solid transparent;
+    max-width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px;
+}
+
+.diaspora_li .diaspora_icon figure img.img-fluid {
+    max-width: 60px;
+    filter: invert(1);
+}
+
+.diaspora_icon {
+    background: #363636;
+    max-width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 100%;
+    /* margin: auto; */
+}
+
+.diaspora_li:hover {
+    border-color: #ffbe00;
+}
+
+/* diaspora-section Css  */
+
+/* assembly-section Css  */
+
+.assembly_content {
+    background-image: linear-gradient(180deg, #ffbe00 0%, #f2295b00 100%);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.sub_heading {
+    font-size: 18px;
+    font-family: "Albert Sans";
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+/* assembly-section Css  */
+
+/* adventure-section Css  */
+
+.yellow_heading {
+    font-size: 34px;
+    color: #ffbe00;
+    font-family: "Albert Sans";
+    font-weight: 700;
+}
+
+.sub_para {
+    font-size: 18px;
+    color: #7a7a7a;
+}
+
+.radius-10 {
+    border-radius: 10px;
+}
+
+/* donation-section Css  */
+
+.yellow_color {
+    color: #ffbe00;
+}
+
+.donation_heading {
+    font-size: 31px;
+    font-family: "Albert Sans";
+    color: #000;
+}
+
+.donation_sub {
+    font-size: 24px;
+    font-family: "Albert Sans";
+    color: #000;
+    font-weight: 600;
+}
+
+.donation_wrapper {
+    border: 3px solid #000;
+    border-radius: 2px;
+    padding: 40px;
+}
+
+/* donation-section Css  */
+
+/* blog-section Css  */
+
+.blog-heading {
+    flex: 0 0 50%;
+}
+
+.blog_wrapper:hover img.img-fluid {
+    filter: grayscale(0);
+    transform: perspective(2000px) rotateX(0.1deg) rotateY(0deg) scaleX(1.1)
+        scaleY(1.1);
+}
+
+.blog_wrapper img.img-fluid {
+    height: 500px;
+    filter: grayscale(1);
+    transition: transform 500ms;
+    transform: perspective(0px) rotateX(0deg) rotateY(0deg) scaleX(1) scaleY(1);
+    transform-origin: center center;
+}
+
+.blog_wrapper .blog_img figure {
+    overflow: hidden;
+}
+
+.blog_sub {
+    font-size: 16px;
+    font-family: "Albert Sans";
+    font-weight: 600;
+}
+
+.blog_heading {
+    font-size: 28px;
+    font-family: "Albert Sans";
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+}
+
+.cat-link {
+    padding-right: 12px;
+    position: relative;
+    z-index: 1;
+    color: #000;
+    font-weight: 500;
+    font-family: "Albert Sans";
+    text-decoration: none;
+}
+
+.blog_content .categories::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    top: 11px;
+    right: 0;
+}
+
+.blog_content .date {
+    color: #363636;
+    font-family: "Albert Sans";
+}
+
+.blog_content .blog_date_wrapper {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 12px 0;
+    margin-top: 15px;
+}
+
+.blog_sub::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: #000;
+}
+
+.blog-arrow-wrap {
+    background: #f5f5f5;
+    color: #000;
+    max-width: 70px;
+    height: 60px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -30px;
+    right: 40px;
+    width: 100%;
+}
+
+.blog_anchor {
+    color: #000;
+}
+
+.blog_wrapper:hover .blog-arrow-wrap {
+    background: #ffbe00;
+}
+
+.blog_wrapper:hover .blog_anchor {
+    color: #fff;
+}
+
+/* contact-section Css  */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-family: "Albert Sans";
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.form-control {
+    font-size: 16px;
+    font-family: 'Albert Sans';
+    color: #D9D9D9;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #D9D9D9;
+    border-radius: 0;
+    padding: 10px 0px;
+}
+
+.contact_form {
+    background: #F7F6F1;
+    padding: 68px 60px;
+    margin-top: 180px;
+}
+
+.contact_main {
+    margin-top: -19rem;
+}
+/* contact-section Css  */
+
 /* fooer starts here */
 footer {
     background: #060606;
