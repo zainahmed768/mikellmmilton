@@ -3,11 +3,13 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
+
 <!-- Bootstrap CDN -->
 <link href="{!! frontSass('main.css') !!}" rel="stylesheet">
 <!-- Slick SLider -->
 <link href="{!! frontSlick('slick.css') !!}" rel="stylesheet">
 <link href="{!! frontSlick('slick-theme.css') !!}" rel="stylesheet">
+{{-- <link href="{!! frontSass('main.css') !!}" rel="stylesheet"> --}}
 <!-- Slick SLider -->
 {{-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 <!-- Font Awesome -->
@@ -19,6 +21,10 @@
 <!-- Stylesheet -->
 <link href="{!! frontCss('style.css') !!}" rel="stylesheet">
 <!-- Stylesheet -->
+
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css'>
+
+{{-- <link rel="stylesheet" href="https://codepen.io/GreenSock/pen/xxmzBrw.css"> --}}
 <link rel="shortcut icon" href="{!! frontImage('logo.png') !!}" type="image/x-icon">
 <meta name="csrf-token" content="{!! csrf_token() !!}">
 
