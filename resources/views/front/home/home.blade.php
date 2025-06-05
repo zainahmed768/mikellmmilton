@@ -1,5 +1,67 @@
 @extends('layouts.app')
 @section('content')
+    {{-- banner-section Starts Here  --}}
+    <section class="banner-section">
+        <div class="container-fluid px-0">
+            <div class="banner-slider_wrapper position-relative">
+                <div class="banner-slider">
+                    <div class="bnner-slide">
+                        <figure>
+                            <img src="{{ frontImage('banner1.jpg') }}" alt="" class="img-fluid w-100">
+                        </figure>
+                    </div>
+                    <div class="bnner-slide">
+                        <figure>
+                            <img src="{{ frontImage('banner2.jpeg') }}" alt="" class="img-fluid w-100">
+                        </figure>
+                    </div>
+                    <div class="bnner-slide">
+                        <figure>
+                            <img src="{{ frontImage('banner3.jpeg') }}" alt="" class="img-fluid w-100">
+                        </figure>
+                    </div>
+                </div>
+                <div class="review_wrapper position-absolute">
+                    <h5 class="review_text">Reviews </h5>
+                    <div class="review_star_wrap d-flex align-items-center gap-2">
+                        <ul class="star_ul d-flex align-items-center gap-1 list-unstyled">
+                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
+                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
+                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
+                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
+                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
+                        </ul>
+                        <p class="rating_text"> 4.8 view </p>
+                    </div>
+                    <p class="rating_text mb-0">
+                        Discover the sci fi thriller novel </p>
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-lg-7">
+                    <div class="banner-nav">
+                        <div class="banner-thumbnail">
+                            <figure>
+                                <img src="{{ frontImage('banner1.jpg') }}" alt="" class="img-fluid">
+                            </figure>
+                        </div>
+                        <div class="banner-thumbnail">
+                            <figure>
+                                <img src="{{ frontImage('banner2.jpeg') }}" alt="" class="img-fluid">
+                            </figure>
+                        </div>
+                        <div class="banner-thumbnail">
+                            <figure>
+                                <img src="{{ frontImage('banner3.jpeg') }}" alt="" class="img-fluid">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- banner-section Starts Here  --}}
+
     {{-- list sec starts here --}}
     <section class="list-sec">
         <div class="container">
@@ -67,10 +129,12 @@
         <div class="container">
             <div class="row pb-4">
                 <div class="col-lg-12">
-                    <div class="about-heading-wrapper d-flex justify-content-between">
-                        <h5>About the Book</h5>
-                        <div class="icon-wrapper">
-                            <i aria-hidden="true" class="fas fa-pen-nib"></i>
+                    <div class="about-heading-container">
+                        <div class="about-heading-wrapper d-flex justify-content-between">
+                            <h5>About the Book</h5>
+                            <div class="icon-wrapper">
+                                <i aria-hidden="true" class="fas fa-pen-nib"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -179,12 +243,13 @@
         <div class="container">
             <div class="row pb-4">
                 <div class="col-lg-12">
-                    <div class="about-heading-wrapper d-flex justify-content-between">
-                        <h5 class="text-white">DBT
-
-                        </h5>
-                        <div class="icon-wrapper">
-                            <i class="fa-solid fa-book-open text-white"></i>
+                    <div class="about-heading-container">
+                        <div class="about-heading-wrapper d-flex justify-content-between">
+                            <h5 class="text-white">DBT
+                            </h5>
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-book-open text-white"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -217,11 +282,13 @@
         <div class="container">
             <div class="row pb-4">
                 <div class="col-lg-12">
-                    <div class="about-heading-wrapper d-flex justify-content-between">
-                        <h5 class="text-white">The DOPE Breakthrough
-                        </h5>
-                        <div class="icon-wrapper">
-                            <i class="fa-solid fa-people-arrows"></i>
+                    <div class="about-heading-container">
+                        <div class="about-heading-wrapper d-flex justify-content-between">
+                            <h5 class="text-white">The DOPE Breakthrough
+                            </h5>
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-people-arrows"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -259,7 +326,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 ms-auto">
-                    <div class="adventure-img-wrapper">
+                    <div class="prophecy-img-wrapper">
                         <figure class="mb-0">
                             <img src="{{ frontImage('prophecy-img.jpeg') }}" alt="" class="img-fluid">
                         </figure>
@@ -377,30 +444,41 @@
     {{-- available ends here --}}
     {{-- dope starts here --}}
     <section class=""></section>
-    <section class="bs-expertise-4-box" id="tagContainer">
+    <section class="bs-expertise-4-box expertise-section" id="tagContainer">
         <div class="container">
             <div class="expertise_top_heading">
                 <h2 class="expertise_text">The Dope
                     Breakthrough</h2>
             </div>
-            <div class="single-tag" data-x="100" data-y="-500"><span class="single-tag-item"><span class="icon">
-                        <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                        class="text">The</span></span></div>
-            <div class="single-tag" data-x="500" data-y="-150"><span class="single-tag-item"><span class="icon">
-                        <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                        class="text">Dope</span></span></div>
-            <div class="single-tag" data-x="700" data-y="-200"><span class="single-tag-item"><span class="icon">
-                        <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                        class="text">Breakthrough</span></span></div>
-            <div class="single-tag" data-x="300" data-y="-300"><span class="single-tag-item"><span class="icon">
-                        <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                        class="text">Divining Our</span></span></div>
-            <div class="single-tag" data-x="500" data-y="-250"><span class="single-tag-item"><span class="icon">
-                        <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                        class="text">Perfect</span></span></div>
-            <div class="single-tag" data-x="900" data-y="-250"><span class="single-tag-item"><span class="icon">
-                        <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                        class="text">Eternity</span></span></div>
+            <div class="tags_main overflow-hidden">
+                <div class="tags-wrapper">
+                    <div class="single-tag" data-x="100" data-y="-500"><span class="single-tag-item"><span
+                                class="icon">
+                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
+                                class="text">The</span></span></div>
+                    <div class="single-tag" data-x="500" data-y="-150"><span class="single-tag-item"><span
+                                class="icon">
+                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
+                                class="text">Dope</span></span></div>
+                    <div class="single-tag" data-x="700" data-y="-200"><span class="single-tag-item"><span
+                                class="icon">
+                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
+                                class="text">Breakthrough</span></span></div>
+                    <div class="single-tag" data-x="300" data-y="-300"><span class="single-tag-item"><span
+                                class="icon">
+                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
+                                class="text">Divining Our</span></span></div>
+                    <div class="single-tag" data-x="500" data-y="-250"><span class="single-tag-item"><span
+                                class="icon">
+                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
+                                class="text">Perfect</span></span></div>
+                    <div class="single-tag" data-x="900" data-y="-250"><span class="single-tag-item"><span
+                                class="icon">
+                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
+                                class="text">Eternity</span></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     {{-- dope ends here --}}
@@ -598,7 +676,8 @@
                 <div class="col-lg-6">
                     <div class="assembly-img-wrapper">
                         <figure class="mb-0">
-                            <img src="{{ frontImage('assembly-img.jpeg') }}" alt="" class="img-fluid">
+                            <img src="{{ frontImage('assembly-img.jpeg') }}" alt=""
+                                class="img-fluid assembly_img">
                         </figure>
                     </div>
                 </div>
@@ -646,7 +725,7 @@
                 <div class="col-lg-7 ms-auto">
                     <div class="adventure-img-wrapper w-fit mx-auto">
                         <figure class="mb-0">
-                            <img src="{{ frontImage('book-img.png') }}" alt="" class="img-fluid">
+                            <img src="{{ frontImage('book-img.png') }}" alt="" class="img-fluid adventure-img">
                         </figure>
                     </div>
                     <div class="adventure_card_wrapper">
@@ -715,7 +794,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="adventure-img-wrapper">
+                    <div class="wealth-img-wrapper">
                         <figure class="mb-0">
                             <img src="{{ frontImage('wealth-img.jpeg') }}" alt="" class="img-fluid radius-10">
                         </figure>
@@ -864,11 +943,21 @@
         <div class="container">
             <div class="row pb-4">
                 <div class="col-lg-12">
-                    <div class="about-heading-wrapper d-flex justify-content-between">
-                        <h5>blog & news
-                        </h5>
-                        <div class="icon-wrapper">
-                            <i class="fa-brands fa-blogger-b"></i>
+                    {{-- <div class="about-heading-container">
+                        <div class="about-heading-wrapper d-flex justify-content-between">
+                            <h5>blog & news
+                            </h5>
+                            <div class="icon-wrapper">
+                                <i class="fa-brands fa-blogger-b"></i>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="about-heading-container">
+                        <div class="about-heading-wrapper d-flex justify-content-between">
+                            <h5>About the Book</h5>
+                            <div class="icon-wrapper">
+                                <i aria-hidden="true" class="fas fa-pen-nib"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -883,8 +972,18 @@
                         </h2>
                     </div>
                 </div>
-                <div class="blog-btn">
-                    <a href="#" class="btn">View All Blogs</a>
+                <div class="btn_group position-relative">
+                    <span class="btn_border"></span>
+                    <span class="btn_border"></span>
+                    <span class="btn_border"></span>
+                    <span class="btn_border"></span>
+                    <a href="#" class="btn">
+                        <span class="inner_border"></span>
+                        <span class="inner_border"></span>
+                        <span class="inner_border"></span>
+                        <span class="inner_border"></span>
+                        <span class="btn_text">View All Blogs</span>
+                    </a>
                 </div>
             </div>
             <div class="row">

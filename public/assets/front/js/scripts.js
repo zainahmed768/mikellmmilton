@@ -41,6 +41,82 @@ $(".see_order_details").click(function () {
     $(".orders_details_start_here").removeClass("hide");
 });
 
+// banner Slider
+
+gsap.registerPlugin(ScrollTrigger);
+$(document).ready(function () {
+    $(".banner-slider .slick-slide:not(.slick-current)").css({
+        opacity: 0,
+        y: 0,
+    });
+
+    $(".banner-slider").on(
+        "beforeChange",
+        function (event, slick, currentSlide, nextSlide) {
+            const currentSlideEl = $(slick.$slides[currentSlide]);
+            gsap.to(currentSlideEl, {
+                y: -1200,
+                opacity: 0,
+                duration: 0.6,
+                ease: "power2.inOut",
+            });
+        }
+    );
+
+    $(".banner-slider").on(
+        "afterChange",
+        function (event, slick, currentSlide) {
+            const newSlideEl = $(slick.$slides[currentSlide]);
+            gsap.fromTo(
+                newSlideEl,
+                { y: 1200, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    delay: 0.1,
+                }
+            );
+        }
+    );
+
+    $(".banner-slider").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: false,
+        speed: 500, // smoother than 0
+        asNavFor: ".banner-nav",
+        draggable: false,
+    });
+
+    $(".banner-nav").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: ".banner-slider",
+        dots: false,
+        centerMode: false,
+        focusOnSelect: true,
+        arrows: false,
+        infinite: false,
+    });
+});
+
+gsap.utils.toArray(".about-heading-container").forEach((el) => {
+    gsap.to(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play reverse play reverse",
+        },
+        duration: 1,
+        ease: "power2.out",
+        scaleX: 1,
+    });
+});
+
 // marquee
 $(document).ready(function () {
     $(".marquee-slider").slick({
@@ -76,8 +152,6 @@ $(document).ready(function () {
 });
 
 // marquee
-
-gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".diaspora-content-wrapper", {
     // clipPath: "inset(0 100% 0 0)",
@@ -116,21 +190,22 @@ document.addEventListener("DOMContentLoaded", function () {
     checkScroll();
 });
 
-gsap.registerPlugin(ScrollTrigger);
-
 const container = document.getElementById("tagContainer");
 const tags = document.querySelectorAll(".single-tag");
 
-// Drop all tags with bounce when scrolling into view
+// Define boundaries for dragging and bounce
+const BOUNDARY_WIDTH = container.clientWidth;
+const BOUNDARY_HEIGHT = 400;
+
 ScrollTrigger.create({
     trigger: container,
     start: "top center",
     once: true,
     onEnter: () => {
-        const maxY = container.clientHeight - 60;
+        const maxY = BOUNDARY_HEIGHT - 60; // drop height within boundary
         tags.forEach((tag) => {
             const x = parseFloat(tag.dataset.x);
-            tag.dataset.rotation = 0; // initialize rotation
+            tag.dataset.rotation = 0;
 
             gsap.to(tag, {
                 duration: 1,
@@ -164,13 +239,6 @@ function enableDrag(tag) {
     const bounceFactor = -0.6;
     const friction = 0.96;
 
-    function updateTransform(target = tag) {
-        const x = parseFloat(target.dataset.x);
-        const y = parseFloat(target.dataset.y);
-        const rotation = parseFloat(target.dataset.rotation) || 0;
-        target.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
-    }
-
     tag.addEventListener("pointerdown", (e) => {
         isDragging = true;
         lastX = e.clientX;
@@ -190,8 +258,8 @@ function enableDrag(tag) {
         let x = parseFloat(tag.dataset.x) + dx;
         let y = parseFloat(tag.dataset.y) + dy;
 
-        const maxX = container.clientWidth - tag.offsetWidth;
-        const maxY = container.clientHeight - tag.offsetHeight;
+        const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
+        const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
 
         x = Math.max(0, Math.min(maxX, x));
         y = Math.max(0, Math.min(maxY, y));
@@ -199,15 +267,12 @@ function enableDrag(tag) {
         tag.dataset.x = x;
         tag.dataset.y = y;
 
-        // Reduced rotation speed to 0.3 for smoother, less intense rotation
+        velocityX = dx;
+        velocityY = dy;
         velocityRotation = dx * 0.3;
-
         tag.dataset.rotation = parseFloat(tag.dataset.rotation) || 0;
 
         tag.style.transform = `translate(${x}px, ${y}px) rotate(${tag.dataset.rotation}deg)`;
-
-        velocityX = dx;
-        velocityY = dy;
 
         resolveCollision(tag);
     });
@@ -228,30 +293,24 @@ function enableDrag(tag) {
             let rotation =
                 (parseFloat(tag.dataset.rotation) || 0) + velocityRotation;
 
-            const maxX = container.clientWidth - tag.offsetWidth;
-            const maxY = container.clientHeight - tag.offsetHeight;
+            const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
+            const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
 
-            // Clamp X position and bounce horizontally
             if (x <= 0 || x >= maxX) {
                 x = Math.max(0, Math.min(maxX, x));
                 velocityX *= bounceFactor;
-                velocityRotation *= -1; // reverse rotation on bounce
+                velocityRotation *= -1;
             }
 
-            // Clamp Y position and bounce vertically
             if (y >= maxY) {
                 y = maxY;
                 velocityY *= bounceFactor;
 
-                // Stop animation if velocity is very small
                 if (
                     Math.abs(velocityY) < 1 &&
                     Math.abs(velocityX) < 0.5 &&
                     Math.abs(velocityRotation) < 0.5
                 ) {
-                    velocityY = 0;
-                    velocityX = 0;
-                    velocityRotation = 0;
                     cancelAnimationFrame(animationFrame);
                     return;
                 }
@@ -271,8 +330,8 @@ function enableDrag(tag) {
     }
 
     function resolveCollision(currentTag) {
-        const maxX = container.clientWidth - currentTag.offsetWidth;
-        const maxY = container.clientHeight - currentTag.offsetHeight;
+        const maxX = BOUNDARY_WIDTH - currentTag.offsetWidth;
+        const maxY = BOUNDARY_HEIGHT - currentTag.offsetHeight;
 
         tags.forEach((other) => {
             if (other === currentTag) return;
@@ -293,34 +352,31 @@ function enableDrag(tag) {
                 const pushX = (Math.cos(angle) * (minDist - distance)) / 2;
                 const pushY = (Math.sin(angle) * (minDist - distance)) / 2;
 
-                currentTag.dataset.x = parseFloat(currentTag.dataset.x) - pushX;
-                currentTag.dataset.y = parseFloat(currentTag.dataset.y) - pushY;
+                let newX1 = x1 - pushX;
+                let newY1 = y1 - pushY;
+                let newX2 = x2 + pushX;
+                let newY2 = y2 + pushY;
 
-                other.dataset.x = parseFloat(other.dataset.x) + pushX;
-                other.dataset.y = parseFloat(other.dataset.y) + pushY;
-
-                // Clamp positions to container boundaries
-                currentTag.dataset.x = Math.min(
-                    maxX,
-                    Math.max(0, currentTag.dataset.x)
-                );
-                currentTag.dataset.y = Math.min(
-                    maxY,
-                    Math.max(0, currentTag.dataset.y)
-                );
-                other.dataset.x = Math.min(maxX, Math.max(0, other.dataset.x));
-                other.dataset.y = Math.min(maxY, Math.max(0, other.dataset.y));
+                currentTag.dataset.x = Math.min(maxX, Math.max(0, newX1));
+                currentTag.dataset.y = Math.min(maxY, Math.max(0, newY1));
+                other.dataset.x = Math.min(maxX, Math.max(0, newX2));
+                other.dataset.y = Math.min(maxY, Math.max(0, newY2));
 
                 updateTransform(currentTag);
                 updateTransform(other);
             }
         });
     }
+
+    function updateTransform(target) {
+        const x = parseFloat(target.dataset.x);
+        const y = parseFloat(target.dataset.y);
+        const rotation = parseFloat(target.dataset.rotation) || 0;
+        target.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+    }
 }
 
 console.clear();
-
-gsap.registerPlugin(ScrollTrigger);
 
 const cardsWrappers = gsap.utils.toArray(".card-wrapper");
 const cards = gsap.utils.toArray(".card");
@@ -358,17 +414,45 @@ cardsWrappers.forEach((wrapper, i) => {
 });
 
 // Slides Text ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
-
 gsap.timeline({
     scrollTrigger: {
         trigger: ".book-section",
         start: "top 5%",
         end: "bottom 90%", // Only a small scroll range triggers full animation
         scrub: 0.7,
-        markers: true,
+        markers: false,
     },
 })
     .to(".center_text", { scale: 0.5, y: 300, ease: "power2.out" }, 0)
     .to(".left_text", { x: -700, ease: "power2.out" }, 0)
     .to(".right_text", { x: 700, ease: "power2.out" }, 0);
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".adventure-section",
+        start: "top 60%",
+        end: "bottom 90%",
+        toggleActions: "play reverse play reverse",
+        markers: false,
+    },
+}).to(".adventure-img", {
+    scale: 1,
+    x: 0,
+    ease: "power2.out",
+    duration: 0.5,
+});
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".assembly-section",
+        start: "top 60%",
+        end: "bottom 90%",
+        toggleActions: "play reverse play reverse",
+        markers: false,
+    },
+}).to(".assembly_img", {
+    scale: 1,
+    x: 0,
+    ease: "power2.out",
+    duration: 0.5,
+});
