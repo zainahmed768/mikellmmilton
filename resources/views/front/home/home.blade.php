@@ -74,11 +74,11 @@
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-1.svg') }}" class="img-fluid" alt="">
                                 </div>
-                                <div class="list-heading-wrapper">
+                                {{-- <div class="list-heading-wrapper">
                                     <a href="#">
                                         Lorem Ipsum
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-lg-3">
@@ -86,11 +86,11 @@
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-2.svg') }}" class="img-fluid" alt="">
                                 </div>
-                                <div class="list-heading-wrapper">
+                                {{-- <div class="list-heading-wrapper">
                                     <a href="#">
                                         Lorem Ipsum
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-lg-3">
@@ -98,11 +98,11 @@
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-3.svg') }}" class="img-fluid" alt="">
                                 </div>
-                                <div class="list-heading-wrapper">
+                                {{-- <div class="list-heading-wrapper">
                                     <a href="#">
                                         Lorem Ipsum
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-lg-3">
@@ -110,11 +110,11 @@
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-4.svg') }}" class="img-fluid" alt="">
                                 </div>
-                                <div class="list-heading-wrapper">
+                                {{-- <div class="list-heading-wrapper">
                                     <a href="#">
                                         Lorem Ipsum
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -255,9 +255,9 @@
                 </div>
             </div>
             <div class="dbt_wrapper">
-                <div class="ml14 mb-4">
+                <div class="ml14 reveal mb-4">
                     <h2 class="level-2 heading-font text-white mb-0">
-                        <span class="letters">The DOPE Breakthrough
+                        <span class="letters"> The DOPE Breakthrough
                         </span>
                     </h2>
                 </div>
@@ -284,7 +284,7 @@
                 <div class="col-lg-12">
                     <div class="about-heading-container">
                         <div class="about-heading-wrapper d-flex justify-content-between">
-                            <h5 class="text-white">The DOPE Breakthrough
+                            <h5 class="text-dark">The DOPE Breakthrough
                             </h5>
                             <div class="icon-wrapper">
                                 <i class="fa-solid fa-people-arrows"></i>
@@ -296,7 +296,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="adventure_content">
-                        <div class="ml14 mb-5">
+                        <div class="ml14 reveal mb-5">
                             <h2 class="level-2 heading-font sec_heading">
                                 <span class="letters"> A Prophecy for the 21st
                                     century’s Boomers,
@@ -500,7 +500,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ml14 mb-4">
+                        <div class="ml14 reveal mb-4">
                             <h2 class="level-2 heading-font text-white mb-0">
                                 <span class="letters">A Prophecy for the 21st
                                     century Israelites in the
@@ -623,7 +623,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="assembly_content">
-                        <div class="ml14 mb-4">
+                        <div class="ml14 reveal mb-4">
                             <h2 class="level-2 heading-font text-dark mb-0">
                                 <span class="letters">ABOUT US
                                 </span>
@@ -692,7 +692,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="adventure_content">
-                        <div class="ml14 mb-5">
+                        <div class="ml14 reveal mb-5">
                             <h2 class="level-2 heading-font">
                                 <span class="letters"> The D.O.P.E. Breakthrough
                                 </span>
@@ -802,7 +802,7 @@
                 </div>
                 <div class="col-lg-6 ps-lg-5">
                     <div class="adventure_content">
-                        <div class="ml14 mb-3">
+                        <div class="ml14 reveal mb-3">
                             <h2 class="level-2 heading-font yellow_heading">
                                 <span class="letters">
                                     The DBT Ministry Sovereign Wealth
@@ -848,7 +848,7 @@
     <section class="donation-section">
         <div class="container-fluid">
             <div class="donation_wrapper text-center">
-                <div class="ml14">
+                <div class="ml14 reveal">
                     <h4 class="level-2 heading-font donation_heading">
                         <span class="letters">
                             80% of all revenue from The DBT will be dedicated to a sovereign wealth fund supporting
@@ -874,65 +874,76 @@
                 </div>
             </div>
             <div class="book_animate_wrapper">
+                <div class="spacer"></div>
                 <div class="slides_wrapper">
                     <div class="slide_box">
-                        <div class="img_box">
-                            <figure><img src="{{ frontImage('book-img1.jpg') }}" alt="slide_image" class="img-fluid">
-                            </figure>
-                        </div>
-                        <div class="content_wrapper d-flex align-items-center justify-content-between">
-                            <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                            <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                <div class="role">
-                                    <h5 class="property">role:</h5>
-                                    <h5 class="value">Architecture design</h5>
-                                </div>
-                                <div class="role">
-                                    <h5 class="property">role:</h5>
-                                    <h5 class="value">Architecture design</h5>
+                        <div class="slide_box_wrap">
+                            <div class="img_box">
+                                <figure><img src="{{ frontImage('book-img1.jpg') }}" alt="slide_image"
+                                        class="img-fluid">
+                                </figure>
+                            </div>
+                            <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                    <div class="role">
+                                        <h5 class="property">role:</h5>
+                                        <h5 class="value">Architecture design</h5>
+                                    </div>
+                                    <div class="role">
+                                        <h5 class="property">role:</h5>
+                                        <h5 class="value">Architecture design</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="slide_box">
-                        <div class="img_box">
-                            <figure><img src="{{ frontImage('book-img2.jpg') }}" alt="slide_image" class="img-fluid">
-                            </figure>
-                        </div>
-                        <div class="content_wrapper d-flex align-items-center justify-content-between">
-                            <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                            <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                <div class="role">
-                                    <h5 class="property">role:</h5>
-                                    <h5 class="value">Architecture design</h5>
-                                </div>
-                                <div class="role">
-                                    <h5 class="property">role:</h5>
-                                    <h5 class="value">Architecture design</h5>
+                        <div class="slide_box_wrap">
+                            <div class="img_box">
+                                <figure><img src="{{ frontImage('book-img2.jpg') }}" alt="slide_image"
+                                        class="img-fluid">
+                                </figure>
+                            </div>
+                            <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                    <div class="role">
+                                        <h5 class="property">role:</h5>
+                                        <h5 class="value">Architecture design</h5>
+                                    </div>
+                                    <div class="role">
+                                        <h5 class="property">role:</h5>
+                                        <h5 class="value">Architecture design</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="slide_box">
-                        <div class="img_box">
-                            <figure><img src="{{ frontImage('book-img3.jpg') }}" alt="slide_image" class="img-fluid">
-                            </figure>
-                        </div>
-                        <div class="content_wrapper d-flex align-items-center justify-content-between">
-                            <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                            <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                <div class="role">
-                                    <h5 class="property">role:</h5>
-                                    <h5 class="value">Architecture design</h5>
-                                </div>
-                                <div class="role">
-                                    <h5 class="property">role:</h5>
-                                    <h5 class="value">Architecture design</h5>
+                        <div class="slide_box_wrap">
+                            <div class="img_box">
+                                <figure><img src="{{ frontImage('book-img3.jpg') }}" alt="slide_image"
+                                        class="img-fluid">
+                                </figure>
+                            </div>
+                            <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                    <div class="role">
+                                        <h5 class="property">role:</h5>
+                                        <h5 class="value">Architecture design</h5>
+                                    </div>
+                                    <div class="role">
+                                        <h5 class="property">role:</h5>
+                                        <h5 class="value">Architecture design</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="spacer"></div>
             </div>
         </div>
     </section>
@@ -964,7 +975,7 @@
             </div>
             <div class="blog-top-content d-flex align-items-center justify-content-between">
                 <div class="blog-heading">
-                    <div class="ml14 mb-5">
+                    <div class="ml14 reveal mb-5">
                         <h2 class="level-2 heading-font">
                             <span class="letters"> Take a Look at Our Latest
                                 blogs & Articles.
@@ -1105,7 +1116,7 @@
                             </form>
                         </div> --}}
                         <div class="contact_heading">
-                            <div class="ml14 mb-3">
+                            <div class="ml14 reveal mb-3">
                                 <h2 class="level-2 heading-font">
                                     <span class="letters">
                                         200+ trusted partners all
@@ -1118,7 +1129,8 @@
                     <div class="col-lg-3">
                         <div class="contact_img">
                             <figure class="mb-0">
-                                <img src="{{ frontImage('contact-img.jpeg') }}" alt="" class="img-fluid w-100">
+                                <img src="{{ frontImage('contact-img.jpeg') }}" alt=""
+                                    class="img-fluid w-100 contact_img_wrap">
                             </figure>
                         </div>
                     </div>

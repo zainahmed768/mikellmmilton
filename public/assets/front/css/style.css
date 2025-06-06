@@ -271,6 +271,25 @@ header#header .main-header-wrapper .header-link-wrapper ul li a {
     padding: 28px 0;
     text-transform: capitalize;
     font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+header#header .main-header-wrapper .header-link-wrapper ul li .nav-link::after {
+    content: "*";
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: 0;
+    z-index: -1;
+}
+
+header#header .main-header-wrapper .header-link-wrapper ul li:hover .nav-link::after {
+    top: 55%;
+    left: -12px;
+    opacity: 1;
 }
 
 .site-header .side-bar {
@@ -382,6 +401,12 @@ section.list-sec {
 .list-sec .list-card-wrapper .list-icon-wrapper {
     margin-bottom: 20px;
 }
+
+.list-sec .list-card-wrapper .list-icon-wrapper:hover img.img-fluid {
+    animation: swing 1s;
+    transform-origin: top center;
+}
+
 .list-sec .list-card-wrapper .list-heading-wrapper a {
     font-size: 25px;
     font-family: "Albert Sans";
@@ -422,6 +447,12 @@ section.list-sec {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.reveal {
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0;
 }
 
 .about-heading-wrapper h5 {
@@ -929,7 +960,7 @@ section.list-sec {
 }
 /*  */
 .spacer,
-.wrapper {
+.slides_wrapper {
     width: 100%;
     min-height: 100vh;
 }
@@ -1085,14 +1116,6 @@ section.list-sec {
     transform-origin: left;
 }
 
-.reveal {
-    visibility: hidden;
-    position: relative;
-    width: 80%;
-    height: 80%;
-    max-width: 500px;
-    overflow: hidden;
-}
 .adventure-img-wrapper {
     background: #fff;
     overflow: hidden;
@@ -1169,6 +1192,15 @@ section.list-sec {
 .contact_main {
     margin-top: -19rem;
 }
+
+.contact_img {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-20px); /* thoda upar se shuru */
+    transition: all 0.3s ease; /* fallback in case JS disabled */
+  }
+
 /* contact-section Css  */
 
 /* marque-section Css  */
@@ -1321,6 +1353,15 @@ footer .footer-links-wrapper ul {
 .footer-row-wrapper {
     margin-bottom: 100px;
 }
+
+.char {
+    display: inline-block;
+  }
+  .space {
+    display: inline-block;
+    width: 0.3em;
+  }
+  
 #copyright {
     padding: 28px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.24);

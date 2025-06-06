@@ -378,55 +378,79 @@ function enableDrag(tag) {
 
 console.clear();
 
-const cardsWrappers = gsap.utils.toArray(".card-wrapper");
-const cards = gsap.utils.toArray(".card");
-
-cardsWrappers.forEach((wrapper, i) => {
-    const card = cards[i];
-    let scale = 1,
-        rotation = 0;
-    if (i !== cards.length - 1) {
-        scale = 0.9 + 0.025 * i;
-        rotation = -10;
-    }
-    gsap.to(card, {
-        scale: scale,
-        rotationX: rotation,
-        transformOrigin: "top center",
-        ease: "none",
-        scrollTrigger: {
-            trigger: wrapper,
-            start: "top " + (60 + 10 * i),
-            end: "bottom 550",
-            endTrigger: ".wrapper",
-            scrub: true,
-            pin: wrapper,
-            pinSpacing: false,
-            // markers: {
-            //     indent: 100 * i,
-            //     startColor: "#0ae448",
-            //     endColor: "#fec5fb",
-            //     fontSize: "14px",
-            // },
-            id: i + 1,
-        },
-    });
-});
-
 // Slides Text ScrollTrigger
-gsap.timeline({
+gsap.registerPlugin(ScrollTrigger);
+
+const cards = gsap.utils.toArray(".slide_box");
+const spacer = 20;
+const minScale = 0.8;
+const distributor = gsap.utils.distribute({ base: minScale, amount: 0.2 });
+
+const tl = gsap.timeline({
     scrollTrigger: {
         trigger: ".book-section",
-        start: "top 5%",
-        end: "bottom 90%", // Only a small scroll range triggers full animation
-        scrub: 0.7,
-        markers: false,
+        start: "top top",
+        end: () => `+=${cards.length * 300}`, // Adjust based on number of cards and spacing
+        scrub: true,
+        pin: true,
+        markers: true,
     },
-})
-    .to(".center_text", { scale: 0.5, y: 300, ease: "power2.out" }, 0)
+});
+
+// Text animations first
+tl.to(".center_text", { scale: 0.5, y: 300, ease: "power2.out" }, 0)
     .to(".left_text", { x: -700, ease: "power2.out" }, 0)
     .to(".right_text", { x: 700, ease: "power2.out" }, 0);
 
+// Add a label to begin card animations after text
+tl.add("cardStart");
+
+cards.forEach((card, index) => {
+    const scaleVal = distributor(index, cards[index], cards);
+    tl.to(
+        card,
+        {
+            y: -index * spacer,
+            scale: scaleVal,
+            ease: "power1.out",
+        },
+        `cardStart+=${index * 0.5}`
+    ); // stagger the entry slightly
+});
+
+// cardsWrappers.forEach((wrapper, i) => {
+//     // const card = cards[i];
+//     // let scale = 1,
+//     //     rotation = 0;
+//     // if (i !== cards.length - 1) {
+//     //     scale = 0.9 + 0.025 * i;
+//     //     rotation = -10;
+//     // }
+//     // gsap.to(card, {
+//     //     scale: scale,
+//     //     rotationX: rotation,
+//     //     transformOrigin: "top center",
+//     //     ease: "none",
+//     //     scrollTrigger: {
+//     //         trigger: wrapper,
+//     //         start: "top " + (60 + 10 * i),
+//     //         end: "bottom 550",
+//     //         endTrigger: ".wrapper",
+//     //         scrub: true,
+//     //         pin: wrapper,
+//     //         pinSpacing: false,
+//     //         markers: {
+//     //             indent: 100 * i,
+//     //             startColor: "#0ae448",
+//     //             endColor: "#fec5fb",
+//     //             fontSize: "14px",
+//     //         },
+//     //         id: i + 1,
+//     //     },
+//     // });
+// });
+
+// adventure animation starts here
 gsap.timeline({
     scrollTrigger: {
         trigger: ".adventure-section",
@@ -455,4 +479,63 @@ gsap.timeline({
     x: 0,
     ease: "power2.out",
     duration: 0.5,
+});
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".contact-section",
+        start: "top 60%",
+        end: "bottom 90%",
+        toggleActions: "play reverse play reverse",
+        markers: false,
+    },
+}).to(".contact_img", {
+    height: "100%",
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power2.out",
+});
+
+document.querySelectorAll(".reveal").forEach((el) => {
+    gsap.fromTo(
+        el,
+        { x: 60, opacity: 0.2, scale: 0.85 },
+        {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1.5,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+                toggleActions: "play none none reset",
+            },
+        }
+    );
+});
+
+const heading = document.getElementById("footer-heading");
+const letters = heading.textContent.split("");
+heading.innerHTML = letters
+    .map((letter) =>
+        letter === " "
+            ? `<span class="space">&nbsp;</span>`
+            : `<span class="char">${letter}</span>`
+    )
+    .join("");
+
+// Animate each character
+gsap.from(".char", {
+    y: 50,
+    opacity: 0,
+    stagger: 0.05,
+    ease: "power3.out",
+    duration: 0.6,
+    scrollTrigger: {
+        trigger: "#footer-heading",
+        start: "top 80%", // when top of heading is at 80% of viewport
+        toggleActions: "play none none none",
+    },
 });

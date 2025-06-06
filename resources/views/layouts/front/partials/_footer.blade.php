@@ -44,8 +44,8 @@
                     <div class="col-lg-6">
                         <div class="footer-newsletter-wrapper">
                             <div class="footer-heading-wrapper">
-                                <h2 class="text-white text-capitalize">get in touch</h2>
-                            </div>
+                                <h2 class="text-white text-capitalize" id="footer-heading">get in touch</h2>
+                              </div>                              
                             <div class="footer-email-wrapper">
                                 <div class="footer-email-label-wrapper">
                                     <h4 class="text-white text-uppercase">Email</h4>

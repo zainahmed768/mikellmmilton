@@ -53,12 +53,9 @@
                 </div>
                 <div class="main-header-wrapper">
                     <div class="header-link-wrapper d-flex align-items-center justify-content-between">
-                        <ul class="header-list list-unstyled d-flex gap-3 mb-0 ps-4">
+                        <ul class="header-list list-unstyled d-flex gap-5 mb-0 ps-4">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">about the author</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">about the author</a>
