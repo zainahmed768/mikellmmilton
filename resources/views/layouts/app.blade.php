@@ -12,7 +12,7 @@
     {{-- @include('layouts.front.partials._navBar') --}}
     @include('layouts.front.partials._header')
     {{-- loader --}}
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div id="loading" style="display: none;">
@@ -22,8 +22,28 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+
+    <!-- Site Loader Start Here -->
+    <div class="loader">
+        <div class="ajax-loader">
+            <div class="image-wrapper">
+                <img src="{{ frontImage('logo.png') }}" alt="logo">
+            </div>
+        </div>
     </div>
+
+    <!-- Site Loader End Here -->
     {{-- loader --}}
+
+    <div class="ball"></div>
+
+    {{-- back to top button  --}}
+    <div class="wa-back-to-top" id="topScroll">
+        <span class="wa-back-to-top-text">
+            Top </span>
+    </div>
+    {{-- back to top button  --}}
 
     @yield('content')
 

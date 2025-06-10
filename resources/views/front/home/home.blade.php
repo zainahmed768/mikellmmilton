@@ -131,7 +131,8 @@
                 <div class="col-lg-12">
                     <div class="about-heading-container">
                         <div class="about-heading-wrapper d-flex justify-content-between">
-                            <h5>About the Book</h5>
+                            <h5>Aleph-Tav “Strength of the Covenant”
+                            </h5>
                             <div class="icon-wrapper">
                                 <i aria-hidden="true" class="fas fa-pen-nib"></i>
                             </div>
@@ -143,15 +144,27 @@
                 <div class="col-lg-6">
                     <div class="about-content-wrapper">
                         <div class="text-container">
-                        <h2 class="reveal-text" data-text="The Dope Breakthrough Divining Our Perfect Eternity"></h2>
-                            </div>
+                            <h2 class="reveal-text" data-text="The DBT Franchise Ministry Presents..."></h2>
+                        </div>
                         <div class="about-paragraph-wrapper">
-                            <p class="bold">In The Beginning… You Know The Ending.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur
-                                adipiscing
-                                elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum
-                                dolor.
+                            {{-- <p class="bold">In The Beginning… You Know The Ending.</p> --}}
+                            <p>The Prophecy of Sovereignty For the Royal House of Judah (Modern Day African-Americans)<br />
+                                <br /> During his ministry in 627 B.C., Jeremiah, the Hebrew-Israelite prophet from the
+                                royal tribe of Judah, warned three of the twelve tribes of a present and future danger. In
+                                the ancient world, 70 nation-states, some eventually achieving empire status, were governed
+                                by the Elohim, one supreme god or a pantheon of gods. History is chock-full of demigod
+                                legends: Titans battling Olympians and their mortal servants, magicians, pharaohs, kings,
+                                and Caesars, all waging wars and making pacts in order to secure wealth, power and fame. But
+                                there is one ancient tale that 70 united nations around the world agreed to keep
+                                secret&hellip; For if the global community ever learned the truth about the Omnipotent,
+                                Omniscient Elohim whose Omnibenevolence was powerful enough to set that masses free, then of
+                                course, the world would call on HIS MIGHTY and MAJESTIC name&hellip; YAHAWAH!<br /> <br />
+                                <strong>A Prophecy for the 21st century&rsquo;s European and Asian descendants of Japheth
+                                    the Brave.</strong><br /> <br /> "O Most Holy YAHAWAH, my strength, and my fortress, and
+                                my refuge in the day of affliction, the Gentiles shall come unto thee from the ends of the
+                                earth, and shall say, Surely our fathers have inherited lies, vanity, and things wherein
+                                there is no profit."&nbsp;<br /> <strong>- Jeremiah 16:19</strong><br /> <br /> 2025 Bible
+                                Prophecy Clock Announcement&ndash; It is now 15 minutes to midnight
                             </p>
                             <div class="about-btn-wrapper">
                                 <a class="btn-effect-1 text-decoration-none">
@@ -168,34 +181,61 @@
                         </div>
                     </div>
                     <div class="row pt-4">
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="about-card-wrapper">
                                 <div class="about-icon-wrapper">
                                     <span>
-                                        <i class="fa-solid fa-industry"></i>
+                                        {{-- <i class="fa-solid fa-industry"></i> --}}
+                                        <figure class="mb-0">
+                                            <img src="{{ frontImage('book-icon.png') }}" alt=""
+                                                class="img-fluid">
+                                        </figure>
                                     </span>
 
                                 </div>
                                 <div class="about-icon-heading-wrapper">
                                     <a href="#">
-                                        Lorem Ipsum
+                                        QUARAN HADITH HEADLINES
                                     </a>
-                                    <p>Lorem ipsum is a dummy which will be replaced by actual text</p>
+                                    <p>HOLY MOLY MOHAMMED... The Judah Lions have awakened!</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="about-card-wrapper">
                                 <div class="about-icon-wrapper">
                                     <span>
-                                        <i class="fa-solid fa-robot"></i>
+                                        {{-- <i class="fa-solid fa-robot"></i> --}}
+                                        <figure class="mb-0">
+                                            <img src="{{ frontImage('book-icon.png') }}" alt=""
+                                                class="img-fluid">
+                                        </figure>
                                     </span>
                                 </div>
                                 <div class="about-icon-heading-wrapper">
                                     <a href="#">
-                                        Lorem Ipsum
+                                        THE BOOK OF MORMON
                                     </a>
-                                    <p>Lorem ipsum is a dummy which will be replaced by actual text</p>
+                                    <p>Oh, Jesus, Mary and Joseph Smith! They are going to expose our lies!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="about-card-wrapper">
+                                <div class="about-icon-wrapper">
+                                    <span>
+                                        {{-- <i class="fa-solid fa-robot"></i> --}}
+                                        <figure class="mb-0">
+                                            <img src="{{ frontImage('book-icon.png') }}" alt=""
+                                                class="img-fluid">
+                                        </figure>
+                                    </span>
+                                </div>
+                                <div class="about-icon-heading-wrapper">
+                                    <a href="#">
+                                        ZOROASTRIANISM ZOOM
+                                    </a>
+                                    <p>Good Mazda almighty! There go our plans for a New World Order.</p>
                                 </div>
                             </div>
                         </div>
@@ -216,9 +256,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="break-img-wrapper">
-                        <figure class="mb-0">
-                            <img src="{{ frontImage('break.jpg') }}" class="img-fluid" alt="">
-                        </figure>
+                        {{-- <figure class="mb-0">
+                            <img src="{{ frontImage('break.jpeg') }}" class="img-fluid w-100" alt="">
+                        </figure> --}}
                         <div class="break-heading-wrapper">
                             <div class="marquee-container">
                                 <div class="marquee">
@@ -271,7 +311,19 @@
                     European ancestors who waged a fierce, three centuries war against Jupiter and his Roman pantheon of
                     devil gods, and goddesses. The Israelites were never your enemies. The Apostle Paul told you that!
                 </p>
-                <a href="#" class="btn">view all chapters</a>
+                <div class="btn_group btn_white position-relative w-fit mt-5">
+                    <span class="btn_border"></span>
+                    <span class="btn_border"></span>
+                    <span class="btn_border"></span>
+                    <span class="btn_border"></span>
+                    <a href="#" class="btn">
+                        <span class="inner_border"></span>
+                        <span class="inner_border"></span>
+                        <span class="inner_border"></span>
+                        <span class="inner_border"></span>
+                        <span class="btn_text">view all chapters</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -297,7 +349,7 @@
                 <div class="col-lg-5">
                     <div class="adventure_content">
                         <div class="ml14 reveal mb-5">
-                            <h2 class="level-2 heading-font sec_heading">
+                            <h2 class="level-2 heading-font sec_heading target-heading">
                                 <span class="letters"> A Prophecy for the 21st
                                     century’s Boomers,
                                     GEN X, Millennials,
@@ -322,13 +374,26 @@
                             were cast on the Judean-loyalists of Israel&rsquo;s rightful king, Christ Yashiah! Israelite
                             politicians, clergy and sorcerers betrayed their own!
                         </p>
-                        <a href="#" class="btn">view more</a>
+                        <div class="btn_group position-relative w-fit mt-5">
+                            <span class="btn_border"></span>
+                            <span class="btn_border"></span>
+                            <span class="btn_border"></span>
+                            <span class="btn_border"></span>
+                            <a href="#" class="btn">
+                                <span class="inner_border"></span>
+                                <span class="inner_border"></span>
+                                <span class="inner_border"></span>
+                                <span class="inner_border"></span>
+                                <span class="btn_text">view more</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 ms-auto">
                     <div class="prophecy-img-wrapper">
                         <figure class="mb-0">
-                            <img src="{{ frontImage('prophecy-img.jpeg') }}" alt="" class="img-fluid">
+                            <img src="{{ frontImage('prophecy-img.jpeg') }}" alt=""
+                                class="img-fluid prophecy_img">
                         </figure>
                     </div>
                 </div>
@@ -559,10 +624,10 @@
                         </div>
                         <div class="diaspora_content pt-4">
                             <h4 class="text-white">
-                                <a href="#" class="text-white text-decoration-none">Lorem Ipsum Dolor</a>
+                                <a href="#" class="text-white text-decoration-none">Psalm 64:1</a>
                             </h4>
-                            <p class="text-white">Lorem ipsum is a dummy which will be replaced. Lorem ipsum is a dummy
-                                which will be replaced.
+                            <p class="text-white">Hear my voice, Abba Yahawah, in my meditation;
+                                Preserve my life from fear of the enemy.
                             </p>
                         </div>
                     </li>
@@ -574,10 +639,10 @@
                         </div>
                         <div class="diaspora_content pt-4">
                             <h4 class="text-white">
-                                <a href="#" class="text-white text-decoration-none">Lorem Ipsum Dolor</a>
+                                <a href="#" class="text-white text-decoration-none">Joel 2:12</a>
                             </h4>
-                            <p class="text-white">Lorem ipsum is a dummy which will be replaced. Lorem ipsum is a dummy
-                                which will be replaced.
+                            <p class="text-white">Now therefore," says Lord Yashiah,
+                                "Turn to me with all your heart, With fasting, with weeping, and with mourning.
                             </p>
                         </div>
                     </li>
@@ -589,10 +654,10 @@
                         </div>
                         <div class="diaspora_content pt-4">
                             <h4 class="text-white">
-                                <a href="#" class="text-white text-decoration-none">Lorem Ipsum Dolor</a>
+                                <a href="#" class="text-white text-decoration-none">James 1:21</a>
                             </h4>
-                            <p class="text-white">Lorem ipsum is a dummy which will be replaced. Lorem ipsum is a dummy
-                                which will be replaced.
+                            <p class="text-white">Therefore, lay aside all filthiness and overflow of wickedness,
+                                and receive with meekness the implanted word, which is able to save your souls.
                             </p>
                         </div>
                     </li>
@@ -604,10 +669,11 @@
                         </div>
                         <div class="diaspora_content pt-4">
                             <h4 class="text-white">
-                                <a href="#" class="text-white text-decoration-none">Lorem Ipsum Dolor</a>
+                                <a href="#" class="text-white text-decoration-none">Revelation 2:26</a>
                             </h4>
-                            <p class="text-white">Lorem ipsum is a dummy which will be replaced. Lorem ipsum is a dummy
-                                which will be replaced.
+                            <p class="text-white">And Christ-King Yashiah said, <br> And he or she who overcomes, and keeps
+                                MY works until the end,
+                                to them I will give power over the nations.
                             </p>
                         </div>
                     </li>
@@ -624,7 +690,7 @@
                 <div class="col-lg-6">
                     <div class="assembly_content">
                         <div class="ml14 reveal mb-4">
-                            <h2 class="level-2 heading-font text-dark mb-0">
+                            <h2 class="level-2 heading-font text-white mb-0">
                                 <span class="letters">ABOUT US
                                 </span>
                             </h2>
@@ -756,11 +822,11 @@
                                         </figure>
                                     </div>
                                     <div class="adv_card_content pt-4">
-                                        <p class="sub_para mb-4">Behold, how good and how pleasant it is for brethren
-                                            to
-                                            dwell together in unity!
+                                        <p class="sub_para mb-4">And when the day of Pentecost was fully come, the
+                                            Messianic Israelites were all with one accord in one place.
                                         </p>
-                                        <p class="sub_para">- Psalm 133:1</p>
+                                        <p class="sub_para">-Acts 2:1
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -773,11 +839,13 @@
                                         </figure>
                                     </div>
                                     <div class="adv_card_content pt-4">
-                                        <p class="sub_para mb-4">Behold, how good and how pleasant it is for brethren
-                                            to
-                                            dwell together in unity!
+                                        <p class="sub_para mb-4">After this I looked, and there before me was a great
+                                            multitude that no one could count, from every nation, tribe, people and
+                                            language, standing before the throne and before the Lamb. They were wearing
+                                            white robes and were holding palm branches in their hands.
                                         </p>
-                                        <p class="sub_para">- Psalm 133:1</p>
+                                        <p class="sub_para">-Revelation 7:9
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -975,11 +1043,16 @@
             </div>
             <div class="blog-top-content d-flex align-items-center justify-content-between">
                 <div class="blog-heading">
-                    <div class="ml14 reveal mb-5">
+                    {{-- <div class="ml14 reveal mb-5">
                         <h2 class="level-2 heading-font">
                             <span class="letters"> Take a Look at Our Latest
                                 blogs & Articles.
                             </span>
+                        </h2>
+                    </div> --}}
+                    <div class="text-container mb-5">
+                        <h2 class="reveal-text text-dark"
+                            data-text="Take a Look at Our Latest blogs & Articles.">
                         </h2>
                     </div>
                 </div>
@@ -1076,7 +1149,7 @@
     {{-- blog-section Ends Here  --}}
 
     {{-- contact-section Starts Here  --}}
-    <section class="contact-section">
+    <section class="contact-section position-relative">
         <div class="container-fluid px-0">
             <div class="contact_bg">
                 <figure class="mb-0">
@@ -1086,7 +1159,7 @@
         </div>
         <div class="contact_main">
             <div class="container">
-                <div class="row justify-content-between align-items-end">
+                <div class="row align-items-end">
                     <div class="col-lg-7">
                         {{-- <div class="contact_form">
                             <form action="#">
@@ -1116,12 +1189,9 @@
                             </form>
                         </div> --}}
                         <div class="contact_heading">
-                            <div class="ml14 reveal mb-3">
-                                <h2 class="level-2 heading-font">
-                                    <span class="letters">
-                                        200+ trusted partners all
-                                        over the world.
-                                    </span>
+                            <div class="text-container">
+                                <h2 class="reveal-text text-dark"
+                                    data-text="200+ Trusted Partners All  Over The World.">
                                 </h2>
                             </div>
                         </div>

@@ -1,3 +1,9 @@
+// Loader JS
+$(window).on("load", function () {
+    console.log("test");
+    $(".loader").fadeOut(3000);
+});
+// Loader JS
 $(".increment_quantity").click(function () {
     var counter = parseInt($(this).parent().siblings(".quantity").val());
     counter++;
@@ -174,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const rect = el.getBoundingClientRect();
         return (
             rect.top <=
-            (window.innerHeight || document.documentElement.clientHeight) &&
+                (window.innerHeight || document.documentElement.clientHeight) &&
             rect.bottom >= 0
         );
     }
@@ -193,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const container = document.getElementById("tagContainer");
 const tags = document.querySelectorAll(".single-tag");
 
-// Define boundaries for dragging and bounce
+// Define boundaries
 const BOUNDARY_WIDTH = container.clientWidth;
 const BOUNDARY_HEIGHT = 400;
 
@@ -202,7 +208,7 @@ ScrollTrigger.create({
     start: "top center",
     once: true,
     onEnter: () => {
-        const maxY = BOUNDARY_HEIGHT - 60; // drop height within boundary
+        const maxY = BOUNDARY_HEIGHT - 60;
         tags.forEach((tag) => {
             const x = parseFloat(tag.dataset.x);
             tag.dataset.rotation = 0;
@@ -231,8 +237,8 @@ function enableDrag(tag) {
     let lastX = 0,
         lastY = 0;
     let velocityX = 0,
-        velocityY = 0;
-    let velocityRotation = 0;
+        velocityY = 0,
+        velocityRotation = 0;
     let animationFrame = null;
 
     const gravity = 1.2;
@@ -261,8 +267,9 @@ function enableDrag(tag) {
         const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
         const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
 
-        x = Math.max(0, Math.min(maxX, x));
-        y = Math.max(0, Math.min(maxY, y));
+        // Clamp to container boundaries
+        x = Math.min(maxX, Math.max(0, x));
+        y = Math.min(maxY, Math.max(0, y));
 
         tag.dataset.x = x;
         tag.dataset.y = y;
@@ -296,8 +303,9 @@ function enableDrag(tag) {
             const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
             const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
 
+            // Clamp to boundaries and bounce
             if (x <= 0 || x >= maxX) {
-                x = Math.max(0, Math.min(maxX, x));
+                x = Math.min(maxX, Math.max(0, x));
                 velocityX *= bounceFactor;
                 velocityRotation *= -1;
             }
@@ -306,6 +314,7 @@ function enableDrag(tag) {
                 y = maxY;
                 velocityY *= bounceFactor;
 
+                // Snap if very close to resting
                 if (
                     Math.abs(velocityY) < 1 &&
                     Math.abs(velocityX) < 0.5 &&
@@ -315,6 +324,11 @@ function enableDrag(tag) {
                     return;
                 }
             }
+
+            // Snap to exact edge if very close
+            if (Math.abs(x) < 1) x = 0;
+            if (Math.abs(x - maxX) < 1) x = maxX;
+            if (Math.abs(y - maxY) < 1) y = maxY;
 
             tag.dataset.x = x;
             tag.dataset.y = y;
@@ -357,10 +371,16 @@ function enableDrag(tag) {
                 let newX2 = x2 + pushX;
                 let newY2 = y2 + pushY;
 
-                currentTag.dataset.x = Math.min(maxX, Math.max(0, newX1));
-                currentTag.dataset.y = Math.min(maxY, Math.max(0, newY1));
-                other.dataset.x = Math.min(maxX, Math.max(0, newX2));
-                other.dataset.y = Math.min(maxY, Math.max(0, newY2));
+                // Clamp to container
+                newX1 = Math.min(maxX, Math.max(0, newX1));
+                newY1 = Math.min(maxY, Math.max(0, newY1));
+                newX2 = Math.min(maxX, Math.max(0, newX2));
+                newY2 = Math.min(maxY, Math.max(0, newY2));
+
+                currentTag.dataset.x = newX1;
+                currentTag.dataset.y = newY1;
+                other.dataset.x = newX2;
+                other.dataset.y = newY2;
 
                 updateTransform(currentTag);
                 updateTransform(other);
@@ -466,6 +486,24 @@ gsap.timeline({
     duration: 0.5,
 });
 
+// prophecy image Animation
+
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".prophecy-section",
+        start: "top 60%",
+        end: "bottom 90%",
+        toggleActions: "play reverse play reverse",
+        markers: false,
+    },
+}).to(".prophecy_img", {
+    scale: 1,
+    x: 0,
+    ease: "power2.out",
+    duration: 0.8,
+});
+// prophecy image Animation
+
 gsap.timeline({
     scrollTrigger: {
         trigger: ".assembly-section",
@@ -540,62 +578,63 @@ gsap.from(".char", {
     },
 });
 
+// STEP 1: Split each .reveal-text into span.reveal-char
+document.querySelectorAll(".reveal-text").forEach((revealText) => {
+    const fullText = revealText.dataset.text;
+    revealText.innerHTML = ""; // Clear existing text
 
-// STEP 1: Split into span.char
-const revealText = document.querySelector('.reveal-text');
-const fullText = revealText.dataset.text;
+    fullText.split("").forEach((char) => {
+        const span = document.createElement("span");
+        span.className = "reveal-char";
+        span.textContent = char === " " ? "\u00A0" : char;
+        revealText.appendChild(span);
+    });
 
-revealText.innerHTML = ''; // Clear
-
-fullText.split('').forEach(char => {
-    const span = document.createElement('span');
-    span.className = 'reveal-char';
-    span.textContent = char === ' ' ? '\u00A0' : char; // keep spaces
-    revealText.appendChild(span);
-});
-
-// STEP 2: Animate each character with ScrollTrigger
-gsap.fromTo(".reveal-char",
-    { y: "100%", opacity: 0 },
-    {
-        y: "0%",
-        opacity: 1,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.05,
-        scrollTrigger: {
-            trigger: ".reveal-text",
-            start: "top 80%",
-            toggleActions: "play none none reset" // repeat on scroll
+    // STEP 2: Animate each .reveal-char inside this .reveal-text
+    gsap.fromTo(
+        revealText.querySelectorAll(".reveal-char"),
+        { y: "100%", opacity: 0 },
+        {
+            y: "0%",
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            stagger: 0.05,
+            scrollTrigger: {
+                trigger: revealText,
+                start: "top 80%",
+                toggleActions: "play none none reset",
+            },
         }
-    }
-);
-
-
+    );
+});
 
 const timelineContact = gsap.timeline({
     scrollTrigger: {
         trigger: ".contact_img",
         start: "top 80%",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
     },
     repeat: -1,
-    yoyo: true
+    yoyo: true,
 });
 
-timelineContact.fromTo(".contact_img img",
-    { yPercent: -100, opacity: 0 },
-    { yPercent: 0, opacity: 1, duration: 1.6, ease: "power3.out" }
-)
-    .to(".contact_img",
-        { clipPath: "inset(0% 0% 0% 0%)", duration: 1, ease: "power3.out" }, ">0.1"
+timelineContact
+    .fromTo(
+        ".contact_img img",
+        { yPercent: -100, opacity: 0 },
+        { yPercent: 0, opacity: 1, duration: 1.6, ease: "power3.out" }
     )
-    .to(".contact_img",
-        { clipPath: "inset(20% 0% 20% 0%)", duration: 1, ease: "power3.inOut" }, ">1"
+    .to(
+        ".contact_img",
+        { clipPath: "inset(0% 0% 0% 0%)", duration: 1, ease: "power3.out" },
+        ">0.1"
+    )
+    .to(
+        ".contact_img",
+        { clipPath: "inset(20% 0% 20% 0%)", duration: 1, ease: "power3.inOut" },
+        ">1"
     );
-
-
-
 
 let imageTl = gsap.timeline({
     scrollTrigger: {
@@ -604,15 +643,16 @@ let imageTl = gsap.timeline({
         end: "top 35%",
         scrub: 1.2,
         // markers: true,
-    }
+    },
 });
 
-imageTl.to(".clip-img", {
-    opacity: 1,
-    x: 0,
-    ease: "power1.out",
-    duration: 0.4,
-})
+imageTl
+    .to(".clip-img", {
+        opacity: 1,
+        x: 0,
+        ease: "power1.out",
+        duration: 0.4,
+    })
     .to(".clip-img", {
         clipPath: "inset(40% 0% 40% 0%)",
         duration: 0.5,
@@ -628,7 +668,6 @@ imageTl.to(".clip-img", {
         duration: 0.5,
         ease: "power1.out",
     });
-
 
 // const container = document.querySelector(".tags-wrapper");
 // const tags = document.querySelectorAll(".single-tag");
@@ -753,7 +792,36 @@ imageTl.to(".clip-img", {
 //     }
 // }
 
+gsap.set(".ball", { xPercent: -50, yPercent: -50 });
+let targets = gsap.utils.toArray(".ball");
+window.addEventListener("mousemove", (e) => {
+    const { clientX, clientY } = e;
+    gsap.to(targets, {
+        duration: 0.3,
+        x: e.clientX,
+        y: e.clientY,
+        ease: "none",
+        overwrite: "auto",
+        stagger: 0.035,
+    });
+});
+$(".target-heading").on("mouseenter", function () {
+    gsap.to(targets, {
+        scale: 20,
+    });
+});
+$(".target-heading").on("mouseleave", function () {
+    gsap.to(targets, {
+        scale: 1,
+    });
+});
 
+window.addEventListener("scroll", function () {
+    const myDiv = document.getElementById("topScroll");
 
-
-
+    if (window.scrollY >= 100) {
+        myDiv.classList.add("scrolled");
+    } else {
+        myDiv.classList.remove("scrolled");
+    }
+});

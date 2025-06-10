@@ -4,13 +4,13 @@
             <div class="col-lg-2 pe-lg-0">
                 <div class="logo-wrapper">
                     <a href="#">
-                        <img src={{ frontImage('logo.png') }} class="img-fluid mt-4" alt="">
+                        <img src={{ frontImage('logo.png') }} class="img-fluid" alt="">
                     </a>
                 </div>
             </div>
             <div class="col-lg-10 ps-lg-0">
                 <div class="header-top-wrapper d-flex justify-content-between align-items-center">
-                    <div class="header-list">
+                    <div class="header-list py-3">
                         <ul class="d-flex list-unstyled gap-2 mb-0">
                             <li>
                                 <a href="mailto:mikell3@hotmail.com" class="text-decoration-none">
@@ -18,15 +18,15 @@
                                     <span class="text-dark">mikell3@hotmail.com</span>
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="mailto:mikell3@hotmail.com" class="text-decoration-none">
                                     <i class="fa-solid fa-phone"></i>
                                     <span class="text-dark">828-545-9634</span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
-                    <div class="header-social-icons-wrapper">
+                    {{-- <div class="header-social-icons-wrapper">
                         <ul class="d-flex list-unstyled mb-0">
                             <li>
                                 <a href="#" class="text-dark">
@@ -49,7 +49,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="main-header-wrapper">
                     <div class="header-link-wrapper d-flex align-items-center justify-content-between">
@@ -69,7 +69,13 @@
                         </ul>
                         <div class="header_right_wrapper d-flex align-items-center gap-2">
                             <div class="header-btn">
-                                <a href="#" class="btn">Buy Now</a>
+                                <a class="btn-effect-1 text-decoration-none">
+                                    <span>Buy Now</span>
+                                    <div class="corner tl"></div>
+                                    <div class="corner tr"></div>
+                                    <div class="corner bl"></div>
+                                    <div class="corner br"></div>
+                                </a>
                             </div>
                             <div class="header_hamburger">
                                 <button class="icon-badge"
