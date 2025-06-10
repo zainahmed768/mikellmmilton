@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const rect = el.getBoundingClientRect();
         return (
             rect.top <=
-                (window.innerHeight || document.documentElement.clientHeight) &&
+            (window.innerHeight || document.documentElement.clientHeight) &&
             rect.bottom >= 0
         );
     }
@@ -481,21 +481,21 @@ gsap.timeline({
     duration: 0.5,
 });
 
-gsap.timeline({
-    scrollTrigger: {
-        trigger: ".contact-section",
-        start: "top 60%",
-        end: "bottom 90%",
-        toggleActions: "play reverse play reverse",
-        markers: false,
-    },
-}).to(".contact_img", {
-    height: "100%",
-    opacity: 1,
-    y: 0,
-    duration: 0.8,
-    ease: "power2.out",
-});
+// gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".contact-section",
+//         start: "top 60%",
+//         end: "bottom 90%",
+//         toggleActions: "play reverse play reverse",
+//         markers: false,
+//     },
+// }).to(".contact_img", {
+//     height: "100%",
+//     opacity: 1,
+//     y: 0,
+//     duration: 0.8,
+//     ease: "power2.out",
+// });
 
 document.querySelectorAll(".reveal").forEach((el) => {
     gsap.fromTo(
@@ -539,3 +539,221 @@ gsap.from(".char", {
         toggleActions: "play none none none",
     },
 });
+
+
+// STEP 1: Split into span.char
+const revealText = document.querySelector('.reveal-text');
+const fullText = revealText.dataset.text;
+
+revealText.innerHTML = ''; // Clear
+
+fullText.split('').forEach(char => {
+    const span = document.createElement('span');
+    span.className = 'reveal-char';
+    span.textContent = char === ' ' ? '\u00A0' : char; // keep spaces
+    revealText.appendChild(span);
+});
+
+// STEP 2: Animate each character with ScrollTrigger
+gsap.fromTo(".reveal-char",
+    { y: "100%", opacity: 0 },
+    {
+        y: "0%",
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.05,
+        scrollTrigger: {
+            trigger: ".reveal-text",
+            start: "top 80%",
+            toggleActions: "play none none reset" // repeat on scroll
+        }
+    }
+);
+
+
+
+const timelineContact = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".contact_img",
+        start: "top 80%",
+        toggleActions: "play none none none"
+    },
+    repeat: -1,
+    yoyo: true
+});
+
+timelineContact.fromTo(".contact_img img",
+    { yPercent: -100, opacity: 0 },
+    { yPercent: 0, opacity: 1, duration: 1.6, ease: "power3.out" }
+)
+    .to(".contact_img",
+        { clipPath: "inset(0% 0% 0% 0%)", duration: 1, ease: "power3.out" }, ">0.1"
+    )
+    .to(".contact_img",
+        { clipPath: "inset(20% 0% 20% 0%)", duration: 1, ease: "power3.inOut" }, ">1"
+    );
+
+
+
+
+let imageTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".wa-clip-left-right",
+        start: "top 85%",
+        end: "top 35%",
+        scrub: 1.2,
+        // markers: true,
+    }
+});
+
+imageTl.to(".clip-img", {
+    opacity: 1,
+    x: 0,
+    ease: "power1.out",
+    duration: 0.4,
+})
+    .to(".clip-img", {
+        clipPath: "inset(40% 0% 40% 0%)",
+        duration: 0.5,
+        ease: "power1.out",
+    })
+    .to(".clip-img", {
+        clipPath: "inset(0% 0% 40% 0%)",
+        duration: 0.5,
+        ease: "power1.out",
+    })
+    .to(".clip-img", {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 0.5,
+        ease: "power1.out",
+    });
+
+
+// const container = document.querySelector(".tags-wrapper");
+// const tags = document.querySelectorAll(".single-tag");
+
+// const BOUNDARY_WIDTH = container.clientWidth;
+// const BOUNDARY_HEIGHT = 400; // height of .tags-wrapper
+
+// ScrollTrigger.create({
+//     trigger: container,
+//     start: "top center",
+//     once: true,
+//     onEnter: () => {
+//         const maxY = BOUNDARY_HEIGHT - 80;
+//         tags.forEach((tag) => {
+//             const x = parseFloat(tag.dataset.x) || 0;
+//             const startY = parseFloat(tag.dataset.y) || -200;
+
+//             gsap.set(tag, { x, y: startY, opacity: 1 });
+
+//             gsap.to(tag, {
+//                 duration: 1,
+//                 y: maxY,
+//                 ease: "bounce.out",
+//                 onUpdate: () => {
+//                     const y = gsap.getProperty(tag, "y");
+//                     tag.dataset.x = x;
+//                     tag.dataset.y = y;
+//                     tag.style.transform = `translate(${x}px, ${y}px)`;
+//                 },
+//                 onComplete: () => {
+//                     enableDrag(tag);
+//                 }
+//             });
+//         });
+//     }
+// });
+
+// function enableDrag(tag) {
+//     let isDragging = false;
+//     let lastX = 0, lastY = 0;
+//     let velocityX = 0, velocityY = 0;
+//     let animationFrame = null;
+
+//     const gravity = 1.2;
+//     const bounceFactor = -0.6;
+//     const friction = 0.96;
+
+//     tag.addEventListener("pointerdown", (e) => {
+//         isDragging = true;
+//         lastX = e.clientX;
+//         lastY = e.clientY;
+//         tag.setPointerCapture(e.pointerId);
+//         cancelAnimationFrame(animationFrame);
+//     });
+
+//     tag.addEventListener("pointermove", (e) => {
+//         if (!isDragging) return;
+
+//         const dx = e.clientX - lastX;
+//         const dy = e.clientY - lastY;
+//         lastX = e.clientX;
+//         lastY = e.clientY;
+
+//         let x = parseFloat(tag.dataset.x) + dx;
+//         let y = parseFloat(tag.dataset.y) + dy;
+
+//         const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
+//         const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
+
+//         x = Math.max(0, Math.min(maxX, x));
+//         y = Math.max(0, Math.min(maxY, y));
+
+//         tag.dataset.x = x;
+//         tag.dataset.y = y;
+
+//         velocityX = dx;
+//         velocityY = dy;
+
+//         tag.style.transform = `translate(${x}px, ${y}px)`;
+//     });
+
+//     tag.addEventListener("pointerup", () => {
+//         isDragging = false;
+//         animateFall();
+//     });
+
+//     function animateFall() {
+//         function fall() {
+//             velocityY += gravity;
+//             velocityX *= friction;
+
+//             let x = parseFloat(tag.dataset.x) + velocityX;
+//             let y = parseFloat(tag.dataset.y) + velocityY;
+
+//             const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
+//             const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
+
+//             if (x <= 0 || x >= maxX) {
+//                 x = Math.max(0, Math.min(maxX, x));
+//                 velocityX *= bounceFactor;
+//             }
+
+//             if (y >= maxY) {
+//                 y = maxY;
+//                 velocityY *= bounceFactor;
+
+//                 if (Math.abs(velocityY) < 1 && Math.abs(velocityX) < 0.5) {
+//                     cancelAnimationFrame(animationFrame);
+//                     return;
+//                 }
+//             }
+
+//             tag.dataset.x = x;
+//             tag.dataset.y = y;
+
+//             tag.style.transform = `translate(${x}px, ${y}px)`;
+
+//             animationFrame = requestAnimationFrame(fall);
+//         }
+
+//         animationFrame = requestAnimationFrame(fall);
+//     }
+// }
+
+
+
+
+

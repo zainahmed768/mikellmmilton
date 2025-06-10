@@ -142,9 +142,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="about-content-wrapper">
-                        <h2>The Dope Breakthrough
-                            Divining Our Perfect
-                            Eternity</h2>
+                        <div class="text-container">
+                        <h2 class="reveal-text" data-text="The Dope Breakthrough Divining Our Perfect Eternity"></h2>
+                            </div>
                         <div class="about-paragraph-wrapper">
                             <p class="bold">In The Beginning… You Know The Ending.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
@@ -163,8 +163,8 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="about-content-last-img mt-5">
-                            <img src="{{ frontImage('a4-illus-1.webp') }}" class="img-fluid" alt="">
+                        <div class="about-content-last-img mt-5 wa-clip-left-right">
+                            <img src="{{ frontImage('a4-illus-1.webp') }}" class="img-fluid clip-img" alt="">
                         </div>
                     </div>
                     <div class="row pt-4">
