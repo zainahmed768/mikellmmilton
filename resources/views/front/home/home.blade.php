@@ -143,26 +143,37 @@
                 <div class="col-lg-6">
                     <div class="about-content-wrapper">
                         <div class="text-container">
-                            <h2 class="reveal-text" data-text="The DBT Franchise Ministry Presents..."></h2>
+                            <h2 class="reveal-text target-heading" data-text="The DBT Franchise Ministry Presents..."></h2>
                         </div>
                         <div class="about-paragraph-wrapper">
                             {{-- <p class="bold">In The Beginning… You Know The Ending.</p> --}}
-                            <p>The Prophecy of Sovereignty For the Royal House of Judah (Modern Day African-Americans)<br />
+                            <p>The Prophecy of Sovereignty For the Royal House of Judah (Modern Day
+                                African-Americans)<br />
                                 <br /> During his ministry in 627 B.C., Jeremiah, the Hebrew-Israelite prophet from the
-                                royal tribe of Judah, warned three of the twelve tribes of a present and future danger. In
-                                the ancient world, 70 nation-states, some eventually achieving empire status, were governed
+                                royal tribe of Judah, warned three of the twelve tribes of a present and future danger.
+                                In
+                                the ancient world, 70 nation-states, some eventually achieving empire status, were
+                                governed
                                 by the Elohim, one supreme god or a pantheon of gods. History is chock-full of demigod
-                                legends: Titans battling Olympians and their mortal servants, magicians, pharaohs, kings,
-                                and Caesars, all waging wars and making pacts in order to secure wealth, power and fame. But
+                                legends: Titans battling Olympians and their mortal servants, magicians, pharaohs,
+                                kings,
+                                and Caesars, all waging wars and making pacts in order to secure wealth, power and fame.
+                                But
                                 there is one ancient tale that 70 united nations around the world agreed to keep
                                 secret&hellip; For if the global community ever learned the truth about the Omnipotent,
-                                Omniscient Elohim whose Omnibenevolence was powerful enough to set that masses free, then of
-                                course, the world would call on HIS MIGHTY and MAJESTIC name&hellip; YAHAWAH!<br /> <br />
-                                <strong>A Prophecy for the 21st century&rsquo;s European and Asian descendants of Japheth
-                                    the Brave.</strong><br /> <br /> "O Most Holy YAHAWAH, my strength, and my fortress, and
-                                my refuge in the day of affliction, the Gentiles shall come unto thee from the ends of the
+                                Omniscient Elohim whose Omnibenevolence was powerful enough to set that masses free,
+                                then of
+                                course, the world would call on HIS MIGHTY and MAJESTIC name&hellip; YAHAWAH!<br />
+                                <br />
+                                <strong>A Prophecy for the 21st century&rsquo;s European and Asian descendants of
+                                    Japheth
+                                    the Brave.</strong><br /> <br /> "O Most Holy YAHAWAH, my strength, and my fortress,
+                                and
+                                my refuge in the day of affliction, the Gentiles shall come unto thee from the ends of
+                                the
                                 earth, and shall say, Surely our fathers have inherited lies, vanity, and things wherein
-                                there is no profit."&nbsp;<br /> <strong>- Jeremiah 16:19</strong><br /> <br /> 2025 Bible
+                                there is no profit."&nbsp;<br /> <strong>- Jeremiah 16:19</strong><br /> <br /> 2025
+                                Bible
                                 Prophecy Clock Announcement&ndash; It is now 15 minutes to midnight
                             </p>
                             <div class="about-btn-wrapper">
@@ -294,7 +305,7 @@
             </div>
             <div class="dbt_wrapper">
                 <div class="ml14 reveal mb-4">
-                    <h2 class="level-2 heading-font text-white mb-0">
+                    <h2 class="level-2 heading-font text-white mb-0 target-heading">
                         <span class="letters"> The DOPE Breakthrough
                         </span>
                     </h2>
@@ -550,17 +561,30 @@
                     <div class="diaspora-content-wrapper">
                         <div class="row pb-4">
                             <div class="col-lg-12">
-                                <div class="about-heading-wrapper d-flex justify-content-between">
-                                    <h5 class="text-white">More About Us
-                                    </h5>
-                                    <div class="icon-wrapper">
-                                        <i class="fa-solid fa-user-astronaut text-white"></i>
+                                <div class="about-heading-container">
+                                    <div class="about-heading-wrapper d-flex justify-content-between">
+                                        <h5 class="text-white">More About Us
+                                        </h5>
+                                        <div class="icon-wrapper">
+                                            <i class="fa-solid fa-user-astronaut text-white"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {{-- <div class="row pb-4">
+                                <div class="col-lg-12">
+                                    <div class="about-heading-wrapper d-flex justify-content-between">
+                                        <h5 class="text-white">More About Us
+                                        </h5>
+                                        <div class="icon-wrapper">
+                                            <i class="fa-solid fa-user-astronaut text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
                         <div class="ml14 reveal mb-4">
-                            <h2 class="level-2 heading-font text-white mb-0">
+                            <h2 class="level-2 heading-font text-white mb-0 target-heading">
                                 <span class="letters">A Prophecy for the 21st
                                     century Israelites in the
                                     diaspora.</span>
@@ -665,7 +689,8 @@
                             <h4 class="text-white">
                                 <a href="#" class="text-white text-decoration-none">Revelation 2:26</a>
                             </h4>
-                            <p class="text-white">And Christ-King Yashiah said, <br> And he or she who overcomes, and keeps
+                            <p class="text-white">And Christ-King Yashiah said, <br> And he or she who overcomes, and
+                                keeps
                                 MY works until the end,
                                 to them I will give power over the nations.
                             </p>
@@ -683,7 +708,7 @@
                 <div class="col-lg-6">
                     <div class="assembly_content">
                         <div class="ml14 reveal mb-4">
-                            <h2 class="level-2 heading-font text-white mb-0">
+                            <h2 class="level-2 heading-font text-white mb-0 target-heading">
                                 <span class="letters">ABOUT US
                                 </span>
                             </h2>
@@ -751,11 +776,11 @@
                 <div class="col-lg-4">
                     <div class="adventure_content">
                         <div class="ml14 reveal mb-5">
-                            <h2 class="level-2 heading-font">
+                            <h2 class="level-2 heading-font yellow_heading">
                                 <span class="letters"> The D.O.P.E. Breakthrough
                                 </span>
                             </h2>
-                            <h5 class="text-dark sub_heading">Mikell M. Milton and L.A. Doyle
+                            <h5 class="text-dark sub_heading target-heading">Mikell M. Milton and L.A. Doyle
                             </h5>
                         </div>
                         <p class="sub_para mb-5">The D.O.P.E. Breakthrough is a supernatural action adventure that
@@ -862,7 +887,7 @@
                 <div class="col-lg-6 ps-lg-5">
                     <div class="adventure_content">
                         <div class="ml14 reveal mb-3">
-                            <h2 class="level-2 heading-font yellow_heading">
+                            <h2 class="level-2 heading-font yellow_heading target-heading">
                                 <span class="letters">
                                     The DBT Ministry Sovereign Wealth
                                     Fund
@@ -914,7 +939,7 @@
                         </span>
                     </h4>
                 </div>
-                <h2 class="number_heading yellow_color"> 0$</h2>
+                <h2 class="number_heading yellow_color"> $0</h2>
                 <h5 class="donation_sub">Donation Covered</h5>
             </div>
         </div>
@@ -1281,7 +1306,8 @@
                         </div> --}}
                         <div class="contact_heading">
                             <div class="text-container">
-                                <h2 class="reveal-text text-dark" data-text="200+ Trusted Partners All  Over The World.">
+                                <h2 class="reveal-text text-dark target-heading"
+                                    data-text="200+ Trusted Partners All  Over The World.">
                                 </h2>
                             </div>
                         </div>

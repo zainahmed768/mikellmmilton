@@ -4,6 +4,7 @@ $(window).on("load", function () {
     $(".loader").fadeOut(3000);
 });
 // Loader JS
+
 $(".increment_quantity").click(function () {
     var counter = parseInt($(this).parent().siblings(".quantity").val());
     counter++;
@@ -123,6 +124,55 @@ gsap.utils.toArray(".about-heading-container").forEach((el) => {
     });
 });
 
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "footer",
+        start: "top 30%",
+        end: "bottom 60%",
+        toggleActions: "play reverse play reverse",
+        markers: true,
+    },
+}).to(".footer-email-link-wrapper", {
+    scale: 1,
+    x: 0,
+    ease: "power2.out",
+    duration: 0.5,
+});
+
+// gsap.timeline({
+//     scrollTrigger: {
+//         trigger: "footer",
+//         start: "top 30%",
+//         end: "bottom 70%",
+//         toggleActions: "play reverse play reverse",
+//         markers: true,
+//     },
+// }).to(".footer-email-link-wrapper", {
+//     scale: 1,
+//     x: 0,
+//     ease: "power2.out",
+//     duration: 0.5,
+// });
+// gsap.fromTo(
+//     ".footer-email-link-wrapper",
+//     {
+//         scaleX: 0,
+//         transformOrigin: "left center",
+//     },
+//     {
+//         scrollTrigger: {
+//             trigger: ".footer-email-link-wrapper",
+//             start: "top 80%",
+//             end: "bottom 20%",
+//             toggleActions: "play reverse play reverse",
+//             markers: true,
+//         },
+//         duration: 1,
+//         ease: "power2.out",
+//         scaleX: 1,
+//     }
+// );
+
 // marquee
 $(document).ready(function () {
     $(".marquee-slider").slick({
@@ -187,12 +237,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function checkScroll() {
         if (isElementInViewport(ul)) {
             ul.classList.add("show");
-            window.removeEventListener("scroll", checkScroll);
+        } else {
+            ul.classList.remove("show");
         }
     }
 
     window.addEventListener("scroll", checkScroll);
-    checkScroll();
+    checkScroll(); // initial check
 });
 
 const container = document.getElementById("tagContainer");
@@ -904,4 +955,14 @@ window.addEventListener("scroll", function () {
     } else {
         myDiv.classList.remove("scrolled");
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    luxy.init({
+        wrapper: "#luxy",
+        wrapperSpeed: 0.08,
+        targetSpeed: 0.02,
+        smooth: true,
+        native: false,
+    });
 });

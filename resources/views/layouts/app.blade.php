@@ -44,10 +44,10 @@
             Top </span>
     </div>
     {{-- back to top button  --}}
-
+    <main id="luxy">
     @yield('content')
-
     @include('layouts.front.partials._footer')
+</main>
     @include('layouts.front.partials._footerLinks')
 
 </body>

@@ -97,8 +97,10 @@
             </div>
             <div class="sidebar_close">
                 <button class="btn"
-                    onclick='$(".side-bar").toggleClass("active");$("body").toggleClass("overflow-hidden")'><i
-                        class="fa fa-close"></i></button>
+                    onclick='$(".side-bar").toggleClass("active");$("body").toggleClass("overflow-hidden")'>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
         <div class="gallery_main">
