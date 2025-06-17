@@ -61,7 +61,6 @@
         </div>
     </section>
     {{-- banner-section Starts Here  --}}
-
     {{-- list sec starts here --}}
     <section class="list-sec">
         <div class="container">
@@ -277,7 +276,6 @@
         </div>
     </section>
     {{-- Break ends here --}}
-
     {{-- dbt-section Starts Here  --}}
     <section class="dbt-section">
         <div class="container">
@@ -328,7 +326,6 @@
         </div>
     </section>
     {{-- dbt-section Starts Here  --}}
-
     {{-- prophecy-section Starts Here  --}}
     <section class="prophecy-section section">
         <div class="container">
@@ -401,7 +398,6 @@
         </div>
     </section>
     {{-- prophecy-section Ends Here  --}}
-
     {{-- available starts here --}}
     <section class="availabel-sec">
         <div class="container">
@@ -508,7 +504,6 @@
     </section>
     {{-- available ends here --}}
     {{-- dope starts here --}}
-    <section class=""></section>
     <section class="bs-expertise-4-box expertise-section" id="tagContainer">
         <div class="container">
             <div class="expertise_top_heading">
@@ -547,7 +542,6 @@
         </div>
     </section>
     {{-- dope ends here --}}
-
     {{-- diaspora-section Starts Here  --}}
     <section class="diaspora-section">
         <div class="container-fluid px-0 overflow-x-hidden">
@@ -682,7 +676,6 @@
         </div>
     </section>
     {{-- diaspora-section Ends Here  --}}
-
     {{-- assembly-section Starts Here  --}}
     <section class="assembly-section section">
         <div class="container">
@@ -751,7 +744,6 @@
         </div>
     </section>
     {{-- assembly-section Ends Here  --}}
-
     {{-- adventure-section Starts Here  --}}
     <section class="adventure-section section">
         <div class="container">
@@ -856,7 +848,6 @@
         </div>
     </section>
     {{-- adventure-section Ends Here  --}}
-
     {{-- wealth-section Starts Here  --}}
     <section class="wealth-section section">
         <div class="container">
@@ -911,7 +902,6 @@
         </div>
     </section>
     {{-- wealth-section Ends Here  --}}
-
     {{-- donation-section Starts Here  --}}
     <section class="donation-section">
         <div class="container-fluid">
@@ -930,7 +920,6 @@
         </div>
     </section>
     {{-- donation-section Ends Here  --}}
-
     {{-- book-section Starts Here  --}}
     <section class="book-section section position-relative">
         <div class="container">
@@ -941,7 +930,7 @@
                     <h2 class="right_text">work</h2>
                 </div>
             </div>
-            <div class="book_animate_wrapper">
+            {{-- <div class="book_animate_wrapper">
                 <div class="spacer"></div>
                 <div class="slides_wrapper">
                     <div class="slide_box">
@@ -1012,11 +1001,114 @@
                     </div>
                 </div>
                 <div class="spacer"></div>
+            </div> --}}
+            <div class="book_animate_wrapper">
+                <div class="stacked-card">
+                    <ul class="cards">
+                        <li class="card">
+                            <div class="slide_box">
+                                <div class="slide_box_wrap">
+                                    <div class="img_box">
+                                        <figure><img src="{{ frontImage('book-img1.jpg') }}" alt="slide_image"
+                                                class="img-fluid">
+                                        </figure>
+                                    </div>
+                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="slide_box">
+                                <div class="slide_box_wrap">
+                                    <div class="img_box">
+                                        <figure><img src="{{ frontImage('book-img2.jpg') }}" alt="slide_image"
+                                                class="img-fluid">
+                                        </figure>
+                                    </div>
+                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="slide_box">
+                                <div class="slide_box_wrap">
+                                    <div class="img_box">
+                                        <figure><img src="{{ frontImage('book-img3.jpg') }}" alt="slide_image"
+                                                class="img-fluid">
+                                        </figure>
+                                    </div>
+                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                           <li class="card">
+                            <div class="slide_box">
+                                <div class="slide_box_wrap">
+                                    <div class="img_box">
+                                        <figure><img src="{{ frontImage('book-img2.jpg') }}" alt="slide_image"
+                                                class="img-fluid">
+                                        </figure>
+                                    </div>
+                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
     {{-- book-section Ends Here  --}}
-
+    {{-- <div class="empty">First</div> --}}
+    {{-- <div class="empty">End</div> --}}
     {{-- blog-section Starts Here  --}}
     <section class="blog-section">
         <div class="container">
@@ -1051,8 +1143,7 @@
                         </h2>
                     </div> --}}
                     <div class="text-container mb-5">
-                        <h2 class="reveal-text text-dark"
-                            data-text="Take a Look at Our Latest blogs & Articles.">
+                        <h2 class="reveal-text text-dark" data-text="Take a Look at Our Latest blogs & Articles.">
                         </h2>
                     </div>
                 </div>
@@ -1190,8 +1281,7 @@
                         </div> --}}
                         <div class="contact_heading">
                             <div class="text-container">
-                                <h2 class="reveal-text text-dark"
-                                    data-text="200+ Trusted Partners All  Over The World.">
+                                <h2 class="reveal-text text-dark" data-text="200+ Trusted Partners All  Over The World.">
                                 </h2>
                             </div>
                         </div>

@@ -1114,16 +1114,16 @@ section.list-sec {
 /* donation-section Css  */
 
 /* book-section Css  */
-.book-section {
+/* .book-section {
     height: 100vh;
-}
+} */
 .book-section .book_top_heading h2 {
     font-size: 185px;
     text-align: center;
     line-height: 195px;
 }
 .book-section .slide_box img {
-    height: 550px;
+    height: 350px;
     width: 100%;
     object-fit: cover;
 }
@@ -1179,6 +1179,50 @@ section.list-sec {
     border-radius: 0px;
     border: 0;
 }
+
+/* stacked starts here */
+.stacked-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    /* background-color: #000; */
+}
+
+.stacked-card .cards {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+
+    /* border: 2px solid red; */
+}
+.stacked-card .cards > * {
+    grid-area: 1/1/2/2;
+}
+.stacked-card .cards li {
+    list-style: none;
+}
+
+.stacked-card .card {
+    height: 100%;
+    background-color: transparent;
+    min-height: auto;
+    padding: 30px;
+}
+
+.empty {
+    width: 100%;
+    height: 100vh;
+    font-size: 200px;
+    display: flex;
+    justify-content: center;
+}
+.book_animate_wrapper .slide_box {
+    width: 100%;
+}
+/* stacked ends here */
 
 /* blog-section Css  */
 

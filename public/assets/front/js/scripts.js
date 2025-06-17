@@ -158,7 +158,6 @@ $(document).ready(function () {
 });
 
 // marquee
-
 gsap.to(".diaspora-content-wrapper", {
     // clipPath: "inset(0 100% 0 0)",
     scale: 0.1,
@@ -399,44 +398,125 @@ function enableDrag(tag) {
 console.clear();
 
 // Slides Text ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const cards = gsap.utils.toArray(".slide_box");
-const spacer = 20;
-const minScale = 0.8;
-const distributor = gsap.utils.distribute({ base: minScale, amount: 0.2 });
+// const cards = gsap.utils.toArray(".slide_box");
+// const spacer = 20;
+// const minScale = 0.8;
+// const distributor = gsap.utils.distribute({ base: minScale, amount: 0.2 });
+
+// const tl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".book-section",
+//         start: "top top",
+//         end: () => `+=${cards.length * 300}`, // Adjust based on number of cards and spacing
+//         scrub: true,
+//         pin: true,
+//         markers: true,
+//     },
+// });
+
+// // Text animations first
+// tl.to(".center_text", { scale: 0.5, y: 300, ease: "power2.out" }, 0)
+//     .to(".left_text", { x: -700, ease: "power2.out" }, 0)
+//     .to(".right_text", { x: 700, ease: "power2.out" }, 0);
+
+// Add a label to begin card animations after text
+// tl.add("cardStart");
+
+// cards.forEach((card, index) => {
+//     const scaleVal = distributor(index, cards[index], cards);
+//     tl.to(
+//         card,
+//         {
+//             y: -index * spacer,
+//             scale: scaleVal,
+//             ease: "power1.out",
+//         },
+//         `cardStart+=${index * 0.5}`
+//     ); // stagger the entry slightly
+// });
+
+// const tl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".book-section",
+//         start: "top top",
+//         end: () => `+=${cards.length * 300}`, // Adjust based on number of cards and spacing
+//         scrub: true,
+//         // pin: true,
+//         markers: true,
+//     },
+// });
 
 const tl = gsap.timeline({
     scrollTrigger: {
-        trigger: ".book-section",
-        start: "top top",
-        end: () => `+=${cards.length * 300}`, // Adjust based on number of cards and spacing
+        trigger: ".book-section", // 👈 the section you want to watch
+        start: "top center", // when top of section hits center of viewport
+        end: "bottom center", // optional: when animation ends
+        scrub: 1, // smooth scroll animation
+        // markers: true,            // uncomment to debug visually
+    },
+    defaults: { duration: 1, ease: "power2.out" },
+});
+
+tl.to(".center_text", { scale: 0.5, y: -100 }) // moved upward (not down)
+    .to(".left_text", { x: -700 }, 0)
+    .to(".right_text", { x: 700 }, 0);
+
+gsap.from(".stacked-card", { y: -800 });
+
+const scaleMax = gsap.utils.mapRange(
+    1,
+    document.querySelectorAll(".card").length - 1,
+    0.8,
+    1
+);
+const time = 1;
+
+gsap.set(".card", {
+    y: (index) => 30 * index, // set offset
+    transformStyle: "preserve-3d", // For the perspecitve effect
+    // transformPerspective: 1000, // For the perspecitve effect
+    transformOrigin: "center top",
+});
+
+//--------------------------------//
+// The animation
+//--------------------------------//
+const tl_test = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".stacked-card",
+        start: "top 0%",
+        end: `${window.innerHeight * 5} top`,
         scrub: true,
         pin: true,
+        // pinSpacing: false,
         markers: true,
     },
 });
 
-// Text animations first
-tl.to(".center_text", { scale: 0.5, y: 300, ease: "power2.out" }, 0)
-    .to(".left_text", { x: -700, ease: "power2.out" }, 0)
-    .to(".right_text", { x: 700, ease: "power2.out" }, 0);
-
-// Add a label to begin card animations after text
-tl.add("cardStart");
-
-cards.forEach((card, index) => {
-    const scaleVal = distributor(index, cards[index], cards);
-    tl.to(
-        card,
-        {
-            y: -index * spacer,
-            scale: scaleVal,
-            ease: "power1.out",
-        },
-        `cardStart+=${index * 0.5}`
-    ); // stagger the entry slightly
+// Animte cards up from off screen one by one.
+tl_test.from(".stacked-card .card", {
+    y: () => window.innerHeight,
+    scale: 0.5,
+    duration: time / 1,
+    stagger: time,
 });
+
+//
+tl_test.to(
+    ".book-section .card:not(:last-child)",
+    {
+        rotationX: -20,
+        scale: (index) => scaleMax(index), // dynamlicly get scale based on the index of the current card
+        stagger: {
+            each: time,
+        },
+    },
+    time // Start tween when the first cards has done animating
+);
+
+// END The animation --------------//
 
 // cardsWrappers.forEach((wrapper, i) => {
 //     // const card = cards[i];
