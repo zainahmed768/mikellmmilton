@@ -19,4 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('front.home.home');
-});
+})->name('home');
+
+Route::get('/about-author', function () {
+    return view('front.about.aboutAuthor');
+})->name('about-author');

@@ -1263,7 +1263,6 @@
         </div>
     </section>
     {{-- blog-section Ends Here  --}}
-
     {{-- contact-section Starts Here  --}}
     <section class="contact-section position-relative">
         <div class="container-fluid px-0">
@@ -1325,7 +1324,6 @@
         </div>
     </section>
     {{-- contact-section Ends Here  --}}
-
     {{-- marque-section Starts Here  --}}
     <section class="marque-section section">
         <div class="container-fluid px-0">

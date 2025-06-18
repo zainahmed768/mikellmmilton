@@ -1,0 +1,45 @@
+.about-author .about-author-text-wrapper h2 {
+    font-family: "Albert Sans";
+    font-weight: 600;
+}
+.about-author-text-wrapper .author-para-wrapper p {
+    font-size: 18px;
+    font-family: "Albert Sans";
+}
+/* stats sec start here */
+.stats-sec {
+    padding: 120px 0px 120px 0px;
+}
+.stats-sec .row {
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+}
+.stats-sec .stats-card-wrapper {
+    padding: 20px;
+}
+.stats-sec .col-lg-3:not(:last-child) .stats-card-wrapper {
+    border-right: 1px solid #d9d9d9;
+}
+.stats-sec .stats-heading-wrapper h4 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.stats-sec .stats-heading-wrapper h2 {
+    font-size: 65px;
+    font-weight: 600;
+    color: #060606;
+    font-family: "Albert Sans";
+    display: flex;
+    align-items: center;
+}
+.stats-sec .stats-heading-wrapper h2 sub {
+    color: #ffbe00;
+    font-size: 32px;
+}
+.stats-card-wrapper .stats-para-wrapper p {
+    font-family: "DM Sans";
+    color: #363636;
+    font-size: 18px;
+}
+/* stats sec ends here */
