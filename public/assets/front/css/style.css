@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 :root {
     --bs-cube-2: cubic-bezier(0.1, 0.75, 0.25, 1);
+    --header-height: 136px;
 }
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 body {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -18,8 +21,10 @@ body::-webkit-scrollbar {
 #luxy {
     position: fixed;
     width: 100%;
-    top: 0;
+    top: var(--header-height);
     left: 0;
+    height: auto;
+    /* overflow: hidden; */
     will-change: transform;
 }
 
@@ -52,6 +57,14 @@ h6 {
 }
 .w-fit {
     width: fit-content;
+}
+
+.h-fit {
+    height: fit-content;
+}
+
+.left-0 {
+    left: 0;
 }
 
 .section {
@@ -214,9 +227,9 @@ h6 {
     display: inline-block;
     position: relative;
     animation-fill-mode: forwards;
-  animation-duration: 0.4s;
-  animation-timing-function: ease;
-  transform: translateY(0);
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    transform: translateY(0);
 }
 
 .btn_white .btn_text {
@@ -315,26 +328,25 @@ h6 {
 
 .btn_group .btn:not(:hover) .btn_text {
     animation-name: slideDown;
-
 }
 
 @keyframes slideUp {
     from {
-      transform: translateY(50px);
+        transform: translateY(50px);
     }
     to {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  }
-  
-  @keyframes slideDown {
+}
+
+@keyframes slideDown {
     from {
-      transform: translateY(-50px);
+        transform: translateY(-50px);
     }
     to {
-      transform: translateY(0px);
+        transform: translateY(0px);
     }
-  }
+}
 /* .btn_group .btn .btn_text {
     transform: translateY(100%);
     opacity: 0;
@@ -1024,7 +1036,7 @@ section.list-sec {
     transition: border-bottom-width 0.6s ease;
 }
 
-.diaspora-section .custom-controls .video_btn {
+.custom-controls .video_btn {
     cursor: pointer;
     color: #fff;
     border-radius: 50%;
@@ -1036,7 +1048,7 @@ section.list-sec {
     text-decoration: none;
 }
 
-.diaspora-section .custom-controls .video_btn i {
+.custom-controls .video_btn i {
     font-size: 40px;
 }
 
@@ -1759,4 +1771,53 @@ footer .footer-links-wrapper ul {
     opacity: 0;
     transform: translateX(-10%);
     will-change: transform, clip-path, opacity;
+}
+
+/* about-book Css  */
+
+.inner-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)), url(../images/inner-banner.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 500px;
+    background-color: var(--bs-black);
+}
+
+
+.inner_banner_heading {
+    font-size: 90px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.breadcrumb_link {
+    font-size: 28px;
+    font-family: "Albert Sans";
+    font-weight: 500;
+    color: #060606;
+    opacity: 60%;
+}
+
+.inner_banner_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+}
+
+.breadcrumb {
+    background: var(--bs-body-bg);
+    padding: 16px 32px;
+    margin: 0;
+}
+
+.breadcrumb_arrow {
+    bottom: 20px;
+    right: 30rem;
 }

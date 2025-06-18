@@ -1,69 +1,22 @@
-<?php
-$breadcrumb = true;
-?>
+@php
+    $pagename = 'About the Book';
+    $breadcrumbs = [['label' => 'Home', 'url' => url('/')], ['label' => 'About the Book', 'url' => route('about')]];
+@endphp
 @extends('layouts.app')
+
 @section('content')
-    {{-- banner-section Starts Here  --}}
-    <section class="banner-section">
-        <div class="container-fluid px-0">
-            <div class="banner-slider_wrapper position-relative">
-                <div class="banner-slider">
-                    <div class="bnner-slide">
-                        <figure>
-                            <img src="{{ frontImage('banner1.jpg') }}" alt="" class="img-fluid w-100">
-                        </figure>
-                    </div>
-                    <div class="bnner-slide">
-                        <figure>
-                            <img src="{{ frontImage('banner2.jpeg') }}" alt="" class="img-fluid w-100">
-                        </figure>
-                    </div>
-                    <div class="bnner-slide">
-                        <figure>
-                            <img src="{{ frontImage('banner3.jpeg') }}" alt="" class="img-fluid w-100">
-                        </figure>
-                    </div>
-                </div>
-                <div class="review_wrapper position-absolute">
-                    <h5 class="review_text">Reviews </h5>
-                    <div class="review_star_wrap d-flex align-items-center gap-2">
-                        <ul class="star_ul d-flex align-items-center gap-1 list-unstyled">
-                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
-                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
-                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
-                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
-                            <li class="star_li"><i class="fa-solid fa-star" style="color: #555F75"></i></li>
-                        </ul>
-                        <p class="rating_text"> 4.8 view </p>
-                    </div>
-                    <p class="rating_text mb-0">
-                        Discover the sci fi thriller novel </p>
-                </div>
-            </div>
-            <div class="row justify-content-end">
-                <div class="col-lg-7">
-                    <div class="banner-nav">
-                        <div class="banner-thumbnail">
-                            <figure>
-                                <img src="{{ frontImage('banner1.jpg') }}" alt="" class="img-fluid">
-                            </figure>
-                        </div>
-                        <div class="banner-thumbnail">
-                            <figure>
-                                <img src="{{ frontImage('banner2.jpeg') }}" alt="" class="img-fluid">
-                            </figure>
-                        </div>
-                        <div class="banner-thumbnail">
-                            <figure>
-                                <img src="{{ frontImage('banner3.jpeg') }}" alt="" class="img-fluid">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    {{-- inner-banner Starts Here --}}
+    <section class="inner-banner">
+        <div class="inner_banner_wrapper">
+            @include('layouts.front.partials.breadcrumbs', [
+                'pagename' => $pagename,
+                'breadcrumbs' => $breadcrumbs,
+            ])
+        </div>
         </div>
     </section>
-    {{-- banner-section Starts Here  --}}
+    {{-- inner-banner Ends Here --}}
+
     {{-- list sec starts here --}}
     <section class="list-sec">
         <div class="container">
@@ -200,8 +153,7 @@ $breadcrumb = true;
                                     <span>
                                         {{-- <i class="fa-solid fa-industry"></i> --}}
                                         <figure class="mb-0">
-                                            <img src="{{ frontImage('book-icon.png') }}" alt=""
-                                                class="img-fluid">
+                                            <img src="{{ frontImage('book-icon.png') }}" alt="" class="img-fluid">
                                         </figure>
                                     </span>
 
@@ -220,8 +172,7 @@ $breadcrumb = true;
                                     <span>
                                         {{-- <i class="fa-solid fa-robot"></i> --}}
                                         <figure class="mb-0">
-                                            <img src="{{ frontImage('book-icon.png') }}" alt=""
-                                                class="img-fluid">
+                                            <img src="{{ frontImage('book-icon.png') }}" alt="" class="img-fluid">
                                         </figure>
                                     </span>
                                 </div>
@@ -239,8 +190,7 @@ $breadcrumb = true;
                                     <span>
                                         {{-- <i class="fa-solid fa-robot"></i> --}}
                                         <figure class="mb-0">
-                                            <img src="{{ frontImage('book-icon.png') }}" alt=""
-                                                class="img-fluid">
+                                            <img src="{{ frontImage('book-icon.png') }}" alt="" class="img-fluid">
                                         </figure>
                                     </span>
                                 </div>
@@ -263,33 +213,7 @@ $breadcrumb = true;
         </div>
     </section>
     {{-- About ends here --}}
-    {{-- Break starts here --}}
-    <section class="break-sec overflow-x-hidden position-relative">
-        <div class="container-fluid px-0">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="break-img-wrapper">
-                        {{-- <figure class="mb-0">
-                            <img src="{{ frontImage('break.jpeg') }}" class="img-fluid w-100" alt="">
-                        </figure> --}}
-                        <div class="break-heading-wrapper">
-                            <div class="marquee-container">
-                                <div class="marquee">
-                                    <span>T</span><span>H</span><span>E</span>
-                                    <span>D</span><span>R</span><span>O</span><span>P</span>
-                                    <span>B</span><span>R</span><span>E</span><span>A</span><span>K</span>
-                                    <span>T</span><span
-                                        class="highlight">H</span><span>R</span><span>O</span><span>U</span><span>G</span><span>H</span>
-                                    &nbsp;&nbsp;&nbsp;
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- Break ends here --}}
+
     {{-- dbt-section Starts Here  --}}
     <section class="dbt-section">
         <div class="container">
@@ -412,150 +336,23 @@ $breadcrumb = true;
         </div>
     </section>
     {{-- prophecy-section Ends Here  --}}
-    {{-- available starts here --}}
-    <section class="availabel-sec">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="availabel-heading-wrapper">
-                        <h2 class="text-dark text-center">
-                            <span class="text-primary">Available in the following</span> Formats
-                        </h2>
+    <!-- Video Start Here -->
+    <section class="about-video">
+        <div class="container-fluid px-0">
+            <div class="video-player">
+                <figure class="position-relative mb-0">
+                    <img src="{{ frontImage('video-bg.jpg') }}" alt="video-bg" class="img-fluid">
+                    <div
+                        class="custom-controls position-absolute top-0 bottom-0 d-flex align-items-center justify-content-center w-100">
+                        <a href="#" class="video_btn d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-play"></i>
+                        </a>
                     </div>
-                </div>
-            </div>
-            <div class="row pt-5">
-                <div class="col-lg-3">
-                    <div class="availabel-card-wrapper">
-                        <div class="availabel-img-wrapper">
-                            <figure>
-                                <img src="{{ frontImage('availabel.png') }}" class="img-fluid" alt="">
-                            </figure>
-                        </div>
-                        <div class="availabel-card-heading-wrapper text-center">
-                            <h5>The Dope Breakthrough
-                                – Audiobook</h5>
-                            <h6 class="text-primary">$99.00</h6>
-                            <div class="availabel-btn-wrapper d-flex justify-content-between align-items-center">
-                                <a href="#" class="btn btn-primary">
-                                    Add to Cart
-                                </a>
-                                <a href="#" class="btn btn-primary">
-                                    Buy Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="availabel-card-wrapper">
-                        <div class="availabel-img-wrapper">
-                            <figure>
-                                <img src="{{ frontImage('availabel.png') }}" class="img-fluid" alt="">
-                            </figure>
-                        </div>
-                        <div class="availabel-card-heading-wrapper text-center">
-                            <h5>The Dope Breakthrough
-                                – Audiobook</h5>
-                            <h6 class="text-primary">$99.00</h6>
-                            <div class="availabel-btn-wrapper d-flex justify-content-between align-items-center">
-                                <a href="#" class="btn btn-primary">
-                                    Add to Cart
-                                </a>
-                                <a href="#" class="btn btn-primary">
-                                    Buy Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="availabel-card-wrapper">
-                        <div class="availabel-img-wrapper">
-                            <figure>
-                                <img src="{{ frontImage('availabel.png') }}" class="img-fluid" alt="">
-                            </figure>
-                        </div>
-                        <div class="availabel-card-heading-wrapper text-center">
-                            <h5>The Dope Breakthrough
-                                – Audiobook</h5>
-                            <h6 class="text-primary">$99.00</h6>
-                            <div class="availabel-btn-wrapper d-flex justify-content-between align-items-center">
-                                <a href="#" class="btn btn-primary">
-                                    Add to Cart
-                                </a>
-                                <a href="#" class="btn btn-primary">
-                                    Buy Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="availabel-card-wrapper">
-                        <div class="availabel-img-wrapper">
-                            <figure>
-                                <img src="{{ frontImage('availabel.png') }}" class="img-fluid" alt="">
-                            </figure>
-                        </div>
-                        <div class="availabel-card-heading-wrapper text-center">
-                            <h5>The Dope Breakthrough
-                                – Audiobook</h5>
-                            <h6 class="text-primary">$99.00</h6>
-                            <div class="availabel-btn-wrapper d-flex justify-content-between align-items-center">
-                                <a href="#" class="btn btn-primary">
-                                    Add to Cart
-                                </a>
-                                <a href="#" class="btn btn-primary">
-                                    Buy Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </figure>
             </div>
         </div>
     </section>
-    {{-- available ends here --}}
-    {{-- dope starts here --}}
-    <section class="bs-expertise-4-box expertise-section" id="tagContainer">
-        <div class="container">
-            <div class="expertise_top_heading">
-                <h2 class="expertise_text">The Dope
-                    Breakthrough</h2>
-            </div>
-            <div class="tags_main overflow-hidden">
-                <div class="tags-wrapper">
-                    <div class="single-tag" data-x="100" data-y="-500"><span class="single-tag-item"><span
-                                class="icon">
-                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                                class="text">The</span></span></div>
-                    <div class="single-tag" data-x="500" data-y="-150"><span class="single-tag-item"><span
-                                class="icon">
-                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                                class="text">Dope</span></span></div>
-                    <div class="single-tag" data-x="700" data-y="-200"><span class="single-tag-item"><span
-                                class="icon">
-                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                                class="text">Breakthrough</span></span></div>
-                    <div class="single-tag" data-x="300" data-y="-300"><span class="single-tag-item"><span
-                                class="icon">
-                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                                class="text">Divining Our</span></span></div>
-                    <div class="single-tag" data-x="500" data-y="-250"><span class="single-tag-item"><span
-                                class="icon">
-                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                                class="text">Perfect</span></span></div>
-                    <div class="single-tag" data-x="900" data-y="-250"><span class="single-tag-item"><span
-                                class="icon">
-                                <img src={{ frontImage('check-mark.png') }} class="img-fluid" alt=""></span><span
-                                class="text">Eternity</span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- dope ends here --}}
+    <!-- Video End Here -->
     {{-- diaspora-section Starts Here  --}}
     <section class="diaspora-section">
         <div class="container-fluid px-0 overflow-x-hidden">
@@ -930,462 +727,4 @@ $breadcrumb = true;
         </div>
     </section>
     {{-- wealth-section Ends Here  --}}
-    {{-- donation-section Starts Here  --}}
-    <section class="donation-section">
-        <div class="container-fluid">
-            <div class="donation_wrapper text-center">
-                <div class="ml14 reveal">
-                    <h4 class="level-2 heading-font donation_heading">
-                        <span class="letters">
-                            80% of all revenue from The DBT will be dedicated to a sovereign wealth fund supporting
-                            African-American youth and contributors to the Jeremiah 31 Project.
-                        </span>
-                    </h4>
-                </div>
-                <h2 class="number_heading yellow_color"> $0</h2>
-                <h5 class="donation_sub">Donation Covered</h5>
-            </div>
-        </div>
-    </section>
-    {{-- donation-section Ends Here  --}}
-    {{-- book-section Starts Here  --}}
-    <section class="book-section section position-relative">
-        <div class="container">
-            <div class="book_top_heading text-uppercase">
-                <h2 class="center_text">recent</h2>
-                <div class="bottom_wrapper d-flex justify-content-between">
-                    <h2 class="left_text">book</h2>
-                    <h2 class="right_text">work</h2>
-                </div>
-            </div>
-            {{-- <div class="book_animate_wrapper">
-                <div class="spacer"></div>
-                <div class="slides_wrapper">
-                    <div class="slide_box">
-                        <div class="slide_box_wrap">
-                            <div class="img_box">
-                                <figure><img src="{{ frontImage('book-img1.jpg') }}" alt="slide_image"
-                                        class="img-fluid">
-                                </figure>
-                            </div>
-                            <div class="content_wrapper d-flex align-items-center justify-content-between">
-                                <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                                <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                    <div class="role">
-                                        <h5 class="property">role:</h5>
-                                        <h5 class="value">Architecture design</h5>
-                                    </div>
-                                    <div class="role">
-                                        <h5 class="property">role:</h5>
-                                        <h5 class="value">Architecture design</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide_box">
-                        <div class="slide_box_wrap">
-                            <div class="img_box">
-                                <figure><img src="{{ frontImage('book-img2.jpg') }}" alt="slide_image"
-                                        class="img-fluid">
-                                </figure>
-                            </div>
-                            <div class="content_wrapper d-flex align-items-center justify-content-between">
-                                <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                                <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                    <div class="role">
-                                        <h5 class="property">role:</h5>
-                                        <h5 class="value">Architecture design</h5>
-                                    </div>
-                                    <div class="role">
-                                        <h5 class="property">role:</h5>
-                                        <h5 class="value">Architecture design</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide_box">
-                        <div class="slide_box_wrap">
-                            <div class="img_box">
-                                <figure><img src="{{ frontImage('book-img3.jpg') }}" alt="slide_image"
-                                        class="img-fluid">
-                                </figure>
-                            </div>
-                            <div class="content_wrapper d-flex align-items-center justify-content-between">
-                                <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                                <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                    <div class="role">
-                                        <h5 class="property">role:</h5>
-                                        <h5 class="value">Architecture design</h5>
-                                    </div>
-                                    <div class="role">
-                                        <h5 class="property">role:</h5>
-                                        <h5 class="value">Architecture design</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="spacer"></div>
-            </div> --}}
-            <div class="book_animate_wrapper">
-                <div class="stacked-card">
-                    <ul class="cards">
-                        <li class="card">
-                            <div class="slide_box">
-                                <div class="slide_box_wrap">
-                                    <div class="img_box">
-                                        <figure><img src="{{ frontImage('book-img1.jpg') }}" alt="slide_image"
-                                                class="img-fluid">
-                                        </figure>
-                                    </div>
-                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
-                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                            <div class="role">
-                                                <h5 class="property">role:</h5>
-                                                <h5 class="value">Architecture design</h5>
-                                            </div>
-                                            <div class="role">
-                                                <h5 class="property">role:</h5>
-                                                <h5 class="value">Architecture design</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card">
-                            <div class="slide_box">
-                                <div class="slide_box_wrap">
-                                    <div class="img_box">
-                                        <figure><img src="{{ frontImage('book-img2.jpg') }}" alt="slide_image"
-                                                class="img-fluid">
-                                        </figure>
-                                    </div>
-                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
-                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                            <div class="role">
-                                                <h5 class="property">role:</h5>
-                                                <h5 class="value">Architecture design</h5>
-                                            </div>
-                                            <div class="role">
-                                                <h5 class="property">role:</h5>
-                                                <h5 class="value">Architecture design</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="card">
-                            <div class="slide_box">
-                                <div class="slide_box_wrap">
-                                    <div class="img_box">
-                                        <figure><img src="{{ frontImage('book-img3.jpg') }}" alt="slide_image"
-                                                class="img-fluid">
-                                        </figure>
-                                    </div>
-                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
-                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                            <div class="role">
-                                                <h5 class="property">role:</h5>
-                                                <h5 class="value">Architecture design</h5>
-                                            </div>
-                                            <div class="role">
-                                                <h5 class="property">role:</h5>
-                                                <h5 class="value">Architecture design</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                           <li class="card">
-                            <div class="slide_box">
-                                <div class="slide_box_wrap">
-                                    <div class="img_box">
-                                        <figure><img src="{{ frontImage('book-img2.jpg') }}" alt="slide_image"
-                                                class="img-fluid">
-                                        </figure>
-                                    </div>
-                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
-                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
-                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
-                                            <div class="role">
-                                                <h5 class="property">role:</h5>
-                                                <h5 class="value">Architecture design</h5>
-                                            </div>
-                                            <div class="role">
-                                                <h5 class="property">role:</h5>
-                                                <h5 class="value">Architecture design</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- book-section Ends Here  --}}
-    {{-- <div class="empty">First</div> --}}
-    {{-- <div class="empty">End</div> --}}
-    {{-- blog-section Starts Here  --}}
-    <section class="blog-section">
-        <div class="container">
-            <div class="row pb-4">
-                <div class="col-lg-12">
-                    {{-- <div class="about-heading-container">
-                        <div class="about-heading-wrapper d-flex justify-content-between">
-                            <h5>blog & news
-                            </h5>
-                            <div class="icon-wrapper">
-                                <i class="fa-brands fa-blogger-b"></i>
-                            </div>
-                        </div>
-                    </div> --}}
-                    <div class="about-heading-container">
-                        <div class="about-heading-wrapper d-flex justify-content-between">
-                            <h5>About the Book</h5>
-                            <div class="icon-wrapper">
-                                <i aria-hidden="true" class="fas fa-pen-nib"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-top-content d-flex align-items-center justify-content-between">
-                <div class="blog-heading">
-                    {{-- <div class="ml14 reveal mb-5">
-                        <h2 class="level-2 heading-font">
-                            <span class="letters"> Take a Look at Our Latest
-                                blogs & Articles.
-                            </span>
-                        </h2>
-                    </div> --}}
-                    <div class="text-container mb-5">
-                        <h2 class="reveal-text text-dark" data-text="Take a Look at Our Latest blogs & Articles.">
-                        </h2>
-                    </div>
-                </div>
-                <div class="btn_group position-relative">
-                    <span class="btn_border"></span>
-                    <span class="btn_border"></span>
-                    <span class="btn_border"></span>
-                    <span class="btn_border"></span>
-                    <a href="#" class="btn">
-                        <span class="inner_border"></span>
-                        <span class="inner_border"></span>
-                        <span class="inner_border"></span>
-                        <span class="inner_border"></span>
-                        <span class="btn_text">View All Blogs</span>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="blog_wrapper">
-                        <div class="blog_img position-relative">
-                            <figure class="mb-0">
-                                <img src="{{ frontImage('blog-img.png') }}" alt="" class="img-fluid">
-                            </figure>
-                            <div class="blog-arrow-wrap position-absolute">
-                                <a href="#" class="text-decoration-none blog_anchor"><i
-                                        class="fa-solid fa-arrow-up fa-rotate-by"
-                                        style="--fa-rotate-angle: 50deg;"></i></a>
-                            </div>
-                        </div>
-                        <div class="blog_content pt-4">
-                            <h5 class="blog_sub position-relative ps-5 mb-3">WP_Developer </h5>
-                            <a href="#" class="blog_heading">Blog Title here</a>
-                            <div class="blog_date_wrapper d-flex align-items-center gap-2">
-                                <span class="categories position-relative">
-                                    <a href="#" class="cat-link">Mikell M. Milton</a>
-                                </span>
-                                <span class="date">May 26, 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog_wrapper">
-                        <div class="blog_img position-relative">
-                            <figure class="mb-0">
-                                <img src="{{ frontImage('blog-img.png') }}" alt="" class="img-fluid">
-                            </figure>
-                            <div class="blog-arrow-wrap position-absolute">
-                                <a href="#" class="text-decoration-none blog_anchor"><i
-                                        class="fa-solid fa-arrow-up fa-rotate-by"
-                                        style="--fa-rotate-angle: 50deg;"></i></a>
-                            </div>
-                        </div>
-                        <div class="blog_content pt-4">
-                            <h5 class="blog_sub position-relative ps-5 mb-3">WP_Developer </h5>
-                            <a href="#" class="blog_heading">Blog Title here</a>
-                            <div class="blog_date_wrapper d-flex align-items-center gap-2">
-                                <span class="categories position-relative">
-                                    <a href="#" class="cat-link">Mikell M. Milton</a>
-                                </span>
-                                <span class="date">May 26, 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog_wrapper">
-                        <div class="blog_img position-relative">
-                            <figure class="mb-0">
-                                <img src="{{ frontImage('blog-img.png') }}" alt="" class="img-fluid">
-                            </figure>
-                            <div class="blog-arrow-wrap position-absolute">
-                                <a href="#" class="text-decoration-none blog_anchor"><i
-                                        class="fa-solid fa-arrow-up fa-rotate-by"
-                                        style="--fa-rotate-angle: 50deg;"></i></a>
-                            </div>
-                        </div>
-                        <div class="blog_content pt-4">
-                            <h5 class="blog_sub position-relative ps-5 mb-3">WP_Developer </h5>
-                            <a href="#" class="blog_heading">Blog Title here</a>
-                            <div class="blog_date_wrapper d-flex align-items-center gap-2">
-                                <span class="categories position-relative">
-                                    <a href="#" class="cat-link">Mikell M. Milton</a>
-                                </span>
-                                <span class="date">May 26, 2025</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- blog-section Ends Here  --}}
-
-    {{-- contact-section Starts Here  --}}
-    <section class="contact-section position-relative">
-        <div class="container-fluid px-0">
-            <div class="contact_bg">
-                <figure class="mb-0">
-                    <img src="{{ frontImage('contact-bg.jpeg') }}" alt="" class="img-fluid w-100">
-                </figure>
-            </div>
-        </div>
-        <div class="contact_main">
-            <div class="container">
-                <div class="row align-items-end">
-                    <div class="col-lg-7">
-                        {{-- <div class="contact_form">
-                            <form action="#">
-                                <div class="form-group">
-                                    <label for="" class="form-label">name</label>
-                                    <input type="text" class="form-control" placeholder="e.g. Oliver Spiteri">
-                                </div>
-                                <div class="form-group">
-                                    <label for="" class="form-label">phone
-                                    </label>
-                                    <input type="number" class="form-control" placeholder="e.g. +1 877 217 8371">
-                                </div>
-                                <div class="form-group">
-                                    <label for="" class="form-label">email
-                                    </label>
-                                    <input type="email" class="form-control" placeholder="example@email.com">
-                                </div>
-                                <div class="form-group">
-                                    <label for="" class="form-label">message
-                                    </label>
-                                    <textarea name="" id="" cols="30" rows="4" class="form-control"
-                                        placeholder="write your message here"></textarea>
-                                </div>
-                                <div class="form-btn">
-                                    <button type="submit" class="btn">Submit Now</button>
-                                </div>
-                            </form>
-                        </div> --}}
-                        <div class="contact_heading">
-                            <div class="text-container">
-                                <h2 class="reveal-text text-dark target-heading"
-                                    data-text="200+ Trusted Partners All  Over The World.">
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="contact_img">
-                            <figure class="mb-0">
-                                <img src="{{ frontImage('contact-img.jpeg') }}" alt=""
-                                    class="img-fluid w-100 contact_img_wrap">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- contact-section Ends Here  --}}
-
-    {{-- marque-section Starts Here  --}}
-    <section class="marque-section section">
-        <div class="container-fluid px-0">
-            <div class="marquee-slider">
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-                <div class="marque_wrap">
-                    <figure class="marque_fig">
-                        <img src="{{ frontImage('marque-img.webp') }}" alt="" class="img-fluid">
-                    </figure>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    {{-- marque-section Ends Here  --}}
 @endsection
