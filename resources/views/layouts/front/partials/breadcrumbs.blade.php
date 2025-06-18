@@ -14,7 +14,7 @@
                 <ol class="breadcrumb w-fit ms-auto">
                     @foreach ($breadcrumbs as $crumb)
                         <li class="breadcrumb-item d-flex align-items-center">
-                            <a href="{{ $crumb['url'] }}" class="breadcrumb_link text-decoration-none">
+                            <a href="{{ $crumb['url'] }}" class="breadcrumb_link text-uppercase text-decoration-none">
                                 {{ $crumb['label'] }}
                             </a>
                         </li>

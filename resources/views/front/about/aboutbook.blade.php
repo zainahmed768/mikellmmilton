@@ -13,7 +13,6 @@
                 'breadcrumbs' => $breadcrumbs,
             ])
         </div>
-        </div>
     </section>
     {{-- inner-banner Ends Here --}}
 

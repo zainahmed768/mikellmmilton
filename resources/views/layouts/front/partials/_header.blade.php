@@ -64,10 +64,10 @@
                                 <a href="#" class="nav-link">about the author</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Blogs</a>
+                                <a href="{{ route('blogs') }}" class="nav-link">Blogs</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Contact Us</a>
+                                <a href="{{ route('contact') }}" class="nav-link">Contact Us</a>
                             </li>
                         </ul>
                         <div class="header_right_wrapper d-flex align-items-center gap-2">
