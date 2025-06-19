@@ -29,13 +29,13 @@
                                     <a href="#">contact us</a>
                                 </li>
                                 <li class="footer-link">
-                                    <a href="#">Privacy Policy</a>
+                                    <a href="{{ route('privacy') }}">Privacy Policy</a>
                                 </li>
                                 <li class="footer-link">
-                                    <a href="#">Terms & Conditions</a>
+                                    <a href="{{ route('terms') }}">Terms & Conditions</a>
                                 </li>
                                 <li class="footer-link">
-                                    <a href="#">Refund Policy</a>
+                                    <a href="{{ route('refundpolicy') }}">Refund Policy</a>
                                 </li>
                             </ul>
                         </div>

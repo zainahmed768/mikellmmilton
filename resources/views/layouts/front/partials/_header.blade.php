@@ -72,7 +72,7 @@
                         </ul>
                         <div class="header_right_wrapper d-flex align-items-center gap-2">
                             <div class="header-btn">
-                                <a class="btn-effect-1 text-decoration-none">
+                                <a href="{{ route('shop') }}" class="btn-effect-1 text-decoration-none">
                                     <span>Buy Now</span>
                                     <div class="corner tl"></div>
                                     <div class="corner tr"></div>

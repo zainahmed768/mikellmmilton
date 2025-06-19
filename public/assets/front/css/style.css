@@ -1509,6 +1509,8 @@ section.list-sec {
     font-family: "Albert Sans";
     text-transform: uppercase;
     font-weight: 500;
+    opacity: 0.56;
+    letter-spacing: 3px;
 }
 
 .form-control {
@@ -1890,7 +1892,7 @@ footer .footer-links-wrapper ul {
     object-fit: cover;
 }
 
-.blog_content .blog_name {
+.blog_name {
     font-size: 18px;
     color: #363636;
     font-family: "Albert Sans";
@@ -1903,3 +1905,140 @@ footer .footer-links-wrapper ul {
     color: var(--bs-body-bg);
 }
 /* blog-page Css  */
+
+/* contact-page Css  */
+
+.contact_btn {
+    background: var(--bs-link-color);
+    color: var(--bs-body-bg);
+    padding: 14px 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact_btn {
+    background: var(--bs-link-color);
+    color: var(--bs-body-bg);
+    padding: 14px 30px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact_btn .shape {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    z-index: -1;
+    opacity: 0;
+}
+
+.contact_btn:hover .shape {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.contact_btn:hover {
+    color: #fff;
+}
+
+.contact_btn i {
+    font-size: 18px;
+}
+
+/* blog-detail Css  */
+.blog_detail_form {
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+.form_heading {
+    font-size: 26px;
+    font-weight: 600;
+}
+/* blog-detail Css  */
+
+/* shop-page Css  */
+
+.shop_cart {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    height: fit-content;
+}
+
+.shop_detail:hover .shop_cart {
+    top: 0;
+}
+
+.shop_detail {
+    position: relative;
+    overflow: hidden;
+}
+
+.shop_detail:hover {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.search_wrapper {
+    margin-bottom: 50px;
+    border: 1px solid rgba(2, 6, 38, 0.15);
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px;
+    padding-left: 30px;
+    flex-wrap: wrap;
+}
+
+.form-control-2 {
+    border-radius: 60px;
+    background-color: rgba(35, 39, 42, 0.05);
+    text-transform: capitalize;
+    width: auto;
+    margin: 0;
+    padding: 10px 20px;
+    padding-right: 30px;
+    height: 54px;
+    border: 1px solid #e0dde5;
+    cursor: pointer;
+}
+
+/* cart-page Css  */
+
+.cart_img figure img.img-fluid {
+    max-width: 84px;
+    height: 84px;
+    object-fit: cover;
+}
+
+.cart_detail_main .table tr th {
+    font-size: 15px;
+    color: var(--bs-black);
+    font-family: "Albert Sans";
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.cart_detail_main .table tr td {
+    vertical-align: top;
+    padding: 20px;
+}
+/* cart-page Css  */

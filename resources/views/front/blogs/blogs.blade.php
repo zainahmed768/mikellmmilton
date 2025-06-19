@@ -306,9 +306,9 @@
                         <div class="blogs_seach_wrap">
                             <h4>Search
                             </h4>
-                            <div class="d-flex form-control-1 p-0">
+                            <div class="d-flex form-control-1 w-100 p-0">
                                 <input type="search" name="" id=""
-                                    class="form-control-1 bg-transparent border-0 py-0" placeholder="Search...">
+                                    class="form-control-1 bg-transparent border-0 py-0 w-100" placeholder="Search...">
                                 <button class="search_btn space-nowrap btn-border" type="button"><i
                                         class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
