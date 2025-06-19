@@ -24,3 +24,8 @@ Route::get('/', function () {
 Route::get('/about-author', function () {
     return view('front.about.aboutAuthor');
 })->name('about-author');
+
+
+Route::get('/about', function () {
+    return view('front.about.aboutbook');
+})->name('about');

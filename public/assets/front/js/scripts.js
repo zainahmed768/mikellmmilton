@@ -51,6 +51,7 @@ $(".see_order_details").click(function () {
 // banner Slider
 
 gsap.registerPlugin(ScrollTrigger);
+
 $(document).ready(function () {
     $(".banner-slider .slick-slide:not(.slick-current)").css({
         opacity: 0,
@@ -247,204 +248,203 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const container = document.getElementById("tagContainer");
-const tags = document.querySelectorAll(".single-tag");
 
-// Define boundaries
-const BOUNDARY_WIDTH = container.clientWidth;
-const BOUNDARY_HEIGHT = 400;
+if (container) {
+    const tags = document.querySelectorAll(".single-tag");
 
-ScrollTrigger.create({
-    trigger: container,
-    start: "top center",
-    once: true,
-    onEnter: () => {
-        const maxY = BOUNDARY_HEIGHT - 60;
-        tags.forEach((tag) => {
-            const x = parseFloat(tag.dataset.x);
-            tag.dataset.rotation = 0;
+    // Define boundaries
+    const BOUNDARY_WIDTH = container.clientWidth;
+    const BOUNDARY_HEIGHT = 400;
 
-            gsap.to(tag, {
-                duration: 1,
-                opacity: 1,
-                y: maxY,
-                ease: "bounce.out",
-                onUpdate() {
-                    const y = gsap.getProperty(tag, "y");
-                    tag.dataset.x = x;
-                    tag.dataset.y = y;
-                    tag.style.transform = `translate(${x}px, ${y}px) rotate(${tag.dataset.rotation}deg)`;
-                },
-                onComplete: () => {
-                    enableDrag(tag);
-                },
+    ScrollTrigger.create({
+        trigger: container,
+        start: "top center",
+        once: true,
+        onEnter: () => {
+            const maxY = BOUNDARY_HEIGHT - 60;
+            tags.forEach((tag) => {
+                const x = parseFloat(tag.dataset.x);
+                tag.dataset.rotation = 0;
+
+                gsap.to(tag, {
+                    duration: 1,
+                    opacity: 1,
+                    y: maxY,
+                    ease: "bounce.out",
+                    onUpdate() {
+                        const y = gsap.getProperty(tag, "y");
+                        tag.dataset.x = x;
+                        tag.dataset.y = y;
+                        tag.style.transform = `translate(${x}px, ${y}px) rotate(${tag.dataset.rotation}deg)`;
+                    },
+                    onComplete: () => {
+                        enableDrag(tag);
+                    },
+                });
             });
+        },
+    });
+
+    function enableDrag(tag) {
+        let isDragging = false;
+        let lastX = 0,
+            lastY = 0;
+        let velocityX = 0,
+            velocityY = 0,
+            velocityRotation = 0;
+        let animationFrame = null;
+
+        const gravity = 1.2;
+        const bounceFactor = -0.6;
+        const friction = 0.96;
+
+        tag.addEventListener("pointerdown", (e) => {
+            isDragging = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+            tag.setPointerCapture(e.pointerId);
+            cancelAnimationFrame(animationFrame);
         });
-    },
-});
 
-function enableDrag(tag) {
-    let isDragging = false;
-    let lastX = 0,
-        lastY = 0;
-    let velocityX = 0,
-        velocityY = 0,
-        velocityRotation = 0;
-    let animationFrame = null;
+        tag.addEventListener("pointermove", (e) => {
+            if (!isDragging) return;
 
-    const gravity = 1.2;
-    const bounceFactor = -0.6;
-    const friction = 0.96;
+            const dx = e.clientX - lastX;
+            const dy = e.clientY - lastY;
+            lastX = e.clientX;
+            lastY = e.clientY;
 
-    tag.addEventListener("pointerdown", (e) => {
-        isDragging = true;
-        lastX = e.clientX;
-        lastY = e.clientY;
-        tag.setPointerCapture(e.pointerId);
-        cancelAnimationFrame(animationFrame);
-    });
-
-    tag.addEventListener("pointermove", (e) => {
-        if (!isDragging) return;
-
-        const dx = e.clientX - lastX;
-        const dy = e.clientY - lastY;
-        lastX = e.clientX;
-        lastY = e.clientY;
-
-        let x = parseFloat(tag.dataset.x) + dx;
-        let y = parseFloat(tag.dataset.y) + dy;
-
-        const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
-        const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
-
-        // Clamp to container boundaries
-        x = Math.min(maxX, Math.max(0, x));
-        y = Math.min(maxY, Math.max(0, y));
-
-        tag.dataset.x = x;
-        tag.dataset.y = y;
-
-        velocityX = dx;
-        velocityY = dy;
-        velocityRotation = dx * 0.3;
-        tag.dataset.rotation = parseFloat(tag.dataset.rotation) || 0;
-
-        tag.style.transform = `translate(${x}px, ${y}px) rotate(${tag.dataset.rotation}deg)`;
-
-        resolveCollision(tag);
-    });
-
-    tag.addEventListener("pointerup", () => {
-        isDragging = false;
-        animateFall();
-    });
-
-    function animateFall() {
-        function fall() {
-            velocityY += gravity;
-            velocityX *= friction;
-            velocityRotation *= friction;
-
-            let x = parseFloat(tag.dataset.x) + velocityX;
-            let y = parseFloat(tag.dataset.y) + velocityY;
-            let rotation =
-                (parseFloat(tag.dataset.rotation) || 0) + velocityRotation;
+            let x = parseFloat(tag.dataset.x) + dx;
+            let y = parseFloat(tag.dataset.y) + dy;
 
             const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
             const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
 
-            // Clamp to boundaries and bounce
-            if (x <= 0 || x >= maxX) {
-                x = Math.min(maxX, Math.max(0, x));
-                velocityX *= bounceFactor;
-                velocityRotation *= -1;
-            }
-
-            if (y >= maxY) {
-                y = maxY;
-                velocityY *= bounceFactor;
-
-                // Snap if very close to resting
-                if (
-                    Math.abs(velocityY) < 1 &&
-                    Math.abs(velocityX) < 0.5 &&
-                    Math.abs(velocityRotation) < 0.5
-                ) {
-                    cancelAnimationFrame(animationFrame);
-                    return;
-                }
-            }
-
-            // Snap to exact edge if very close
-            if (Math.abs(x) < 1) x = 0;
-            if (Math.abs(x - maxX) < 1) x = maxX;
-            if (Math.abs(y - maxY) < 1) y = maxY;
+            x = Math.min(maxX, Math.max(0, x));
+            y = Math.min(maxY, Math.max(0, y));
 
             tag.dataset.x = x;
             tag.dataset.y = y;
-            tag.dataset.rotation = rotation;
 
-            tag.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+            velocityX = dx;
+            velocityY = dy;
+            velocityRotation = dx * 0.3;
+            tag.dataset.rotation = parseFloat(tag.dataset.rotation) || 0;
+
+            tag.style.transform = `translate(${x}px, ${y}px) rotate(${tag.dataset.rotation}deg)`;
 
             resolveCollision(tag);
+        });
+
+        tag.addEventListener("pointerup", () => {
+            isDragging = false;
+            animateFall();
+        });
+
+        function animateFall() {
+            function fall() {
+                velocityY += gravity;
+                velocityX *= friction;
+                velocityRotation *= friction;
+
+                let x = parseFloat(tag.dataset.x) + velocityX;
+                let y = parseFloat(tag.dataset.y) + velocityY;
+                let rotation =
+                    (parseFloat(tag.dataset.rotation) || 0) + velocityRotation;
+
+                const maxX = BOUNDARY_WIDTH - tag.offsetWidth;
+                const maxY = BOUNDARY_HEIGHT - tag.offsetHeight;
+
+                if (x <= 0 || x >= maxX) {
+                    x = Math.min(maxX, Math.max(0, x));
+                    velocityX *= bounceFactor;
+                    velocityRotation *= -1;
+                }
+
+                if (y >= maxY) {
+                    y = maxY;
+                    velocityY *= bounceFactor;
+
+                    if (
+                        Math.abs(velocityY) < 1 &&
+                        Math.abs(velocityX) < 0.5 &&
+                        Math.abs(velocityRotation) < 0.5
+                    ) {
+                        cancelAnimationFrame(animationFrame);
+                        return;
+                    }
+                }
+
+                if (Math.abs(x) < 1) x = 0;
+                if (Math.abs(x - maxX) < 1) x = maxX;
+                if (Math.abs(y - maxY) < 1) y = maxY;
+
+                tag.dataset.x = x;
+                tag.dataset.y = y;
+                tag.dataset.rotation = rotation;
+
+                tag.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+
+                resolveCollision(tag);
+                animationFrame = requestAnimationFrame(fall);
+            }
+
             animationFrame = requestAnimationFrame(fall);
         }
 
-        animationFrame = requestAnimationFrame(fall);
-    }
+        function resolveCollision(currentTag) {
+            const maxX = BOUNDARY_WIDTH - currentTag.offsetWidth;
+            const maxY = BOUNDARY_HEIGHT - currentTag.offsetHeight;
 
-    function resolveCollision(currentTag) {
-        const maxX = BOUNDARY_WIDTH - currentTag.offsetWidth;
-        const maxY = BOUNDARY_HEIGHT - currentTag.offsetHeight;
+            tags.forEach((other) => {
+                if (other === currentTag) return;
 
-        tags.forEach((other) => {
-            if (other === currentTag) return;
+                const x1 = parseFloat(currentTag.dataset.x);
+                const y1 = parseFloat(currentTag.dataset.y);
+                const x2 = parseFloat(other.dataset.x);
+                const y2 = parseFloat(other.dataset.y);
 
-            const x1 = parseFloat(currentTag.dataset.x);
-            const y1 = parseFloat(currentTag.dataset.y);
-            const x2 = parseFloat(other.dataset.x);
-            const y2 = parseFloat(other.dataset.y);
+                const dx = x2 - x1;
+                const dy = y2 - y1;
+                const distance = Math.hypot(dx, dy);
+                const minDist =
+                    (currentTag.offsetWidth + other.offsetWidth) / 2 - 4;
 
-            const dx = x2 - x1;
-            const dy = y2 - y1;
-            const distance = Math.hypot(dx, dy);
-            const minDist =
-                (currentTag.offsetWidth + other.offsetWidth) / 2 - 4;
+                if (distance < minDist && distance > 0) {
+                    const angle = Math.atan2(dy, dx);
+                    const pushX = (Math.cos(angle) * (minDist - distance)) / 2;
+                    const pushY = (Math.sin(angle) * (minDist - distance)) / 2;
 
-            if (distance < minDist && distance > 0) {
-                const angle = Math.atan2(dy, dx);
-                const pushX = (Math.cos(angle) * (minDist - distance)) / 2;
-                const pushY = (Math.sin(angle) * (minDist - distance)) / 2;
+                    let newX1 = x1 - pushX;
+                    let newY1 = y1 - pushY;
+                    let newX2 = x2 + pushX;
+                    let newY2 = y2 + pushY;
 
-                let newX1 = x1 - pushX;
-                let newY1 = y1 - pushY;
-                let newX2 = x2 + pushX;
-                let newY2 = y2 + pushY;
+                    newX1 = Math.min(maxX, Math.max(0, newX1));
+                    newY1 = Math.min(maxY, Math.max(0, newY1));
+                    newX2 = Math.min(maxX, Math.max(0, newX2));
+                    newY2 = Math.min(maxY, Math.max(0, newY2));
 
-                // Clamp to container
-                newX1 = Math.min(maxX, Math.max(0, newX1));
-                newY1 = Math.min(maxY, Math.max(0, newY1));
-                newX2 = Math.min(maxX, Math.max(0, newX2));
-                newY2 = Math.min(maxY, Math.max(0, newY2));
+                    currentTag.dataset.x = newX1;
+                    currentTag.dataset.y = newY1;
+                    other.dataset.x = newX2;
+                    other.dataset.y = newY2;
 
-                currentTag.dataset.x = newX1;
-                currentTag.dataset.y = newY1;
-                other.dataset.x = newX2;
-                other.dataset.y = newY2;
+                    updateTransform(currentTag);
+                    updateTransform(other);
+                }
+            });
+        }
 
-                updateTransform(currentTag);
-                updateTransform(other);
-            }
-        });
-    }
-
-    function updateTransform(target) {
-        const x = parseFloat(target.dataset.x);
-        const y = parseFloat(target.dataset.y);
-        const rotation = parseFloat(target.dataset.rotation) || 0;
-        target.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+        function updateTransform(target) {
+            const x = parseFloat(target.dataset.x);
+            const y = parseFloat(target.dataset.y);
+            const rotation = parseFloat(target.dataset.rotation) || 0;
+            target.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+        }
     }
 }
+
 
 console.clear();
 

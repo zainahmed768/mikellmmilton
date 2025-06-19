@@ -11,6 +11,8 @@
 <body>
     {{-- @include('layouts.front.partials._navBar') --}}
     @include('layouts.front.partials._header')
+    @yield('breadcrumbs')
+
     {{-- loader --}}
     {{-- <div class="container">
         <div class="row">
@@ -45,9 +47,9 @@
     </div>
     {{-- back to top button  --}}
     <main id="luxy">
-    @yield('content')
-    @include('layouts.front.partials._footer')
-</main>
+        @yield('content')
+        @include('layouts.front.partials._footer')
+    </main>
     @include('layouts.front.partials._footerLinks')
 
 </body>

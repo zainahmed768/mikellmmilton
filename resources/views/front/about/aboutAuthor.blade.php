@@ -1,6 +1,21 @@
+@php
+    $pagename = 'About the Book';
+    $breadcrumbs = [['label' => 'Home', 'url' => url('/')], ['label' => 'About the Book', 'url' => route('about')]];
+@endphp
 @extends('layouts.app')
 @section('content')
     <link rel="stylesheet" href="{{ frontCss('about-author.css') }}">
+    {{-- inner-banner Starts Here --}}
+    <section class="inner-banner">
+        <div class="inner_banner_wrapper">
+            @include('layouts.front.partials.breadcrumbs', [
+                'pagename' => $pagename,
+                'breadcrumbs' => $breadcrumbs,
+            ])
+        </div>
+        </div>
+    </section>
+    {{-- inner-banner Ends Here --}}
     {{-- list sec starts here --}}
     <section class="list-sec">
         <div class="container">
@@ -170,6 +185,23 @@
         </div>
     </section>
     {{-- card ends here --}}
+    <!-- Video Start Here -->
+    <section class="about-video">
+        <div class="container-fluid px-0">
+            <div class="video-player">
+                <figure class="position-relative mb-0">
+                    <img src="{{ frontImage('video-bg.jpg') }}" alt="video-bg" class="img-fluid">
+                    <div
+                        class="custom-controls position-absolute top-0 bottom-0 d-flex align-items-center justify-content-center w-100">
+                        <a href="#" class="video_btn d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-play"></i>
+                        </a>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <!-- Video End Here -->
     {{-- assembly-section Starts Here  --}}
     <section class="assembly-section section">
         <div class="container">
@@ -229,7 +261,8 @@
                 <div class="col-lg-6">
                     <div class="assembly-img-wrapper">
                         <figure class="mb-0">
-                            <img src="{{ frontImage('assembly-img.jpeg') }}" alt="" class="img-fluid assembly_img">
+                            <img src="{{ frontImage('assembly-img.jpeg') }}" alt=""
+                                class="img-fluid assembly_img">
                         </figure>
                     </div>
                 </div>
@@ -237,4 +270,41 @@
         </div>
     </section>
     {{-- assembly-section Ends Here  --}}
+    {{-- Achievements starts here --}}
+    {{-- <section class="achievements-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="achievements-text-wrapper">
+                        <h5>Achievements</h5>
+                        <h3>
+                            Showcasing Author's
+                            Achievements
+                        </h3>
+                    </div>
+                    <div class="achievement-img-wrapper">
+                        <figure>
+                            <img src="{{ frontImage('achievement-img.webp') }}" class="img-fluid" alt="">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="cta-btns-wrapper">
+                        <div class="cta-wrapper">
+                            <div class="cta-year-wrapper">
+                                <h3>2024</h3>
+                            </div>
+                            <div class="cta-name-wrapper">
+                                <h4>Lorem Ipsum</h4>
+                            </div>
+                            <div class="cta-button-wrapper">
+                                <i class="fa-solid fa-location-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+    {{-- Achievements ends here --}}
 @endsection

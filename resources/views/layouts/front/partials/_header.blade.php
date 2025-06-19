@@ -58,6 +58,9 @@
                                 <a href="{{ route('home') }}" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
+                                <a href="{{ route('about') }}" class="nav-link">about the Book</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="#" class="nav-link">about the author</a>
                             </li>
                             <li class="nav-item">
