@@ -29,3 +29,11 @@ Route::get('/about-author', function () {
 Route::get('/about', function () {
     return view('front.about.aboutbook');
 })->name('about');
+
+Route::get('/blogs', function () {
+    return view('front.blogs.blogs');
+})->name('blogs');
+
+Route::get('/contact', function () {
+    return view('front.contact.contact');
+})->name('contact');

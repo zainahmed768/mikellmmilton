@@ -1776,7 +1776,8 @@ footer .footer-links-wrapper ul {
 /* about-book Css  */
 
 .inner-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)), url(../images/inner-banner.jpeg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+        url(../images/inner-banner.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1784,7 +1785,6 @@ footer .footer-links-wrapper ul {
     height: 500px;
     background-color: var(--bs-black);
 }
-
 
 .inner_banner_heading {
     font-size: 90px;
@@ -1821,3 +1821,85 @@ footer .footer-links-wrapper ul {
     bottom: 20px;
     right: 30rem;
 }
+
+/* blog-page Css  */
+.blogsdetail_wrapper {
+    padding: 32px 32px;
+    border: 1px solid #dfe1e5;
+}
+
+.blogsdetail_wrapper .blog_btn_wrapper i {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bs-link-color);
+    border-radius: 50%;
+    color: #000;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.blog_btn {
+    font-size: 16px;
+    font-family: "Albert Sans";
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.form-control-1 {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 15px 20px;
+    font-size: 16px;
+    resize: none;
+}
+.form-control:focus,
+.form-control:focus-visible {
+    box-shadow: none;
+    outline: none;
+    border-color: #ececec;
+}
+
+.form-control::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+.blogs_side_wrapper {
+    background: #eef3ec;
+    padding: 45px;
+}
+
+.search_btn {
+    background: var(--bs-link-color);
+    color: var(--bs-body-bg);
+    border-radius: 0px 4px 4px 0px;
+    width: 60px;
+    height: 50px;
+    border: 0;
+}
+
+.blogs_post_wrap .blogs_img {
+    flex: 0 0 40%;
+}
+
+.blogs_post_wrap .blogs_img figure img.img-fluid {
+    min-height: 160px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.blog_content .blog_name {
+    font-size: 18px;
+    color: #363636;
+    font-family: "Albert Sans";
+}
+.book_btn {
+    background: var(--bs-body-bg);
+}
+.book_btn:hover {
+    background: #f16319;
+    color: var(--bs-body-bg);
+}
+/* blog-page Css  */
