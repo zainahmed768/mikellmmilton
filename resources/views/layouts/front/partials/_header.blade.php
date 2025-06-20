@@ -3,7 +3,7 @@
         <div class="row ">
             <div class="col-lg-2 pe-lg-0">
                 <div class="logo-wrapper">
-                    <a href="#">
+                    <a href="{{ route('home') }}">
                         <img src={{ frontImage('logo.png') }} class="img-fluid" alt="">
                     </a>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="header-link-wrapper d-flex align-items-center justify-content-between">
                         <ul class="header-list list-unstyled d-flex gap-5 mb-0 ps-4">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Home</a>
+                                <a href="{{ route('home') }}" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('about') }}" class="nav-link">about the Book</a>
@@ -152,3 +152,104 @@
         </div>
     </ul>
 </header>
+
+{{-- cart_sidebar Starts Here --}}
+<div class="cart_sidebar">
+    <div class="sidebar_header">
+        <div class="d-flex align-items-center justify-content-center gap-1">
+            <div class="cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span></span>
+            </div>
+            <div class="cart_hading">
+                <h5 class="mb-0">Your Cart</h5>
+            </div>
+            <div class="sidebar_close cart_close">
+                <button class="btn"
+                    onclick='$(".cart_sidebar").toggleClass("active");$("body").toggleClass("overflow-hidden")'>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="cart_detail_main">
+        <div class="cart_detail d-flex align-items-center justify-content-between">
+            <div class="cart_img">
+                <figure>
+                    <img src="http://localhost/mikellmmilton/public/assets/front/images/cart-img.png" alt=""
+                        class="img-fluid">
+                </figure>
+            </div>
+            <div class="cart_desc">
+                <a href="#" class="blog_name text-decoration-none">The Dope Breakthrough
+                    <br> – Ebook</a>
+                <p class="blog_name d-flex align-items-center gap-2"><span>4
+                        X
+                        $89.00
+                    </span>
+                    <span> =
+                        $356.00</span>
+                </p>
+            </div>
+            <div class="cart_del">
+                <button class="bg-transparent border-0"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+        <div class="cart_detail d-flex align-items-center justify-content-between">
+            <div class="cart_img">
+                <figure>
+                    <img src="http://localhost/mikellmmilton/public/assets/front/images/cart-img.png" alt=""
+                        class="img-fluid">
+                </figure>
+            </div>
+            <div class="cart_desc">
+                <a href="#" class="blog_name text-decoration-none">The Dope Breakthrough
+                    <br> – Ebook</a>
+                <p class="blog_name d-flex align-items-center gap-2"><span>4
+                        X
+                        $89.00
+                    </span>
+                    <span> =
+                        $356.00</span>
+                </p>
+            </div>
+            <div class="cart_del">
+                <button class="bg-transparent border-0"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+        <div class="cart_detail d-flex align-items-center justify-content-between">
+            <div class="cart_img">
+                <figure>
+                    <img src="http://localhost/mikellmmilton/public/assets/front/images/cart-img.png" alt=""
+                        class="img-fluid">
+                </figure>
+            </div>
+            <div class="cart_desc">
+                <a href="#" class="blog_name text-decoration-none">The Dope Breakthrough
+                    <br> – Ebook</a>
+                <p class="blog_name d-flex align-items-center gap-2"><span>4
+                        X
+                        $89.00
+                    </span>
+                    <span> =
+                        $356.00</span>
+                </p>
+            </div>
+            <div class="cart_del">
+                <button class="bg-transparent border-0"><i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar_footer text-center">
+        <p class="side_total"><span>Subtotal:</span> <span>$752.00</span></p>
+        <p class="blog_name">Shipping, taxes, and discounts calculated at checkout.
+        </p>
+        <div class="cart_btn_main d-flex flex-column gap-2">
+            <a href="{{ route('cart') }}" class="btn cart-btn">View Cart</a>
+            <a href="{{ route('shop') }}" class="btn cart-btn">Continue Shopping</a>
+            <a href="#" class="btn cart-btn">Checkout - 752.00</a>
+        </div>
+    </div>
+</div>
+{{-- cart_sidebar Ends Here  --}}

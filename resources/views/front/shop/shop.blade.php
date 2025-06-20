@@ -59,9 +59,10 @@
                                 – Audiobook</h5>
                             <h6 class="text-primary">$99.00</h6>
                             <div class="shop_cart availabel-btn-wrapper">
-                                <a href="#" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary"
+                                    onclick='$(".cart_sidebar").toggleClass("active");$("body").toggleClass("overflow-hidden")'>
                                     <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -78,9 +79,10 @@
                                 – Audiobook</h5>
                             <h6 class="text-primary">$99.00</h6>
                             <div class="shop_cart availabel-btn-wrapper">
-                                <a href="#" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary"
+                                    onclick='$(".cart_sidebar").toggleClass("active");$("body").toggleClass("overflow-hidden")'>
                                     <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -97,9 +99,10 @@
                                 – Audiobook</h5>
                             <h6 class="text-primary">$99.00</h6>
                             <div class="shop_cart availabel-btn-wrapper">
-                                <a href="#" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary"
+                                    onclick='$(".cart_sidebar").toggleClass("active");$("body").toggleClass("overflow-hidden")'>
                                     <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -116,9 +119,10 @@
                                 – Audiobook</h5>
                             <h6 class="text-primary">$99.00</h6>
                             <div class="shop_cart availabel-btn-wrapper">
-                                <a href="#" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary"
+                                    onclick='$(".cart_sidebar").toggleClass("active");$("body").toggleClass("overflow-hidden")'>
                                     <i class="fa-solid fa-bag-shopping"></i> Add to Cart
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>

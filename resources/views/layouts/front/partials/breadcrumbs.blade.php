@@ -1,6 +1,6 @@
 <div class="breadcrumb_wrapper w-100 position-relative">
     <div class="container">
-        <div class="page-heading-here d-sm-flex flex-column justify-content-end gap-5">
+        <div class="page-heading-here d-sm-flex flex-column justify-content-end">
             <h1 class="inner_banner_heading">{{ $pagename ?? '' }}</h1>
             <div style="--bs-breadcrumb-divider: url('{{ frontImage('icon.svg') }}');" aria-label="breadcrumb">
                 <div class="breadcrumb_arrow position-absolute">

@@ -131,7 +131,7 @@ gsap.timeline({
         start: "top 30%",
         end: "bottom 60%",
         toggleActions: "play reverse play reverse",
-        markers: true,
+        markers: false,
     },
 }).to(".footer-email-link-wrapper", {
     scale: 1,
@@ -445,7 +445,6 @@ if (container) {
     }
 }
 
-
 console.clear();
 
 // Slides Text ScrollTrigger
@@ -542,7 +541,7 @@ const tl_test = gsap.timeline({
         scrub: true,
         pin: true,
         // pinSpacing: false,
-        markers: true,
+        markers: false,
     },
 });
 
@@ -957,12 +956,20 @@ window.addEventListener("scroll", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    luxy.init({
-        wrapper: "#luxy",
-        wrapperSpeed: 0.08,
-        targetSpeed: 0.02,
-        smooth: true,
-        native: false,
-    });
+// document.addEventListener("DOMContentLoaded", function () {
+//     luxy.init({
+//         wrapper: "#luxy",
+//         wrapperSpeed: 0.08,
+//         targetSpeed: 0.02,
+//         smooth: true,
+//         native: false,
+//     });
+// });
+
+$(".toggler-btn").click(function () {
+    $(this).next(".cart_input_wrap").toggleClass("d-none");
+
+    // Toggle arrow icon
+    let icon = $(this).find("i.fa-solid");
+    icon.toggleClass("fa-angle-down fa-angle-up");
 });

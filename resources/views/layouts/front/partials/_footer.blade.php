@@ -5,14 +5,14 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="footer-logo-wrapper">
-                            <a href="#">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ frontImage('logo.png') }}" alt="">
                             </a>
                         </div>
                         <div class="footer-links-wrapper">
                             <ul class="list-unstyled">
                                 <li class="footer-link">
-                                    <a href="#">home</a>
+                                    <a href="{{ route('home') }}">home</a>
                                 </li>
                                 <li class="footer-link">
                                     <a href="#">
@@ -20,13 +20,13 @@
                                     </a>
                                 </li>
                                 <li class="footer-link">
-                                    <a href="#">about the book </a>
+                                    <a href="{{ route('about') }}">about the book </a>
                                 </li>
                                 <li class="footer-link">
-                                    <a href="#">blogs</a>
+                                    <a href="{{ route('blogs') }}">blogs</a>
                                 </li>
                                 <li class="footer-link">
-                                    <a href="#">contact us</a>
+                                    <a href="{{ route('contact') }}">contact us</a>
                                 </li>
                                 <li class="footer-link">
                                     <a href="{{ route('privacy') }}">Privacy Policy</a>
