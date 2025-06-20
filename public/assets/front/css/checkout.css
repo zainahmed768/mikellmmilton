@@ -1,0 +1,160 @@
+.checkout {
+    padding: 100px 0px;
+}
+.checkout .floating-label-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.checkout .floating-label-group input {
+    width: 100%;
+    padding: 1rem 0.75rem 0.25rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.checkout .floating-label-group label {
+    position: absolute;
+    top: 1rem;
+    left: 0.75rem;
+    color: #777;
+    font-size: 1rem;
+    background-color: white;
+    padding: 0 0.25rem;
+    transition: 0.2s ease all;
+    pointer-events: none;
+}
+
+.checkout .floating-label-group input:focus + label,
+.checkout .floating-label-group input:not(:placeholder-shown):valid + label {
+    top: -0.5rem;
+    left: 0.6rem;
+    font-size: 0.8rem;
+    color: #007bff;
+}
+.checkout-form-wrapper input.form-control {
+    appearance: none;
+    background: none;
+    border: 1px solid hsla(0, 0%, 7%, 0.8);
+    border-radius: 4px;
+    color: #2b2d2f;
+    font-family: inherit;
+    font-size: inherit;
+    font-size: 1em;
+    font-style: inherit;
+    font-weight: inherit;
+    height: 100%;
+    letter-spacing: inherit;
+    line-height: inherit;
+    padding: 1em 0.5em 0;
+    text-decoration: inherit;
+    text-transform: inherit;
+    width: 100%;
+}
+
+.checkout-form-wrapper .contact-input-wrapper label {
+    color: hsla(0, 0%, 7%, 0.7);
+    cursor: text;
+    font-family: inherit;
+    font-size: 1.2em;
+    font-style: inherit;
+    line-height: 1.5;
+}
+.contact-heading-wrapper h5 {
+    font-size: 22px;
+    font-weight: 600;
+}
+.payment-options-wrapper textarea#orderNote {
+    background-color: #fff;
+    border: 1px solid hsla(0, 0%, 7%, 0.8);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #2b2d2f;
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 1.375;
+    margin: 0;
+    padding: 0.75em 16px;
+    width: 100%;
+}
+.payment-options-wrapper textarea#orderNote::placeholder {
+    color: #2b2d2f;
+}
+.checkout-form-wrapper .proceding-wrapper {
+    border-top: 1px solid hsla(0, 0%, 7%, 0.11);
+    padding-top: 40px;
+    margin-top: 40px;
+}
+
+.order-wrapper {
+    border: 1px solid hsla(0, 0%, 7%, 0.11);
+    border-radius: 8px;
+}
+
+.order-wrapper .order-summary-wrapper h6 {
+    font-weight: 500;
+    padding: 16px;
+    font-size: 20px;
+    font-family: "DM Sans";
+}
+.order-products-wrapper .order-product-wrapper {
+    padding: 16px;
+}
+.order-products-wrapper .order-product-wrapper .order-img-wrapper {
+    flex: 0 0 20%;
+}
+.order-products-wrapper .order-product-wrapper .order-txt-wrapper {
+    flex: 0 0 60%;
+}
+.order-products-wrapper .order-product-wrapper .order-price-wrapper {
+    flex: 0 0 20%;
+}
+.order-wrapper .order-coupon-wrapper {
+    padding: 16px;
+    border-top: 1px solid hsla(0, 0%, 7%, 0.11);
+}
+.order-coupon-heading-wrapper h6 {
+    font-size: 18px;
+    font-family: "Albert Sans";
+}
+.order-coupon-wrapper .order-field-coupon-wrapper input {
+    border: 1px solid #2b2d2f;
+    border-radius: 6px;
+    color: #2b2d2f;
+}
+.order-coupon-wrapper .order-field-coupon-wrapper button {
+    color: #fff;
+}
+.subtotal-wrapper {
+    padding: 16px;
+    border-top: 1px solid hsla(0, 0%, 7%, 0.11);
+    border-bottom: 1px solid hsla(0, 0%, 7%, 0.11);
+}
+.subtotal-wrapper h6 {
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-family: "Albert Sans";
+    font-weight: 400;
+}
+.subtotal-wrapper h5 {
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-family: "Albert Sans";
+    font-weight: 600;
+}
+.total-wrapper {
+    padding: 16px;
+}
+.total-wrapper h3 {
+    font-weight: 700;
+    font-size: 22px;
+    font-family: "Albert Sans";
+    margin-bottom: 0px;
+}
+.checkout-btn-wrapper button {
+    padding: 21px 77px;
+    border-radius: 34px;
+    color: #fff;
+}

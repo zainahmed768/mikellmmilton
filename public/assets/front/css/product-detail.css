@@ -1,0 +1,161 @@
+.product-detail {
+    padding: 100px 0px;
+}
+.product-detail .product-text-wrapper h3 {
+    font-size: 36px;
+    font-family: "Albert Sans";
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.product-detail .product-text-wrapper h6 {
+    color: #ffbe00;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.product-detail .product-text-wrapper p {
+    color: #0e191e;
+    font-size: 17px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+.product-detail
+    .product-text-wrapper
+    .product-counter-btn-wrapper
+    .product-counter-wrapper {
+    width: 120px;
+    border: 1px solid var(--color-border);
+    background-color: #f4f3f6;
+    padding: 9px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 27px;
+}
+.product-detail
+    .product-text-wrapper
+    .product-counter-btn-wrapper
+    .product-counter-wrapper
+    input[type="number"] {
+    width: 38px;
+    background: transparent;
+    border: 0px;
+}
+.product-detail
+    .product-text-wrapper
+    .product-counter-btn-wrapper
+    .product-counter-wrapper
+    button {
+    background: transparent;
+    border: 0px;
+}
+.product-text-wrapper .product-cart-btn-wrapper button.btn-primary {
+    color: #fff;
+    padding: 8px 21px;
+    border-radius: 31px;
+}
+.product-detail-list-wrapper p {
+    margin-bottom: 10px !important;
+}
+.product-detail-list-wrapper p a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    color: #4a4c51;
+}
+.product-detail .nav-tabs {
+    border-bottom: none;
+}
+.product-detail .nav-tabs .nav-link {
+    border: none;
+    border-radius: 30px;
+    background: transparent;
+    color: #333;
+    margin-right: 10px;
+    padding: 16px 38px;
+    font-family: "Albert Sans";
+    border: 1px solid #f2f2f2;
+    font-weight: 400 !important;
+    font-size: 14px;
+}
+.product-detail .nav-tabs .nav-link.active {
+    background-color: #ffbe00;
+    color: #fff;
+    font-weight: bold;
+}
+.product-detail .tab-content {
+    padding-top: 30px;
+}
+.product-detail .tab-content h2 {
+    font-size: 36px;
+    font-family: "Albert Sans";
+    font-weight: 400;
+}
+.product-detail .tab-content .description-txt-wrapper p {
+    font-size: 18px;
+    font-family: "Albert Sans";
+    color: #0e191e;
+}
+.review-form-wrapper .star-rating {
+    /* border: solid 1px #ccc; */
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 1.5em;
+    justify-content: space-around;
+    padding: 0 0.2em;
+    text-align: center;
+    width: 5em;
+}
+.review-form-wrapper .star-rating input {
+    display: none;
+}
+.review-form-wrapper .star-rating label {
+    color: #ccc;
+    cursor: pointer;
+}
+.review-form-wrapper .star-rating :checked ~ label {
+    color: #f90;
+}
+.review-form-wrapper .star-rating label:hover,
+.review-form-wrapper .star-rating label:hover ~ label {
+    color: #fc0;
+}
+.review-wrapper {
+    background: rgba(14, 25, 30, 0.04);
+    border-radius: 10px;
+    padding: 45px 40px;
+}
+.review-wrapper .review-form-wrapper {
+    color: #0e191e;
+    font-size: 18px;
+    font-family: "Albert Sans";
+}
+.review-wrapper .review-form-wrapper label {
+    margin-bottom: 20px;
+}
+.review-wrapper .review-form-wrapper input {
+    height: 62px;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    background: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    color: #504e4e;
+}
+.review-wrapper .review-form-wrapper textarea {
+    outline: none;
+    border: none;
+    background: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    color: #504e4e;
+}
+/* related starts here */
+.availabel-sec.product-related {
+    padding-top: 0px;
+}
+.availabel-sec.product-related .availabel-heading-wrapper h5 {
+    font-weight: 400 !important;
+    font-size: 36px !important;
+}
+/* related ends here */

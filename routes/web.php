@@ -37,3 +37,11 @@ Route::get('/blogs', function () {
 Route::get('/contact', function () {
     return view('front.contact.contact');
 })->name('contact');
+
+Route::get('/product-detail', function () {
+    return view('front.product.productDetail');
+})->name('product-detail');
+
+Route::get('/checkout', function () {
+    return view('front.checkout.checkout');
+})->name('checkout');

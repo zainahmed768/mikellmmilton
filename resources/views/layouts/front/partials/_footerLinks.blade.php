@@ -6,6 +6,8 @@
 
 <!-- jQuery and Bootstrap -->
 <script src="{!! frontJs('jquery.min.js') !!}"></script>
+
+<script src="{!! frontJs('jquery.exzoom.js') !!}"></script>
 <script src="{!! frontJs('bootstrap.min.js') !!}"></script>
 
 <!-- Luxy.js for smooth scroll -->
@@ -15,7 +17,34 @@
 
 <!-- Your custom scripts -->
 <script src="{!! frontJs('scripts.js') !!}"></script>
+<script>
+    const checkbox = document.getElementById('addNoteCheck');
+    const noteBox = document.getElementById('noteBox');
 
+    checkbox.addEventListener('change', function() {
+        noteBox.classList.toggle('d-none', !this.checked);
+    });
+    $(function() {
+
+        $("#exzoom").exzoom({
+
+            // thumbnail nav options
+            "navWidth": 60,
+            "navHeight": 60,
+            "navItemNum": 5,
+            "navItemMargin": 7,
+            "navBorder": 1,
+
+            // autoplay
+            "autoPlay": true,
+
+            // autoplay interval in milliseconds
+            "autoPlayTimeout": 2000
+
+        });
+
+    });
+</script>
 <!-- Initialize luxy -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {

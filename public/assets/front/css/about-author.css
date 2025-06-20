@@ -43,3 +43,87 @@
     font-size: 18px;
 }
 /* stats sec ends here */
+/* achievement starts here */
+.achievements-sec {
+    padding: 100px 0px;
+    background-color: rgb(245, 245, 245);
+}
+.achievements-text-wrapper h5 {
+    font-size: 16px;
+    font-weight: 400;
+}
+.achievements-text-wrapper h3 {
+    font-weight: 600;
+    font-family: "Albert Sans";
+    font-size: 52px;
+}
+.cta-wrapper a.cta-links-wrapper {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid rgba(6, 6, 6, 0.2);
+    padding: 18px 28px;
+    gap: 32px;
+    margin: 20px 0px;
+    /* background-color: #fff; */
+    transition: 0.4s cubic-bezier(0.1, 0.75, 0.25, 1);
+}
+.cta-wrapper a.cta-links-wrapper:hover {
+    background-color: #060606;
+}
+.cta-wrapper a.cta-links-wrapper .cta-year-wrapper {
+    flex: 0 0 14%;
+}
+.cta-wrapper a.cta-links-wrapper .cta-name-wrapper {
+    flex: 0 0 60%;
+}
+.cta-wrapper a.cta-links-wrapper .cta-button-wrapper {
+    flex: 0 0 10%;
+}
+.cta-wrapper a.cta-links-wrapper:hover .cta-year-wrapper h3 {
+    color: #fff;
+    opacity: 1;
+}
+.cta-wrapper a.cta-links-wrapper .cta-year-wrapper h3 {
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 800;
+    opacity: 8%;
+    color: #060606;
+    margin-bottom: 0px;
+}
+.cta-wrapper a.cta-links-wrapper .cta-name-wrapper h4 {
+    line-height: 1.076;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+    color: #060606;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+.cta-wrapper a.cta-links-wrapper:hover .cta-name-wrapper h4 {
+    color: #fff;
+}
+.cta-wrapper a.cta-links-wrapper .cta-button-wrapper {
+    margin-left: auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #363636;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #363636;
+    font-size: 18px;
+    opacity: 72%;
+    /* transform: rotate(-45deg); */
+    transition: 0.4s cubic-bezier(0.1, 0.75, 0.25, 1);
+    flex: 0 0 auto;
+}
+.cta-wrapper a.cta-links-wrapper:hover .cta-button-wrapper {
+    color: #fff;
+    opacity: 1;
+    border: 1px solid #fff;
+}
+/* achievemnet ends here */

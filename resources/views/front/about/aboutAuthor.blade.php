@@ -271,7 +271,7 @@
     </section>
     {{-- assembly-section Ends Here  --}}
     {{-- Achievements starts here --}}
-    {{-- <section class="achievements-sec">
+    <section class="achievements-sec">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
@@ -291,20 +291,88 @@
                 <div class="col-lg-7">
                     <div class="cta-btns-wrapper">
                         <div class="cta-wrapper">
-                            <div class="cta-year-wrapper">
-                                <h3>2024</h3>
-                            </div>
-                            <div class="cta-name-wrapper">
-                                <h4>Lorem Ipsum</h4>
-                            </div>
-                            <div class="cta-button-wrapper">
-                                <i class="fa-solid fa-location-arrow"></i>
-                            </div>
+                            <a href="#" class="cta-links-wrapper">
+                                <div class="cta-year-wrapper">
+                                    <h3>2024</h3>
+                                </div>
+                                <div class="cta-name-wrapper">
+                                    <h4>Lorem Ipsum</h4>
+                                </div>
+                                <div class="cta-button-wrapper">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="cta-links-wrapper">
+                                <div class="cta-year-wrapper">
+                                    <h3>2024</h3>
+                                </div>
+                                <div class="cta-name-wrapper">
+                                    <h4>Lorem Ipsum</h4>
+                                </div>
+                                <div class="cta-button-wrapper">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="cta-links-wrapper">
+                                <div class="cta-year-wrapper">
+                                    <h3>2024</h3>
+                                </div>
+                                <div class="cta-name-wrapper">
+                                    <h4>Lorem Ipsum</h4>
+                                </div>
+                                <div class="cta-button-wrapper">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="cta-links-wrapper">
+                                <div class="cta-year-wrapper">
+                                    <h3>2024</h3>
+                                </div>
+                                <div class="cta-name-wrapper">
+                                    <h4>Lorem Ipsum</h4>
+                                </div>
+                                <div class="cta-button-wrapper">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="cta-links-wrapper">
+                                <div class="cta-year-wrapper">
+                                    <h3>2024</h3>
+                                </div>
+                                <div class="cta-name-wrapper">
+                                    <h4>Lorem Ipsum</h4>
+                                </div>
+                                <div class="cta-button-wrapper">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="cta-links-wrapper">
+                                <div class="cta-year-wrapper">
+                                    <h3>2024</h3>
+                                </div>
+                                <div class="cta-name-wrapper">
+                                    <h4>Lorem Ipsum</h4>
+                                </div>
+                                <div class="cta-button-wrapper">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="cta-links-wrapper">
+                                <div class="cta-year-wrapper">
+                                    <h3>2024</h3>
+                                </div>
+                                <div class="cta-name-wrapper">
+                                    <h4>Lorem Ipsum</h4>
+                                </div>
+                                <div class="cta-button-wrapper">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     {{-- Achievements ends here --}}
 @endsection
