@@ -1030,7 +1030,7 @@ $breadcrumb = true;
                 </div>
                 <div class="spacer"></div>
             </div> --}}
-            <div class="book_animate_wrapper">
+            {{-- <div class="book_animate_wrapper">
                 <div class="stacked-card">
                     <ul class="cards">
                         <li class="card">
@@ -1105,7 +1105,7 @@ $breadcrumb = true;
                                 </div>
                             </div>
                         </li>
-                           <li class="card">
+                        <li class="card">
                             <div class="slide_box">
                                 <div class="slide_box_wrap">
                                     <div class="img_box">
@@ -1129,6 +1129,190 @@ $breadcrumb = true;
                                 </div>
                             </div>
                         </li>
+                    </ul>
+                </div>
+            </div> --}}
+            <div class="book_animate_wrapper">
+                <div class="stacked-card js-stacking-cards">
+                    <ul class="stacking-cards__list cards">
+                        <li class="stacking-cards__item card">
+                            <div class="slide_box">
+                                <div class="slide_box_wrap">
+                                    <div class="img_box">
+                                        <figure><img src="{{ frontImage('book-img1.jpg') }}" alt="slide_image"
+                                                class="img-fluid">
+                                        </figure>
+                                    </div>
+                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="stacking-cards__item card">
+                            <div class="slide_box">
+                                <div class="slide_box_wrap">
+                                    <div class="img_box">
+                                        <figure><img src="{{ frontImage('book-img2.jpg') }}" alt="slide_image"
+                                                class="img-fluid">
+                                        </figure>
+                                    </div>
+                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="stacking-cards__item card">
+                            <div class="slide_box">
+                                <div class="slide_box_wrap">
+                                    <div class="img_box">
+                                        <figure><img src="{{ frontImage('book-img3.jpg') }}" alt="slide_image"
+                                                class="img-fluid">
+                                        </figure>
+                                    </div>
+                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="stacking-cards__item card">
+                            <div class="slide_box">
+                                <div class="slide_box_wrap">
+                                    <div class="img_box">
+                                        <figure><img src="{{ frontImage('book-img1.jpg') }}" alt="slide_image"
+                                                class="img-fluid">
+                                        </figure>
+                                    </div>
+                                    <div class="content_wrapper d-flex align-items-center justify-content-between">
+                                        <h4 class="title" style="flex: 0 0 60%">Book Name here</h4>
+                                        <div class="right_box d-flex justify-content-between" style="flex: 0 0 40%">
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                            <div class="role">
+                                                <h5 class="property">role:</h5>
+                                                <h5 class="value">Architecture design</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f5f5f5;
+        }
+
+        .book-section {
+            padding: 100px 20px;
+        }
+
+        .book_top_heading {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bottom_wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .book_animate_wrapper {
+            min-height: 100vh;
+        }
+
+        .stacking-cards__list {
+            position: relative;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .stacking-cards__item {
+            position: sticky;
+            top: 20vh;
+            margin: 0 auto 2rem;
+            width: 90%;
+            max-width: 500px;
+            height: 300px;
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            z-index: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .stacking-cards__item--stacked {
+            transform: scale(0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            z-index: 0;
+        }
+    </style>
+    <section class="book-section section position-relative">
+        <div class="container">
+            <div class="book_top_heading text-uppercase">
+                <h2 class="center_text">recent</h2>
+                  <div class="bottom_wrapper">
+                    <h2 class="left_text">book</h2>
+                    <h2 class="right_text">work</h2>
+                </div>
+            </div>
+
+            <div class="book_animate_wrapper">
+                <div class="stacked-card js-stacking-cards">
+                    <ul class="stacking-cards__list">
+                        <li class="stacking-cards__item">Card 1</li>
+                        <li class="stacking-cards__item">Card 2</li>
+                        <li class="stacking-cards__item">Card 3</li>
+                        <li class="stacking-cards__item">Card 4</li>
                     </ul>
                 </div>
             </div>

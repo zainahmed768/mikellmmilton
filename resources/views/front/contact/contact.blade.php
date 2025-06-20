@@ -29,7 +29,8 @@
                 </div>
                 <div class="col-md-6 ps-lg-5">
                     <div class="contact_form_wrapper">
-                        <h6> <img src="{{frontImage('star-shape.webp')}}" alt="" class="img-fluid"> Contact us</h6>
+                        <h6> <img src="{{ frontImage('star-shape.webp') }}" alt="" class="img-fluid"> Contact us
+                        </h6>
                         <div class="text-container">
                             <h2 class="reveal-text target-heading" data-text="Get in touch with us!"></h2>
                         </div>
@@ -55,7 +56,9 @@
                                     placeholder="write your message here"></textarea>
                             </div>
                             <div class="form-btn">
-                                <button type="submit" class="btn">Submit Now</button>
+                                <button type="submit" class="btn contact_btn">Submit Now <i
+                                        class="fa-solid fa-arrow-right-long"></i> <span class="shape"></span>
+                                </button>
                             </div>
                         </form>
                     </div>

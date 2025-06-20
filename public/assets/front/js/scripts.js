@@ -131,7 +131,7 @@ gsap.timeline({
         start: "top 30%",
         end: "bottom 60%",
         toggleActions: "play reverse play reverse",
-        markers: true,
+        markers: false,
     },
 }).to(".footer-email-link-wrapper", {
     scale: 1,
@@ -445,10 +445,140 @@ if (container) {
     }
 }
 
-
-console.clear();
+// console.clear();
 
 // Slides Text ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".book-section", // 👈 the section you want to watch
+        start: "top center", // when top of section hits center of viewport
+        end: "bottom center", // optional: when animation ends
+        scrub: 1, // smooth scroll animation
+        // markers: true,            // uncomment to debug visually
+    },
+    defaults: { duration: 1, ease: "power2.out" },
+});
+
+tl.to(".center_text", { scale: 0.5, y: -100 }) // moved upward (not down)
+    .to(".left_text", { x: -700 }, 0)
+    .to(".right_text", { x: 700 }, 0);
+
+
+
+// gsap.from(".stacked-card", { y: -100 });
+
+// const scaleMax = gsap.utils.mapRange(
+//     1,
+//     document.querySelectorAll(".card").length - 1,
+//     0.8,
+//     1
+// );
+// const time = 1;
+
+// gsap.set(".card", {
+//     y: (index) => 1 * index, // set offset
+//     transformStyle: "preserve-3d", // For the perspecitve effect
+//     // transformPerspective: 1000, // For the perspecitve effect
+//     transformOrigin: "center top",
+// });
+
+// //--------------------------------//
+// // The animation
+// //--------------------------------//
+// const tl_test = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".stacked-card",
+//         start: "top 10%",
+//         end: `${window.innerHeight * 5} top`,
+//         scrub: true,
+//         pin: true,
+//         // pinSpacing: false,
+//         markers: true,
+//     },
+// });
+
+// // Animte cards up from off screen one by one.
+// tl_test.from(".stacked-card .card", {
+//     y: () => window.innerHeight,
+//     scale: 0.5,
+//     duration: time / 1,
+//     stagger: time,
+// });
+
+// //
+// tl_test.to(
+//     ".stacked-card .card:not(:last-child)",
+//     {
+//         rotationX: -20,
+//         scale: (index) => scaleMax(index), // dynamlicly get scale based on the index of the current card
+//         stagger: {
+//             each: time,
+//         },
+//     },
+//     time // Start tween when the first cards has done animating
+// );
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const tl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".book-section",
+//         start: "top center",
+//         end: "bottom center",
+//         scrub: 1,
+//         markers: true,
+//     },
+//     defaults: { duration: 1, ease: "power2.out" },
+// });
+
+// tl.to(".center_text", { scale: 0.5, y: -100 })
+//     .to(".left_text", { x: -700 }, 0)
+//     .to(".right_text", { x: 700 }, 0);
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// // MAIN timeline
+// const tlMain = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".book-section",
+//         start: "top top",
+//         end: "+=1000", // Adjust based on your needs
+//         scrub: true,
+//         pin: true,
+//         markers: true,
+//     },
+// });
+
+// // 1. Animate heading texts
+// tlMain
+//     .to(".center_text", { scale: 0.5, y: -100, duration: 1 })
+//     .to(".left_text", { x: -700, duration: 1 }, "<")
+//     .to(".right_text", { x: 700, duration: 1 }, "<");
+
+// // 2. Stacked card animation (starts after previous animation)
+// const cards = gsap.utils.toArray(".stacked-card .card");
+
+// // Set initial states
+// cards.forEach((card, i) => {
+//     gsap.set(card, {
+//         y: i * 30,
+//         opacity: i === 0 ? 1 : 0,
+//         zIndex: cards.length - i,
+//     });
+// });
+
+// // Add stacked animation in timeline
+// cards.forEach((card, i) => {
+//     if (i === 0) return; // skip first card
+//     tlMain
+//         .to(cards[i - 1], { y: -100, opacity: 0, duration: 0.5 }, "+=0.5")
+//         .to(card, { opacity: 1, y: 0, duration: 0.5 }, "<");
+// });
+
+// tlMain.to(".blog-section", { y: -500, duration: 1 });
+
 // gsap.registerPlugin(ScrollTrigger);
 
 // const cards = gsap.utils.toArray(".slide_box");
@@ -499,73 +629,73 @@ console.clear();
 //     },
 // });
 
-const tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".book-section", // 👈 the section you want to watch
-        start: "top center", // when top of section hits center of viewport
-        end: "bottom center", // optional: when animation ends
-        scrub: 1, // smooth scroll animation
-        // markers: true,            // uncomment to debug visually
-    },
-    defaults: { duration: 1, ease: "power2.out" },
-});
+// const tl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".book-section", // 👈 the section you want to watch
+//         start: "top center", // when top of section hits center of viewport
+//         end: "bottom center", // optional: when animation ends
+//         scrub: 1, // smooth scroll animation
+//         markers: true,            // uncomment to debug visually
+//     },
+//     defaults: { duration: 1, ease: "power2.out" },
+// });
 
-tl.to(".center_text", { scale: 0.5, y: -100 }) // moved upward (not down)
-    .to(".left_text", { x: -700 }, 0)
-    .to(".right_text", { x: 700 }, 0);
+// tl.to(".center_text", { scale: 0.5, y: -100 }) // moved upward (not down)
+//     .to(".left_text", { x: -700 }, 0)
+//     .to(".right_text", { x: 700 }, 0);
 
-gsap.from(".stacked-card", { y: -800 });
+// gsap.from(".stacked-card", { y: -800 });
 
-const scaleMax = gsap.utils.mapRange(
-    1,
-    document.querySelectorAll(".card").length - 1,
-    0.8,
-    1
-);
-const time = 1;
+// const scaleMax = gsap.utils.mapRange(
+//     1,
+//     document.querySelectorAll(".card").length - 1,
+//     0.8,
+//     1
+// );
+// const time = 1;
 
-gsap.set(".card", {
-    y: (index) => 30 * index, // set offset
-    transformStyle: "preserve-3d", // For the perspecitve effect
-    // transformPerspective: 1000, // For the perspecitve effect
-    transformOrigin: "center top",
-});
+// gsap.set(".card", {
+//     y: (index) => 30 * index, // set offset
+//     transformStyle: "preserve-3d", // For the perspecitve effect
+//     // transformPerspective: 1000, // For the perspecitve effect
+//     transformOrigin: "center top",
+// });
 
-//--------------------------------//
-// The animation
-//--------------------------------//
-const tl_test = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".stacked-card",
-        start: "top 0%",
-        end: `${window.innerHeight * 5} top`,
-        scrub: true,
-        pin: true,
-        // pinSpacing: false,
-        markers: true,
-    },
-});
+// //--------------------------------//
+// // The animation
+// //--------------------------------//
+// const tl_test = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".stacked-card",
+//         start: "top 0%",
+//         end: `${window.innerHeight * 5} top`,
+//         scrub: true,
+//         pin: true,
+//         // pinSpacing: false,
+//         markers: false,
+//     },
+// });
 
-// Animte cards up from off screen one by one.
-tl_test.from(".stacked-card .card", {
-    y: () => window.innerHeight,
-    scale: 0.5,
-    duration: time / 1,
-    stagger: time,
-});
+// // Animte cards up from off screen one by one.
+// tl_test.from(".stacked-card .card", {
+//     y: () => window.innerHeight,
+//     scale: 0.5,
+//     duration: time / 1,
+//     stagger: time,
+// });
 
-//
-tl_test.to(
-    ".book-section .card:not(:last-child)",
-    {
-        rotationX: -20,
-        scale: (index) => scaleMax(index), // dynamlicly get scale based on the index of the current card
-        stagger: {
-            each: time,
-        },
-    },
-    time // Start tween when the first cards has done animating
-);
+// //
+// tl_test.to(
+//     ".book-section .card:not(:last-child)",
+//     {
+//         rotationX: -20,
+//         scale: (index) => scaleMax(index), // dynamlicly get scale based on the index of the current card
+//         stagger: {
+//             each: time,
+//         },
+//     },
+//     time // Start tween when the first cards has done animating
+// );
 
 // END The animation --------------//
 
@@ -957,12 +1087,20 @@ window.addEventListener("scroll", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    luxy.init({
-        wrapper: "#luxy",
-        wrapperSpeed: 0.08,
-        targetSpeed: 0.02,
-        smooth: true,
-        native: false,
-    });
+// document.addEventListener("DOMContentLoaded", function () {
+//     luxy.init({
+//         wrapper: "#luxy",
+//         wrapperSpeed: 0.08,
+//         targetSpeed: 0.02,
+//         smooth: true,
+//         native: false,
+//     });
+// });
+
+$(".toggler-btn").click(function () {
+    $(this).next(".cart_input_wrap").toggleClass("d-none");
+
+    // Toggle arrow icon
+    let icon = $(this).find("i.fa-solid");
+    icon.toggleClass("fa-angle-down fa-angle-up");
 });

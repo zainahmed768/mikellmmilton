@@ -18,12 +18,6 @@
 <!-- Your custom scripts -->
 <script src="{!! frontJs('scripts.js') !!}"></script>
 <script>
-    const checkbox = document.getElementById('addNoteCheck');
-    const noteBox = document.getElementById('noteBox');
-
-    checkbox.addEventListener('change', function() {
-        noteBox.classList.toggle('d-none', !this.checked);
-    });
     $(function() {
 
         $("#exzoom").exzoom({
@@ -44,6 +38,29 @@
         });
 
     });
+    document.addEventListener("DOMContentLoaded", function() {
+        const cards = document.querySelectorAll(
+            ".js-stacking-cards .stacking-cards__item"
+        );
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove("stacking-cards__item--stacked");
+                    } else {
+                        entry.target.classList.add("stacking-cards__item--stacked");
+                    }
+                });
+            }, {
+                threshold: 0.5,
+            }
+        );
+
+        cards.forEach((card) => {
+            observer.observe(card);
+        });
+    });
 </script>
 <!-- Initialize luxy -->
 <script>
@@ -57,6 +74,12 @@
             console.error("Luxy.js not loaded");
         }
     });
+    // const checkbox = document.getElementById('addNoteCheck');
+    // const noteBox = document.getElementById('noteBox');
+
+    // checkbox.addEventListener('change', function() {
+    //     noteBox.classList.toggle('d-none', !this.checked);
+    // });
 </script>
 
 <!-- Fancybox -->

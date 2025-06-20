@@ -96,14 +96,14 @@
                                     </svg>
                                     May 26, 2025 </span>
                             </div>
-                            <a href="#" class="blog_heading">Blog Title here</a>
+                            <a href="{{ route('blog-detail') }}" class="blog_heading">Blog Title here</a>
                             <p class="date mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
                                 luctus nec
                                 ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing
                                 eli...
                             </p>
                             <div class="blog_btn_wrapper">
-                                <a href="#" class="btn blog_btn d-flex align-items-center gap-3 p-0">Read More <i>
+                                <a href="{{ route('blog-detail') }}" class="btn blog_btn d-flex align-items-center gap-3 p-0">Read More <i>
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -189,14 +189,14 @@
                                     </svg>
                                     May 26, 2025 </span>
                             </div>
-                            <a href="#" class="blog_heading">Blog Title here</a>
+                            <a href="{{ route('blog-detail') }}" class="blog_heading">Blog Title here</a>
                             <p class="date mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
                                 luctus nec
                                 ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing
                                 eli...
                             </p>
                             <div class="blog_btn_wrapper">
-                                <a href="#" class="btn blog_btn d-flex align-items-center gap-3 p-0">Read More <i>
+                                <a href="{{ route('blog-detail') }}" class="btn blog_btn d-flex align-items-center gap-3 p-0">Read More <i>
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -282,14 +282,14 @@
                                     </svg>
                                     May 26, 2025 </span>
                             </div>
-                            <a href="#" class="blog_heading">Blog Title here</a>
+                            <a href="{{ route('blog-detail') }}" class="blog_heading">Blog Title here</a>
                             <p class="date mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
                                 luctus nec
                                 ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing
                                 eli...
                             </p>
                             <div class="blog_btn_wrapper">
-                                <a href="#" class="btn blog_btn d-flex align-items-center gap-3 p-0">Read More <i>
+                                <a href="{{ route('blog-detail') }}" class="btn blog_btn d-flex align-items-center gap-3 p-0">Read More <i>
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -306,9 +306,9 @@
                         <div class="blogs_seach_wrap">
                             <h4>Search
                             </h4>
-                            <div class="d-flex form-control-1 p-0">
+                            <div class="d-flex form-control-1 w-100 p-0">
                                 <input type="search" name="" id=""
-                                    class="form-control-1 bg-transparent border-0 py-0" placeholder="Search...">
+                                    class="form-control-1 bg-transparent border-0 py-0 w-100" placeholder="Search...">
                                 <button class="search_btn space-nowrap btn-border" type="button"><i
                                         class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
@@ -326,14 +326,14 @@
                                 <div class="blog_content">
                                     <h6 class="item-meta d-flex flex-column gap-2">
                                         <span class="categories">
-                                            <a href="#" class="blog_name text-decoration-none">
+                                            <a href="{{ route('blog-detail') }}" class="blog_name text-decoration-none">
                                                 Mikell M. Milton </a>
                                         </span>
                                         <span class="blog_name">
                                             May 26, 2024 </span>
                                     </h6>
                                     <h4 class="blog_title">
-                                        <a href="#" class="blog_anchor blog_name text-decoration-none text-dark">
+                                        <a href="{{ route('blog-detail') }}" class="blog_anchor blog_name text-decoration-none text-dark">
                                             Blog Title here </a>
                                     </h4>
                                 </div>
@@ -347,14 +347,14 @@
                                 <div class="blog_content">
                                     <h6 class="item-meta d-flex flex-column gap-2">
                                         <span class="categories">
-                                            <a href="#" class="blog_name text-decoration-none">
+                                            <a href="{{ route('blog-detail') }}" class="blog_name text-decoration-none">
                                                 Mikell M. Milton </a>
                                         </span>
                                         <span class="blog_name">
                                             May 26, 2024 </span>
                                     </h6>
                                     <h4 class="blog_title">
-                                        <a href="#" class="blog_anchor blog_name text-decoration-none text-dark">
+                                        <a href="{{ route('blog-detail') }}" class="blog_anchor blog_name text-decoration-none text-dark">
                                             Blog Title here </a>
                                     </h4>
                                 </div>
@@ -368,14 +368,14 @@
                                 <div class="blog_content">
                                     <h6 class="item-meta d-flex flex-column gap-2">
                                         <span class="categories">
-                                            <a href="#" class="blog_name text-decoration-none">
+                                            <a href="{{ route('blog-detail') }}" class="blog_name text-decoration-none">
                                                 Mikell M. Milton </a>
                                         </span>
                                         <span class="blog_name">
                                             May 26, 2024 </span>
                                     </h6>
                                     <h4 class="blog_title">
-                                        <a href="#" class="blog_anchor blog_name text-decoration-none text-dark">
+                                        <a href="{{ route('blog-detail') }}" class="blog_anchor blog_name text-decoration-none text-dark">
                                             Blog Title here </a>
                                     </h4>
                                 </div>
@@ -385,7 +385,7 @@
                         <div class="blog_tag_wrapper">
                             <h4 class="text-capitalize mb-3">tags
                             </h4>
-                            <a href="#" class="btn book_btn">book</a>
+                            <a href="{{ route('blog-detail') }}" class="btn book_btn">book</a>
                         </div>
                     </div>
                 </div>

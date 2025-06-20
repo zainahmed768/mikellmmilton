@@ -21,10 +21,9 @@ Route::get('/', function () {
     return view('front.home.home');
 })->name('home');
 
-Route::get('/about-author', function () {
-    return view('front.about.aboutAuthor');
-})->name('about-author');
-
+Route::get('/test', function () {
+    return view('front.text');
+})->name('test');
 
 Route::get('/about', function () {
     return view('front.about.aboutbook');
@@ -34,14 +33,30 @@ Route::get('/blogs', function () {
     return view('front.blogs.blogs');
 })->name('blogs');
 
+Route::get('/blog-detail', function () {
+    return view('front.blogs.blog-detail');
+})->name('blog-detail');
+
 Route::get('/contact', function () {
     return view('front.contact.contact');
 })->name('contact');
 
-Route::get('/product-detail', function () {
-    return view('front.product.productDetail');
-})->name('product-detail');
+Route::get('/shop', function () {
+    return view('front.shop.shop');
+})->name('shop');
 
-Route::get('/checkout', function () {
-    return view('front.checkout.checkout');
-})->name('checkout');
+Route::get('/cart', function () {
+    return view('front.shop.cart');
+})->name('cart');
+
+Route::get('/privacy', function () {
+    return view('front.web-views.privacy');
+})->name('privacy');
+
+Route::get('/terms', function () {
+    return view('front.web-views.terms');
+})->name('terms');
+
+Route::get('/refundpolicy', function () {
+    return view('front.web-views.refundpolicy');
+})->name('refundpolicy');
