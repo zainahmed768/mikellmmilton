@@ -29,6 +29,10 @@ Route::get('/about', function () {
     return view('front.about.aboutbook');
 })->name('about');
 
+Route::get('/aboutauthor', function () {
+    return view('front.about.aboutAuthor');
+})->name('aboutauthor');
+
 Route::get('/blogs', function () {
     return view('front.blogs.blogs');
 })->name('blogs');
@@ -45,6 +49,10 @@ Route::get('/shop', function () {
     return view('front.shop.shop');
 })->name('shop');
 
+Route::get('/productdetail', function () {
+    return view('front.product.productDetail');
+})->name('productdetail');
+
 Route::get('/cart', function () {
     return view('front.shop.cart');
 })->name('cart');
@@ -60,3 +68,7 @@ Route::get('/terms', function () {
 Route::get('/refundpolicy', function () {
     return view('front.web-views.refundpolicy');
 })->name('refundpolicy');
+
+Route::get('/text', function () {
+    return view('front.text');
+})->name('text');

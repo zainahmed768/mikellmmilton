@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const rect = el.getBoundingClientRect();
         return (
             rect.top <=
-                (window.innerHeight || document.documentElement.clientHeight) &&
+            (window.innerHeight || document.documentElement.clientHeight) &&
             rect.bottom >= 0
         );
     }
@@ -450,21 +450,44 @@ if (container) {
 // Slides Text ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-const tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".book-section", // 👈 the section you want to watch
-        start: "top center", // when top of section hits center of viewport
-        end: "bottom center", // optional: when animation ends
-        scrub: 1, // smooth scroll animation
-        // markers: true,            // uncomment to debug visually
-    },
-    defaults: { duration: 1, ease: "power2.out" },
-});
+gsap.registerPlugin(ScrollTrigger);
 
-tl.to(".center_text", { scale: 0.5, y: -100 }) // moved upward (not down)
+const cards = document.querySelectorAll(".stacking-cards__item");
+const list = document.querySelector(".stacking-cards__list");
+
+// TEXT timeline
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".book-section",
+        start: "top center",
+        end: "bottom center", // full scroll for text
+        scrub: 1,
+    }
+})
+    .to(".center_text", { scale: 0.5, y: -100 }, 0)
     .to(".left_text", { x: -700 }, 0)
     .to(".right_text", { x: 700 }, 0);
 
+// CARDS timeline (independent, early and smooth)
+gsap.timeline({
+    scrollTrigger: {
+        trigger: ".book-section",
+        start: "top center",
+        end: "top+=50%", // this is the magic -- very early complete
+        scrub: 2,
+    }
+})
+    .to(cards, {
+        width: "100%",
+        maxWidth: "none",
+        transform: "translateY(300px)",
+        ease: "power2.out"
+    }, 0)
+    .to(list, {
+        marginTop: "-200px",
+        top: "10vh",
+        position: "sticky"
+    }, 0);
 
 
 // gsap.from(".stacked-card", { y: -100 });
