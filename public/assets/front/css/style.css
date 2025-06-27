@@ -1148,13 +1148,16 @@ section.list-sec {
     background-image: linear-gradient(180deg, #ffbe00 0%, #f2295b00 100%);
     padding: 30px;
     border-radius: 10px;
-    height: 860px;
-    overflow-y: auto;
+    /* height: 860px; */
+    /* overflow-y: auto; */
 }
-
-.assembly_content::-webkit-scrollbar {
+.adventure_card {
+    /* opacity: 0; */
+    transform: translateY(50px);
+}
+/* .assembly_content::-webkit-scrollbar {
     width: 0;
-}
+} */
 
 .sub_heading {
     font-size: 18px;
@@ -1184,6 +1187,43 @@ section.list-sec {
 }
 
 /* donation-section Css  */
+.donation-section .donation_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+/* .title {
+    font-size: 10vw;
+    font-weight: 800;
+    pointer-events: none;
+    transform: scale(0.7);
+    opacity: 1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+        90deg,
+        var(--color-white),
+        var(--color-white) 50%,
+        var(--color-mineshaft) 0
+    );
+    background-size: 200% 100%;
+    background-position: 100%;
+} */
+
+.donation_wrapper .cursor-picture {
+    position: absolute;
+    opacity: 0;
+    width: 280px;
+    object-fit: contain;
+    pointer-events: none;
+    transform: scale(0.8);
+}
 
 .yellow_color {
     color: #ffbe00;
@@ -1316,7 +1356,9 @@ section.list-sec {
 .book_animate_wrapper .slide_box {
     width: 100%;
 }
-
+.book_animate_wrapper .slide_box_wrap {
+    background: #fff;
+}
 .book-section {
     padding: 100px 0px 300px;
 }
@@ -1387,7 +1429,32 @@ section.list-sec {
     z-index: 0;
 }
 /* stacked ends here */
+/* wealth strats hre */
+/* .box {
+    height: 500px;
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+.uncover {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.uncover_slice {
+    flex-grow: 1;
+    height: 100%;
+    background: #ffffff;
+}
+img {
+    width: 100%;
+    height: 100%;
+} */
 
+/* wealth ends here */
 /* blog-section Css  */
 
 .blog-heading {

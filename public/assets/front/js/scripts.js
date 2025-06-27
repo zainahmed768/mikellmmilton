@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const rect = el.getBoundingClientRect();
         return (
             rect.top <=
-            (window.innerHeight || document.documentElement.clientHeight) &&
+                (window.innerHeight || document.documentElement.clientHeight) &&
             rect.bottom >= 0
         );
     }
@@ -462,7 +462,7 @@ gsap.timeline({
         start: "top center",
         end: "bottom center", // full scroll for text
         scrub: 1,
-    }
+    },
 })
     .to(".center_text", { scale: 0.5, y: -100 }, 0)
     .to(".left_text", { x: -700 }, 0)
@@ -475,20 +475,27 @@ gsap.timeline({
         start: "top center",
         end: "top+=50%", // this is the magic -- very early complete
         scrub: 2,
-    }
+    },
 })
-    .to(cards, {
-        width: "100%",
-        maxWidth: "none",
-        transform: "translateY(300px)",
-        ease: "power2.out"
-    }, 0)
-    .to(list, {
-        marginTop: "-200px",
-        top: "10vh",
-        position: "sticky"
-    }, 0);
-
+    .to(
+        cards,
+        {
+            width: "100%",
+            maxWidth: "none",
+            transform: "translateY(300px)",
+            ease: "power2.out",
+        },
+        0
+    )
+    .to(
+        list,
+        {
+            marginTop: "-200px",
+            top: "10vh",
+            position: "sticky",
+        },
+        0
+    );
 
 // gsap.from(".stacked-card", { y: -100 });
 
@@ -768,6 +775,23 @@ gsap.timeline({
     x: 0,
     ease: "power2.out",
     duration: 0.5,
+});
+
+const adventureCards = document.querySelectorAll(".adventure_card");
+console.log(adventureCards, "adventureCards");
+
+gsap.from(adventureCards, {
+    scrollTrigger: {
+        trigger: ".adventure-section",
+        start: "top 70%",
+        toggleActions: "play none none none",
+        markers: false,
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power2.out",
 });
 
 // prophecy image Animation
@@ -1127,3 +1151,79 @@ $(".toggler-btn").click(function () {
     let icon = $(this).find("i.fa-solid");
     icon.toggleClass("fa-angle-down fa-angle-up");
 });
+
+// Donation starts here
+const images = document.querySelectorAll(".cursor-picture");
+let lastX = 0;
+let lastY = 0;
+let index = 0;
+const minDistance = 180;
+const activeImages = new Set();
+let mouseX = 0,
+    mouseY = 0;
+let needsUpdate = false;
+let animationReady = false;
+
+gsap.timeline({
+    onComplete: () => {
+        animationReady = true;
+    },
+})
+    .to(".title", {
+        backgroundPosition: "0",
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power2.out",
+    })
+    .to(
+        ".title",
+        {
+            scale: 1,
+            duration: 1,
+            ease: "power2.inOut",
+        },
+        "-=0.3"
+    );
+
+document.querySelector(".donation_wrapper").addEventListener("mousemove", (e) => {
+    if (!animationReady) return;
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    needsUpdate = true;
+});
+
+gsap.ticker.add(() => {
+    if (!needsUpdate || !animationReady) return;
+    needsUpdate = false;
+
+    if (Math.hypot(mouseX - lastX, mouseY - lastY) < minDistance) return;
+
+    lastX = mouseX;
+    lastY = mouseY;
+
+    if (index >= images.length) index = 0;
+    const img = images[index];
+
+    if (activeImages.has(img)) return;
+    index++;
+    activeImages.add(img);
+
+    gsap.set(img, {
+        left: mouseX - img.width / 2 + "px",
+        top: mouseY - img.height / 2 + "px",
+        scale: 0.8,
+        opacity: 0,
+        position: "absolute",
+    });
+
+    gsap.timeline()
+        .to(img, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" })
+        .to(img, { opacity: 1, duration: 0.1 })
+        .to(img, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power2.in" })
+        .call(() => {
+            activeImages.delete(img);
+        });
+});
+
+// Donation ends here

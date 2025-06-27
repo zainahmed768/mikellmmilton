@@ -761,11 +761,13 @@ $breadcrumb = true;
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="assembly-img-wrapper">
-                        <figure class="mb-0">
-                            <img src="{{ frontImage('assembly-img.jpeg') }}" alt=""
-                                class="img-fluid assembly_img">
-                        </figure>
+                    <div class="sticky-top" style="top: 10px;">
+                        <div class="assembly-img-wrapper">
+                            <figure class="mb-0">
+                                <img src="{{ frontImage('assembly-img.jpeg') }}" alt=""
+                                    class="img-fluid assembly_img">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -881,11 +883,19 @@ $breadcrumb = true;
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="wealth-img-wrapper">
+                    <div class="box" id="mybox">
+                        <img class="myimg fill img-fluid radius-10" src="{{ frontImage('wealth-img.jpeg') }}" alt="">
+                        <div class="uncover">
+                            <div class="uncover_slice"></div>
+                            <div class="uncover_slice"></div>
+                            <div class="uncover_slice"></div>
+                        </div>
+                    </div>
+                    {{-- <div class="wealth-img-wrapper">
                         <figure class="mb-0">
                             <img src="{{ frontImage('wealth-img.jpeg') }}" alt="" class="img-fluid radius-10">
                         </figure>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-lg-6 ps-lg-5">
                     <div class="adventure_content">
@@ -944,6 +954,18 @@ $breadcrumb = true;
                 </div>
                 <h2 class="number_heading yellow_color"> $0</h2>
                 <h5 class="donation_sub">Donation Covered</h5>
+                <img class="cursor-picture" src="https://i.imgur.com/tm9LeRE.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/bBrWFiD.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/SJtLugE.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/KvE9QMh.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/jWnTBs8.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/udrKrcC.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/s8GG2xK.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/byEKsue.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/F56OV7p.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/nEOqNKT.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/YQHYrr3.jpeg" alt="" />
+                <img class="cursor-picture" src="https://i.imgur.com/GzBqpWV.jpeg" alt="" />
             </div>
         </div>
     </section>
@@ -1135,7 +1157,7 @@ $breadcrumb = true;
             <div class="book_animate_wrapper">
                 <div class="stacked-card js-stacking-cards">
                     <ul class="stacking-cards__list cards">
-                        <li class="stacking-cards__item card">
+                        <li class="stacking-cards__item">
                             <div class="slide_box">
                                 <div class="slide_box_wrap">
                                     <div class="img_box">
@@ -1159,7 +1181,7 @@ $breadcrumb = true;
                                 </div>
                             </div>
                         </li>
-                        <li class="stacking-cards__item card">
+                        <li class="stacking-cards__item">
                             <div class="slide_box">
                                 <div class="slide_box_wrap">
                                     <div class="img_box">
@@ -1183,7 +1205,7 @@ $breadcrumb = true;
                                 </div>
                             </div>
                         </li>
-                        <li class="stacking-cards__item card">
+                        <li class="stacking-cards__item">
                             <div class="slide_box">
                                 <div class="slide_box_wrap">
                                     <div class="img_box">
@@ -1207,7 +1229,7 @@ $breadcrumb = true;
                                 </div>
                             </div>
                         </li>
-                        <li class="stacking-cards__item card">
+                        <li class="stacking-cards__item">
                             <div class="slide_box">
                                 <div class="slide_box_wrap">
                                     <div class="img_box">
