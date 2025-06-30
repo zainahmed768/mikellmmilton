@@ -835,7 +835,7 @@ const tl = gsap.timeline({
         trigger: ".wealth-section",
         start: "top 30%",
         toggleActions: "play none none none",
-        markers: true, // enable to debug
+        markers: false, // enable to debug
         once: true,
     },
     repeat: -1, // infinite loop
