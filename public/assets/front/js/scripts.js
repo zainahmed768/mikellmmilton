@@ -110,7 +110,43 @@ $(document).ready(function () {
         infinite: false,
     });
 });
+// // svg lamb starts here
+// var xmlns = "http://www.w3.org/2000/svg",
+//     xlinkns = "http://www.w3.org/1999/xlink",
+//     select = function (s) {
+//         return document.querySelector(s);
+//     },
+//     selectAll = function (s) {
+//         return document.querySelectorAll(s);
+//     },
+//     contain = select(".container"),
+//     mainSVG = select(".mainSVG"),
+//     lamp = MorphSVGPlugin.convertToPath("#lampTop");
 
+// TweenMax.set("svg", {
+//     visibility: "visible",
+// });
+
+// var tln = new TimelineMax();
+
+// for (var i = 0; i < 5; i++) {
+//     var t = TweenMax.to(select(".blob" + i), randomBetween(14, 50), {
+//         y: 260,
+//         repeat: -1,
+//         repeatDelay: randomBetween(1, 3),
+//         yoyo: true,
+//         ease: Linear.easeNone,
+//     });
+
+//     tln.add(t, (i + 1) / 0.6);
+// }
+
+// tln.seek(100);
+
+// function randomBetween(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1) + min);
+// }
+// // svg lamb ends here
 gsap.utils.toArray(".about-heading-container").forEach((el) => {
     gsap.to(el, {
         scrollTrigger: {
@@ -793,7 +829,42 @@ gsap.from(adventureCards, {
     stagger: 0.2,
     ease: "power2.out",
 });
+// Ministry starts here
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".wealth-section",
+        start: "top 30%",
+        toggleActions: "play none none none",
+        markers: true, // enable to debug
+        once: true,
+    },
+    repeat: -1, // infinite loop
+    repeatDelay: 2,
+});
 
+tl.addLabel("start");
+
+tl.to(
+    ".uncover_slice",
+    {
+        height: 0,
+        ease: "power4.inOut",
+        stagger: { amount: 0.33 },
+        duration: 1,
+    },
+    "start"
+);
+
+tl.to(
+    ".wealth-img",
+    {
+        scale: 1.3,
+        ease: "power4.inOut",
+        duration: 1.2,
+    },
+    "start"
+);
+// Ministrye end here
 // prophecy image Animation
 
 gsap.timeline({
@@ -1185,13 +1256,15 @@ gsap.timeline({
         "-=0.3"
     );
 
-document.querySelector(".donation_wrapper").addEventListener("mousemove", (e) => {
-    if (!animationReady) return;
+document
+    .querySelector(".donation_wrapper")
+    .addEventListener("mousemove", (e) => {
+        if (!animationReady) return;
 
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    needsUpdate = true;
-});
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        needsUpdate = true;
+    });
 
 gsap.ticker.add(() => {
     if (!needsUpdate || !animationReady) return;

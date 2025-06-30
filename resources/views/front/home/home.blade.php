@@ -68,8 +68,8 @@ $breadcrumb = true;
     <section class="list-sec">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="list-card-wrapper text-center">
@@ -146,7 +146,8 @@ $breadcrumb = true;
                 <div class="col-lg-6">
                     <div class="about-content-wrapper">
                         <div class="text-container">
-                            <h2 class="reveal-text target-heading" data-text="The DBT Franchise Ministry Presents..."></h2>
+                            <h2 class="reveal-text target-heading" data-text="The DBT Franchise Ministry Presents...">
+                            </h2>
                         </div>
                         <div class="about-paragraph-wrapper">
                             {{-- <p class="bold">In The Beginning… You Know The Ending.</p> --}}
@@ -884,7 +885,8 @@ $breadcrumb = true;
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="box" id="mybox">
-                        <img class="myimg fill img-fluid radius-10" src="{{ frontImage('wealth-img.jpeg') }}" alt="">
+                        <img class="wealth-img fill img-fluid radius-10" src="{{ frontImage('wealth-img.jpeg') }}"
+                            alt="">
                         <div class="uncover">
                             <div class="uncover_slice"></div>
                             <div class="uncover_slice"></div>

@@ -1155,6 +1155,11 @@ section.list-sec {
     /* opacity: 0; */
     transform: translateY(50px);
 }
+.assembly-section .assembly-img-wrapper img.assembly_img {
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+}
 /* .assembly_content::-webkit-scrollbar {
     width: 0;
 } */
@@ -1430,13 +1435,13 @@ section.list-sec {
 }
 /* stacked ends here */
 /* wealth strats hre */
-/* .box {
-    height: 500px;
-    width: 400px;
+.wealth-section .box {
+    /* height: 500px; */
+    width: 100%;
     position: relative;
     overflow: hidden;
 }
-.uncover {
+.wealth-section .uncover {
     display: flex;
     position: absolute;
     top: 0;
@@ -1444,15 +1449,15 @@ section.list-sec {
     width: 100%;
     height: 100%;
 }
-.uncover_slice {
+.wealth-section .uncover_slice {
     flex-grow: 1;
     height: 100%;
     background: #ffffff;
 }
-img {
+.wealth-section img.wealth-img {
     width: 100%;
     height: 100%;
-} */
+}
 
 /* wealth ends here */
 /* blog-section Css  */
