@@ -2118,7 +2118,16 @@ footer .footer-links-wrapper ul {
     bottom: 20px;
     right: 30rem;
 }
-
+/* responsive starts here */
+@media (max-width: 500px) {
+    .inner_banner_heading {
+        font-size: 61px;
+    }
+    .inner-banner{
+        height: 300px;
+    }
+}
+/* responsive ends here */
 /* blog-page Css  */
 .blogsdetail_wrapper {
     padding: 32px 32px;

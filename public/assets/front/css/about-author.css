@@ -127,3 +127,21 @@
     border: 1px solid #fff;
 }
 /* achievemnet ends here */
+/* responsive starts here */
+@media (max-width: 800px) {
+    .about-author .about-author-text-wrapper h2 {
+        font-size: 40px;
+    }
+    .achievements-text-wrapper h3 {
+        font-size: 40px;
+    }
+    .cta-wrapper a.cta-links-wrapper {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cta-wrapper a.cta-links-wrapper .cta-button-wrapper {
+        margin-left: unset;
+    }
+}
+/* responsive ends here */

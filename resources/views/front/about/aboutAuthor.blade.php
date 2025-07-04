@@ -20,10 +20,10 @@
     <section class="list-sec">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8">
+                <div class="col-lg-3 col-md-12"></div>
+                <div class="col-lg-6 col-md-12">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-1.svg') }}" class="img-fluid" alt="">
@@ -35,7 +35,7 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-2.svg') }}" class="img-fluid" alt="">
@@ -47,7 +47,7 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-3.svg') }}" class="img-fluid" alt="">
@@ -59,7 +59,7 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-4.svg') }}" class="img-fluid" alt="">
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2"></div>
+                <div class="col-lg-2 col-md-12"></div>
             </div>
         </div>
     </section>
@@ -206,8 +206,8 @@
     <section class="assembly-section section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="assembly_content">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="assembly_content mt-3 mt-lg-0">
                         <div class="ml14 reveal mb-4">
                             <h2 class="level-2 heading-font text-white mb-0 target-heading">
                                 <span class="letters">ABOUT US
@@ -258,12 +258,14 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="assembly-img-wrapper">
-                        <figure class="mb-0">
-                            <img src="{{ frontImage('assembly-img.jpeg') }}" alt=""
-                                class="img-fluid assembly_img">
-                        </figure>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="sticky-top" style="top: 10px;">
+                        <div class="assembly-img-wrapper">
+                            <figure class="mb-0">
+                                <img src="{{ frontImage('assembly-img.jpeg') }}" alt=""
+                                    class="img-fluid assembly_img">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
