@@ -486,52 +486,53 @@ if (container) {
 // Slides Text ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger);
+// Only run for screen widths greater than 800px
+if (window.matchMedia("(min-width: 801px)").matches) {
+    const cards = document.querySelectorAll(".stacking-cards__item");
+    const list = document.querySelector(".stacking-cards__list");
 
-const cards = document.querySelectorAll(".stacking-cards__item");
-const list = document.querySelector(".stacking-cards__list");
-
-// TEXT timeline
-gsap.timeline({
-    scrollTrigger: {
-        trigger: ".book-section",
-        start: "top center",
-        end: "bottom center", // full scroll for text
-        scrub: 1,
-    },
-})
-    .to(".center_text", { scale: 0.5, y: -100 }, 0)
-    .to(".left_text", { x: -700 }, 0)
-    .to(".right_text", { x: 700 }, 0);
-
-// CARDS timeline (independent, early and smooth)
-gsap.timeline({
-    scrollTrigger: {
-        trigger: ".book-section",
-        start: "top center",
-        end: "top+=50%", // this is the magic -- very early complete
-        scrub: 2,
-    },
-})
-    .to(
-        cards,
-        {
-            width: "100%",
-            maxWidth: "none",
-            transform: "translateY(300px)",
-            ease: "power2.out",
+    // TEXT timeline
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".book-section",
+            start: "top center",
+            end: "bottom center",
+            scrub: 1,
         },
-        0
-    )
-    .to(
-        list,
-        {
-            marginTop: "-200px",
-            top: "10vh",
-            position: "sticky",
+    })
+        .to(".center_text", { scale: 0.5, y: -100 }, 0)
+        .to(".left_text", { x: -700 }, 0)
+        .to(".right_text", { x: 700 }, 0);
+
+    // CARDS timeline
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".book-section",
+            start: "top center",
+            end: "top+=50%",
+            scrub: 2,
         },
-        0
-    );
+    })
+        .to(
+            cards,
+            {
+                width: "100%",
+                maxWidth: "none",
+                transform: "translateY(300px)",
+                ease: "power2.out",
+            },
+            0
+        )
+        .to(
+            list,
+            {
+                marginTop: "-200px",
+                top: "10vh",
+                position: "sticky",
+            },
+            0
+        );
+}
 
 // gsap.from(".stacked-card", { y: -100 });
 

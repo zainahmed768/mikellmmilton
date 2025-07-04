@@ -593,11 +593,34 @@ header#header
     position: relative;
     border: 0;
 }
-
+/* responsive starts here */
+@media (max-width: 800px) {
+    .sidebar-nav-wrapper ul.header-list a.nav-link {
+        font-size: 16px;
+        text-transform: capitalize;
+        line-height: 1.8;
+        font-weight: 500;
+        font-family: "Albert Sans";
+    }
+    header#header .header-top-wrapper {
+        display: none !important;
+    }
+    .site-header .side-bar {
+        overflow-y: scroll;
+    }
+}
+@media (max-width: 500px) {
+    header#header .logo-wrapper img.img-fluid {
+        max-width: 100%;
+    }
+}
+/* responsive ends here */
 /* header ends here */
 
 /* banner-section Css  */
-
+.banner-section {
+    overflow-x: hidden;
+}
 .banner-thumbnail figure img.img-fluid {
     height: 128px;
     object-fit: cover;
@@ -646,7 +669,13 @@ header#header
     font-size: 20px;
     color: #555f75;
 }
-
+/* responsive starts here */
+@media (max-width: 800px) {
+    .banner-slider img {
+        height: 500px;
+    }
+}
+/* responsive ends here */
 /* banner-section Css  */
 
 /* list starts here */
@@ -784,6 +813,13 @@ section.list-sec {
     background: #060606;
     opacity: 24%;
 }
+/* responsive starts here */
+@media (max-width: 1024px) {
+    .about-content-wrapper h2 {
+        font-size: 42px;
+    }
+}
+/* responsive ends here */
 /* about ends here */
 /* break starts here */
 .break-sec {
@@ -887,7 +923,13 @@ section.list-sec {
 .prophecy-img-wrapper img {
     transform: translateX(-100%);
 }
-
+/* responsive starts here */
+@media (max-width: 1024px) {
+    .adventure_content h2.sec_heading {
+        font-size: 33px;
+    }
+}
+/* responsive ends here */
 /* prophecy-section Css  */
 
 /* availabel starts here */
@@ -925,6 +967,14 @@ section.list-sec {
     .availabel-btn-wrapper {
     padding-top: 14px;
 }
+/* responsive starts here */
+@media (max-width: 1366px) {
+    .availabel-btn-wrapper .btn.btn-primary {
+        padding: 7px 23px;
+        font-size: 15px;
+    }
+}
+/* responsive ends here */
 /* availabel ends here */
 
 .bs-expertise-4-box {
@@ -1002,7 +1052,18 @@ section.list-sec {
     opacity: 16%;
     width: 100%;
 }
-
+/* responsie starts here */
+@media (max-width: 800px) {
+    .expertise-section .expertise_text {
+        font-size: 75px;
+    }
+}
+@media (max-width: 500px) {
+    .expertise-section .expertise_text {
+        font-size: 49px;
+    }
+}
+/* responsive ends here */
 /* diaspora-section Css  */
 .diaspora-section {
     background-image: url(../images/about-bg.png);
@@ -1139,7 +1200,27 @@ section.list-sec {
 .diaspora_ul.show .diaspora_li:nth-child(4) {
     transition-delay: 0.8s;
 }
-
+/* responsive starts here */
+@media (max-width: 800px) {
+    .diaspora_ul.show .diaspora_li {
+        flex: 0 0 50%;
+    }
+    .diaspora_ul {
+        flex-wrap: wrap;
+    }
+    .diaspora_li:not(:first-child) {
+        margin-left: unset;
+    }
+}
+@media (max-width: 500px) {
+    .diaspora-content-wrapper h2.target-heading {
+        font-size: 38px;
+    }
+    .diaspora_ul.show .diaspora_li {
+        flex: 0 0 100%;
+    }
+}
+/* responsive ends here */
 /* diaspora-section Css  */
 
 /* assembly-section Css  */
@@ -1170,7 +1251,13 @@ section.list-sec {
     font-weight: 600;
     line-height: 1.7;
 }
-
+/* responsive starts here */
+@media (max-width: 800px) {
+    .adventure_content .sec_heading {
+        font-size: 40px;
+    }
+}
+/* responsive ends here */
 /* assembly-section Css  */
 
 /* adventure-section Css  */
@@ -1252,7 +1339,13 @@ section.list-sec {
     border-radius: 2px;
     padding: 40px;
 }
-
+/* responsive starts here */
+@media (max-width: 500px) {
+    .donation-section .donation_wrapper {
+        height: unset;
+    }
+}
+/* responsive ends here */
 /* donation-section Css  */
 
 /* book-section Css  */
@@ -1366,8 +1459,8 @@ section.list-sec {
 }
 .book-section {
     padding: 100px 0px 300px;
+    overflow-x: hidden;
 }
-
 .book_top_heading {
     /* min-height: 100vh; */
     display: flex;
@@ -1433,6 +1526,46 @@ section.list-sec {
     /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); */
     z-index: 0;
 }
+/* responsive starts here */
+@media (max-width: 800px) {
+    .book-section {
+        padding: 100px 0px;
+    }
+    .book-section .book_top_heading h2 {
+        font-size: 60px;
+        line-height: 65px;
+    }
+    .stacking-cards__list {
+        margin-top: 0px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .stacking-cards__item {
+        height: unset;
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 48%;
+    }
+    .bottom_wrapper {
+        justify-content: center !important;
+        gap: 20px;
+    }
+    .book_animate_wrapper .slide_box .content_wrapper {
+        flex-wrap: wrap;
+    }
+    .book_animate_wrapper .slide_box .content_wrapper h4 {
+        flex: 0 0 100% !important;
+    }
+    .book_animate_wrapper .slide_box .content_wrapper .right_box {
+        flex: 0 0 100% !important;
+    }
+}
+@media (max-width: 500px) {
+    .stacking-cards__item {
+        flex: 0 0 100%;
+    }
+}
+/* responsive ends here */
 /* stacked ends here */
 /* wealth strats hre */
 .wealth-section .box {
@@ -1566,7 +1699,13 @@ section.list-sec {
 .blog_wrapper:hover .blog_anchor {
     color: #fff;
 }
-
+/* responsive starts here */
+@media (max-width: 800px) {
+    .blog_wrapper img {
+        height: 300px !important;
+    }
+}
+/* responsive ends here */
 .adventure_card {
     background: #000;
     height: 570px;
@@ -1621,7 +1760,23 @@ section.list-sec {
         transform: rotate(0deg);
     }
 }
-
+/* responsive starts here */
+@media (max-width: 800px) {
+    .blog-section .blog-heading h2.reveal-text {
+        font-size: 38px;
+    }
+    .blog-section .blog-top-content {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .adventure_card_wrapper {
+        margin-top: 0px;
+    }
+    .adventure_card {
+        height: unset;
+    }
+}
+/* responsve ends here */
 /* contact-section Css  */
 
 .contact-section::before {
@@ -2272,7 +2427,13 @@ footer .footer-links-wrapper ul {
 .page-heading-here {
     gap: 90px;
 }
-
+/* responsive starts here */
+@media (max-width: 800px) {
+    .availabel-heading-wrapper h2 {
+        font-size: 40px;
+    }
+}
+/* responsive ends here */
 /* cart-page Css  */
 
 .cart_img figure img.img-fluid {

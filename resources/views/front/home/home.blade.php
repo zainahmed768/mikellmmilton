@@ -68,10 +68,10 @@ $breadcrumb = true;
     <section class="list-sec">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
+                <div class="col-lg-3 col-md-12"></div>
+                <div class="col-lg-6 col-md-12">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-1.svg') }}" class="img-fluid" alt="">
@@ -83,7 +83,7 @@ $breadcrumb = true;
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-2.svg') }}" class="img-fluid" alt="">
@@ -95,7 +95,7 @@ $breadcrumb = true;
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-3.svg') }}" class="img-fluid" alt="">
@@ -107,7 +107,7 @@ $breadcrumb = true;
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-4.svg') }}" class="img-fluid" alt="">
@@ -121,7 +121,7 @@ $breadcrumb = true;
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2"></div>
+                <div class="col-lg-2 col-md-12"></div>
             </div>
         </div>
     </section>
@@ -143,7 +143,7 @@ $breadcrumb = true;
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-2 order-lg-1">
                     <div class="about-content-wrapper">
                         <div class="text-container">
                             <h2 class="reveal-text target-heading" data-text="The DBT Franchise Ministry Presents...">
@@ -195,7 +195,7 @@ $breadcrumb = true;
                         </div>
                     </div>
                     <div class="row pt-4">
-                        <div class="col-lg-4">
+                        <div class="col-md-4 col-lg-4">
                             <div class="about-card-wrapper">
                                 <div class="about-icon-wrapper">
                                     <span>
@@ -215,7 +215,7 @@ $breadcrumb = true;
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-md-4 col-lg-4">
                             <div class="about-card-wrapper">
                                 <div class="about-icon-wrapper">
                                     <span>
@@ -234,7 +234,7 @@ $breadcrumb = true;
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-md-4 col-lg-4">
                             <div class="about-card-wrapper">
                                 <div class="about-icon-wrapper">
                                     <span>
@@ -255,7 +255,7 @@ $breadcrumb = true;
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-1 order-lg-2">
                     <div class="about-img-wrapper">
                         <img src="{{ frontImage('about-img.png') }}" class="img-fluid" alt="">
                     </div>
@@ -358,9 +358,9 @@ $breadcrumb = true;
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5 order-2 order-lg-1">
                     <div class="adventure_content">
-                        <div class="ml14 reveal mb-5">
+                        <div class="ml14 reveal mb-5 mb-md-3">
                             <h2 class="level-2 heading-font sec_heading target-heading">
                                 <span class="letters"> A Prophecy for the 21st
                                     century’s Boomers,
@@ -401,8 +401,8 @@ $breadcrumb = true;
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 ms-auto">
-                    <div class="prophecy-img-wrapper">
+                <div class="col-lg-6 ms-auto order-1 order-lg-2">
+                    <div class="prophecy-img-wrapper mt-lg-0 mt-4 mb-3 mb-lg-0">
                         <figure class="mb-0">
                             <img src="{{ frontImage('prophecy-img.jpeg') }}" alt=""
                                 class="img-fluid prophecy_img">
@@ -426,8 +426,8 @@ $breadcrumb = true;
                 </div>
             </div>
             <div class="row pt-5">
-                <div class="col-lg-3">
-                    <div class="availabel-card-wrapper">
+                <div class="col-lg-3 col-md-6">
+                    <div class="availabel-card-wrapper my-2">
                         <div class="availabel-img-wrapper">
                             <figure>
                                 <img src="{{ frontImage('availabel.png') }}" class="img-fluid" alt="">
@@ -448,8 +448,8 @@ $breadcrumb = true;
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="availabel-card-wrapper">
+                <div class="col-lg-3 col-md-6">
+                    <div class="availabel-card-wrapper my-2">
                         <div class="availabel-img-wrapper">
                             <figure>
                                 <img src="{{ frontImage('availabel.png') }}" class="img-fluid" alt="">
@@ -470,8 +470,8 @@ $breadcrumb = true;
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="availabel-card-wrapper">
+                <div class="col-lg-3 col-md-6">
+                    <div class="availabel-card-wrapper my-2">
                         <div class="availabel-img-wrapper">
                             <figure>
                                 <img src="{{ frontImage('availabel.png') }}" class="img-fluid" alt="">
@@ -492,8 +492,8 @@ $breadcrumb = true;
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="availabel-card-wrapper">
+                <div class="col-lg-3 col-md-6">
+                    <div class="availabel-card-wrapper my-2">
                         <div class="availabel-img-wrapper">
                             <figure>
                                 <img src="{{ frontImage('availabel.png') }}" class="img-fluid" alt="">
@@ -709,8 +709,8 @@ $breadcrumb = true;
     <section class="assembly-section section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="assembly_content">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="assembly_content mt-3 mt-lg-0">
                         <div class="ml14 reveal mb-4">
                             <h2 class="level-2 heading-font text-white mb-0 target-heading">
                                 <span class="letters">ABOUT US
@@ -761,7 +761,7 @@ $breadcrumb = true;
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-1 order-lg-2">
                     <div class="sticky-top" style="top: 10px;">
                         <div class="assembly-img-wrapper">
                             <figure class="mb-0">
@@ -781,7 +781,7 @@ $breadcrumb = true;
             <div class="row">
                 <div class="col-lg-4">
                     <div class="adventure_content">
-                        <div class="ml14 reveal mb-5">
+                        <div class="ml14 reveal mb-lg-5 mb-3">
                             <h2 class="level-2 heading-font yellow_heading">
                                 <span class="letters"> The D.O.P.E. Breakthrough
                                 </span>
@@ -819,8 +819,8 @@ $breadcrumb = true;
                     </div>
                     <div class="adventure_card_wrapper">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="adventure_card p-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="adventure_card p-4 my-2 my-lg-0">
                                     <div class="adv_card_img">
                                         <figure class="mb-0">
                                             <img src="{{ frontImage('blueprint.png') }}" alt=""
@@ -836,8 +836,8 @@ $breadcrumb = true;
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="adventure_card p-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="adventure_card p-4 my-2 my-lg-0">
                                     <div class="adv_card_img">
                                         <figure class="mb-0">
                                             <img src="{{ frontImage('open-book.png') }}" alt=""
@@ -853,8 +853,8 @@ $breadcrumb = true;
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="adventure_card p-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="adventure_card p-4 my-2 my-lg-0">
                                     <div class="adv_card_img">
                                         <figure class="mb-0">
                                             <img src="{{ frontImage('property-insurance.png') }}" alt=""
@@ -901,7 +901,7 @@ $breadcrumb = true;
                 </div>
                 <div class="col-lg-6 ps-lg-5">
                     <div class="adventure_content">
-                        <div class="ml14 reveal mb-3">
+                        <div class="ml14 reveal mb-3 mt-lg-0 mt-4">
                             <h2 class="level-2 heading-font yellow_heading target-heading">
                                 <span class="letters">
                                     The DBT Ministry Sovereign Wealth
@@ -1285,7 +1285,7 @@ $breadcrumb = true;
                     </div>
                 </div>
             </div>
-            <div class="blog-top-content d-flex align-items-center justify-content-between">
+            <div class="blog-top-content d-flex align-items-center justify-content-between mb-lg-0 mb-4">
                 <div class="blog-heading">
                     {{-- <div class="ml14 reveal mb-5">
                         <h2 class="level-2 heading-font">
@@ -1294,7 +1294,7 @@ $breadcrumb = true;
                             </span>
                         </h2>
                     </div> --}}
-                    <div class="text-container mb-5">
+                    <div class="text-container mb-3 mb-lg-5">
                         <h2 class="reveal-text text-dark" data-text="Take a Look at Our Latest blogs & Articles.">
                         </h2>
                     </div>
@@ -1314,8 +1314,8 @@ $breadcrumb = true;
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="blog_wrapper">
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog_wrapper py-2">
                         <div class="blog_img position-relative">
                             <figure class="mb-0">
                                 <img src="{{ frontImage('blog-img.png') }}" alt="" class="img-fluid">
@@ -1338,8 +1338,8 @@ $breadcrumb = true;
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="blog_wrapper">
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog_wrapper py-2">
                         <div class="blog_img position-relative">
                             <figure class="mb-0">
                                 <img src="{{ frontImage('blog-img.png') }}" alt="" class="img-fluid">
@@ -1362,8 +1362,8 @@ $breadcrumb = true;
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="blog_wrapper">
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog_wrapper py-2">
                         <div class="blog_img position-relative">
                             <figure class="mb-0">
                                 <img src="{{ frontImage('blog-img.png') }}" alt="" class="img-fluid">
@@ -1402,7 +1402,7 @@ $breadcrumb = true;
         <div class="contact_main">
             <div class="container">
                 <div class="row align-items-end">
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 order-2 order-lg-1">
                         {{-- <div class="contact_form">
                             <form action="#">
                                 <div class="form-group">
@@ -1430,7 +1430,7 @@ $breadcrumb = true;
                                 </div>
                             </form>
                         </div> --}}
-                        <div class="contact_heading">
+                        <div class="contact_heading mt-3 mt-lg-0">
                             <div class="text-container">
                                 <h2 class="reveal-text text-dark target-heading"
                                     data-text="200+ Trusted Partners All  Over The World.">
@@ -1438,7 +1438,7 @@ $breadcrumb = true;
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3  order-1 order-lg-2">
                         <div class="contact_img">
                             <figure class="mb-0">
                                 <img src="{{ frontImage('contact-img.jpeg') }}" alt=""

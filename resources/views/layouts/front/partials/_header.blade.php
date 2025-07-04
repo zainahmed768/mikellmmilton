@@ -1,14 +1,14 @@
 <header class="site-header" id="header">
     <div class="container-fluid px-0">
         <div class="row ">
-            <div class="col-lg-2 pe-lg-0">
+            <div class="col-lg-2 col-4 pe-lg-0 pe-0">
                 <div class="logo-wrapper">
                     <a href="{{ route('home') }}">
                         <img src={{ frontImage('logo.png') }} class="img-fluid" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-10 ps-lg-0">
+            <div class="col-lg-10 col-8 ps-lg-0 ps-0">
                 <div class="header-top-wrapper d-flex justify-content-between align-items-center">
                     <div class="header-list py-3">
                         <ul class="d-flex list-unstyled gap-2 mb-0">
@@ -52,8 +52,9 @@
                     </div> --}}
                 </div>
                 <div class="main-header-wrapper">
-                    <div class="header-link-wrapper d-flex align-items-center justify-content-between">
-                        <ul class="header-list list-unstyled d-flex gap-5 mb-0 ps-4">
+                    <div
+                        class="header-link-wrapper d-flex align-items-center justify-content-end justify-content-lg-between">
+                        <ul class="header-list list-unstyled d-lg-flex gap-5 mb-0 ps-4 d-none">
                             <li class="nav-item">
                                 <a href="{{ route('home') }}" class="nav-link">Home</a>
                             </li>
@@ -105,6 +106,25 @@
                     <span></span>
                 </button>
             </div>
+        </div>
+        <div class="sidebar-nav-wrapper d-lg-none d-block">
+            <ul class="header-list list-unstyled gap-5 mb-0 ps-0">
+                <li class="nav-item">
+                    <a href="{{ route('home') }}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('about') }}" class="nav-link">about the Book</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('aboutauthor') }}" class="nav-link">about the author</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('blogs') }}" class="nav-link">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('contact') }}" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
         </div>
         <div class="gallery_main">
             <div class="gallery_text_wrap">

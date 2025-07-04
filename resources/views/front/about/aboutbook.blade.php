@@ -20,10 +20,10 @@
     <section class="list-sec">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8">
+                <div class="col-lg-3 col-md-12"></div>
+                <div class="col-lg-6 col-md-12">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-1.svg') }}" class="img-fluid" alt="">
@@ -35,7 +35,7 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-2.svg') }}" class="img-fluid" alt="">
@@ -47,7 +47,7 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-3.svg') }}" class="img-fluid" alt="">
@@ -59,7 +59,7 @@
                                 </div> --}}
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-3">
                             <div class="list-card-wrapper text-center">
                                 <div class="list-icon-wrapper">
                                     <img src="{{ frontImage('cf-4-icon-4.svg') }}" class="img-fluid" alt="">
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2"></div>
+                <div class="col-lg-2 col-md-12"></div>
             </div>
         </div>
     </section>
@@ -95,10 +95,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-2 order-lg-1">
                     <div class="about-content-wrapper">
                         <div class="text-container">
-                            <h2 class="reveal-text target-heading" data-text="The DBT Franchise Ministry Presents..."></h2>
+                            <h2 class="reveal-text target-heading" data-text="The DBT Franchise Ministry Presents...">
+                            </h2>
                         </div>
                         <div class="about-paragraph-wrapper">
                             {{-- <p class="bold">In The Beginning… You Know The Ending.</p> --}}
@@ -146,7 +147,7 @@
                         </div>
                     </div>
                     <div class="row pt-4">
-                        <div class="col-lg-4">
+                        <div class="col-md-4 col-lg-4">
                             <div class="about-card-wrapper">
                                 <div class="about-icon-wrapper">
                                     <span>
@@ -165,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-md-4 col-lg-4">
                             <div class="about-card-wrapper">
                                 <div class="about-icon-wrapper">
                                     <span>
@@ -183,7 +184,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-md-4 col-lg-4">
                             <div class="about-card-wrapper">
                                 <div class="about-icon-wrapper">
                                     <span>
@@ -203,7 +204,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-1 order-lg-2">
                     <div class="about-img-wrapper">
                         <img src="{{ frontImage('about-img.png') }}" class="img-fluid" alt="">
                     </div>
@@ -280,9 +281,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5 order-2 order-lg-1">
                     <div class="adventure_content">
-                        <div class="ml14 reveal mb-5">
+                        <div class="ml14 reveal mb-5 mb-md-3">
                             <h2 class="level-2 heading-font sec_heading target-heading">
                                 <span class="letters"> A Prophecy for the 21st
                                     century’s Boomers,
@@ -323,8 +324,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 ms-auto">
-                    <div class="prophecy-img-wrapper">
+                <div class="col-lg-6 ms-auto order-1 order-lg-2">
+                    <div class="prophecy-img-wrapper mt-lg-0 mt-4 mb-3 mb-lg-0">
                         <figure class="mb-0">
                             <img src="{{ frontImage('prophecy-img.jpeg') }}" alt=""
                                 class="img-fluid prophecy_img">
@@ -504,8 +505,8 @@
     <section class="assembly-section section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="assembly_content">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="assembly_content mt-3 mt-lg-0">
                         <div class="ml14 reveal mb-4">
                             <h2 class="level-2 heading-font text-white mb-0 target-heading">
                                 <span class="letters">ABOUT US
@@ -556,12 +557,14 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="assembly-img-wrapper">
-                        <figure class="mb-0">
-                            <img src="{{ frontImage('assembly-img.jpeg') }}" alt=""
-                                class="img-fluid assembly_img">
-                        </figure>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="sticky-top" style="top: 10px;">
+                        <div class="assembly-img-wrapper">
+                            <figure class="mb-0">
+                                <img src="{{ frontImage('assembly-img.jpeg') }}" alt=""
+                                    class="img-fluid assembly_img">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -574,7 +577,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="adventure_content">
-                        <div class="ml14 reveal mb-5">
+                        <div class="ml14 reveal mb-lg-5 mb-3">
                             <h2 class="level-2 heading-font yellow_heading">
                                 <span class="letters"> The D.O.P.E. Breakthrough
                                 </span>
@@ -612,8 +615,8 @@
                     </div>
                     <div class="adventure_card_wrapper">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="adventure_card p-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="adventure_card p-4 my-2 my-lg-0">
                                     <div class="adv_card_img">
                                         <figure class="mb-0">
                                             <img src="{{ frontImage('blueprint.png') }}" alt=""
@@ -629,8 +632,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="adventure_card p-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="adventure_card p-4 my-2 my-lg-0">
                                     <div class="adv_card_img">
                                         <figure class="mb-0">
                                             <img src="{{ frontImage('open-book.png') }}" alt=""
@@ -646,8 +649,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="adventure_card p-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="adventure_card p-4 my-2 my-lg-0">
                                     <div class="adv_card_img">
                                         <figure class="mb-0">
                                             <img src="{{ frontImage('property-insurance.png') }}" alt=""
@@ -677,15 +680,24 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="wealth-img-wrapper">
+                    <div class="box" id="mybox">
+                        <img class="wealth-img fill img-fluid radius-10" src="{{ frontImage('wealth-img.jpeg') }}"
+                            alt="">
+                        <div class="uncover">
+                            <div class="uncover_slice"></div>
+                            <div class="uncover_slice"></div>
+                            <div class="uncover_slice"></div>
+                        </div>
+                    </div>
+                    {{-- <div class="wealth-img-wrapper">
                         <figure class="mb-0">
                             <img src="{{ frontImage('wealth-img.jpeg') }}" alt="" class="img-fluid radius-10">
                         </figure>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-lg-6 ps-lg-5">
                     <div class="adventure_content">
-                        <div class="ml14 reveal mb-3">
+                        <div class="ml14 reveal mb-3 mt-lg-0 mt-4">
                             <h2 class="level-2 heading-font yellow_heading target-heading">
                                 <span class="letters">
                                     The DBT Ministry Sovereign Wealth
